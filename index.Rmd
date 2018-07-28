@@ -1,8 +1,30 @@
 ---
-title: "Bayesian Calculations"
+title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andrew Grogan-Kaylor"
-date: "7/28/2018"
-output: html_document
+date: "`r format(Sys.Date(), format='%B %d, %Y')`"
+output:
+  revealjs::revealjs_presentation:
+    fig_height: 4
+    highlight: haddock
+    reveal_options:
+      chalkboard:
+        theme: chalkboard
+        toggleChalkboardButton: yes
+        toggleNotesButton: yes
+      previewLinks: yes
+      progress: yes
+      slideNumber: yes
+    reveal_plugins:
+    - chalkboard
+    - zoom
+    self_contained: no
+    theme: default
+    transition: convex
+  slidy_presentation: default
+  ioslides_presentation:
+    smaller: yes
+  html_document: default
+subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 ---
 
 ```{r setup, include=FALSE}
@@ -11,22 +33,85 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```
 
-## R Markdown
+```{r, eval = FALSE, echo = FALSE}
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+# P(A|B) = [P(B|A)P(A) / P(B)]
+# P(H|D) = [P(D|H)P(H) / P(D)]
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+# posterior is proportional to prior times likelihood
 
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+> R code in this example is adapted and simplified  from Kruschke (2011), p. 70
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+## coin flips
+
+```{r}
+
+data1 <- c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0) # the data
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## prior
+
+```{r}
+
+theta1 <- c(0.25, 0.50, 0.75) # candidate parameter values
+
+ptheta1 <- c(.25, .50, .25) # prior probabilities
+
+ptheta1 <- ptheta1/sum(ptheta1) # normalize
+
+barplot(names.arg = theta1, 
+        height = ptheta1,
+        main = "prior probabilities") # graph
+
+```
+
+## the data
+
+```{r}
+
+n_heads <- sum(data1 == 1) # number of heads
+
+n_tails <- sum(data1 == 0) # number of tails
+
+barplot(table(data1),
+        main = "the data") # graph
+
+
+```
+
+## likelihood
+
+```{r}
+
+likelihood1 <- theta1^n_heads * (1 - theta1)^n_tails # likelihood
+
+barplot(names.arg = theta1, 
+        height = likelihood1,
+        main = "likelihood") # graph
+
+```
+
+## posterior
+
+```{r}
+
+pdata1 <- sum(likelihood1 * ptheta1) # normalize
+
+posterior1 <- likelihood1 * ptheta1 / pdata1 # Bayes Rule
+
+barplot(names.arg = theta1, 
+        height = posterior1,
+        main = "posterior") # graph
+
+
+```
+
+
+
+
+
+
