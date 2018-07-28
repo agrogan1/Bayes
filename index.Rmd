@@ -9,6 +9,7 @@ output:
     keep_md: no
     number_sections: yes
     theme: yeti
+    css: styles.css
     code_folding: hide
     toc: yes
     toc_float:
@@ -47,6 +48,8 @@ subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 knitr::opts_chunk$set(echo = TRUE,
                       fig.fullwidth = TRUE)
 
+library(pander)
+
 ```
 
 ```{r, eval = FALSE, echo = FALSE}
@@ -80,16 +83,6 @@ For the sake of simplicity, this example uses a relatively simple set of prior b
 
 > R code in this example is adapted and simplified  from Kruschke (2011), p. 70
 
-# Coin Flips
-
-10 coin flips.  1 Heads. 9 Tails.
-
-```{r}
-
-data1 <- c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0) # the data
-
-```
-
 # Prior
 
 ```{r}
@@ -108,15 +101,39 @@ barplot(names.arg = theta1,
 
 # The Data
 
+10 coin flips. 1 Heads. 9 Tails.
+
+```{r}
+
+data1 <- c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0) # the data
+
+data1_factor <- factor(data1,
+                       levels = c(0,1),
+                       labels = c("T", "H"))
+
+```
+
 ```{r}
 
 n_heads <- sum(data1 == 1) # number of heads
 
 n_tails <- sum(data1 == 0) # number of tails
 
-barplot(table(data1),
-        main = "the data") # graph
+```
 
+```{r}
+
+plot(x = seq(1,10), # x from 1 to 10
+     y = rep(1,10), # y = 1
+     col = data1_factor, # color by data 
+     cex = 5, # size
+     axes=FALSE,
+     xlab = " ",
+     ylab = " ") 
+
+text(x = seq(1,10), # x from 1 to 10
+     y = rep(1,10), # y = 1
+     labels = data1_factor) # label with data1_factor
 
 ```
 
@@ -147,6 +164,15 @@ barplot(names.arg = theta1,
 
 ```
 
+# Estimates
+
+```{r}
+
+myBayesianEstimates <- data.frame(theta1, ptheta1, likelihood1, posterior1)
+
+pander(myBayesianEstimates)
+
+```
 
 
 
