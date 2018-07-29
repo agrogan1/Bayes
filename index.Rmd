@@ -103,7 +103,16 @@ Our values of $\theta$ are `r pander(theta1)`, with probabilities $P(\theta)$ of
 
 barplot(names.arg = theta1, 
         height = ptheta1,
-        main = "prior probabilities") # graph
+        main = "prior probabilities",
+        col = "gold") # graph
+
+```
+
+```{r}
+
+myBayesianEstimates <- data.frame(theta1, ptheta1)
+
+pander(myBayesianEstimates) # nice table
 
 ```
 
@@ -135,6 +144,7 @@ plot(x = seq(1,10), # x from 1 to 10
      y = rep(1,10), # y = 1
      col = data1_factor, # color by data 
      cex = 5, # size
+     lwd = 2, # line width
      axes=FALSE,
      xlab = " ",
      ylab = " ") 
@@ -149,7 +159,7 @@ text(x = seq(1,10), # x from 1 to 10
 
 The likelihood is the likelihood that a given value of $\theta$ would produce this number of heads.
 
-Since the probability of two independent events *A* and *B* is $P(A,B) = P(A) * P(B)$, we need to calculate $P(heads)^{\text{number of heads}}$ and multiply this by $P(tails)^{\text{number of tails}}$. 
+Since the probability of two independent events $A$ and $B$ is $P(A,B) = P(A) * P(B)$, we need to calculate $[P(heads)]^{\text{number of heads}}$ and multiply this by $[P(tails)]^{\text{number of tails}}$. 
 
 Thus:
 
@@ -161,7 +171,18 @@ likelihood1 <- theta1^n_heads * (1 - theta1)^n_tails # likelihood
 
 barplot(names.arg = theta1, 
         height = likelihood1,
-        main = "likelihood") # graph
+        main = "likelihood",
+        col = "blue") # graph
+
+```
+
+At this point our estimates include not only a value of $\theta$ and $P(\theta)$, but also the likelihood, $\mathcal{L}(\theta)$.
+
+```{r}
+
+myBayesianEstimates <- data.frame(theta1, ptheta1, likelihood1)
+
+pander(myBayesianEstimates) # nice table
 
 ```
 
@@ -187,16 +208,19 @@ posterior1 <- likelihood1 * ptheta1 / pdata1 # Bayes Rule
 
 barplot(names.arg = theta1, 
         height = posterior1,
-        main = "posterior") # graph
+        main = "posterior",
+        col = "darkgreen") # graph
 
 
 ```
+
+Our estimates now include $\theta$, $P(\theta)$, $\mathcal{L}(\theta)$ and $P(\theta | D)$.
 
 ```{r}
 
 myBayesianEstimates <- data.frame(theta1, ptheta1, likelihood1, posterior1)
 
-pander(myBayesianEstimates)
+pander(myBayesianEstimates) # nice table
 
 ```
 

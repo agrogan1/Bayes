@@ -1,0 +1,27 @@
+h1 {
+  font-family: "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+h2 {
+  color: black;
+  font-family: "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+h3 {
+  color: black;
+  font-family: "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+p {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+li {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 100%;
+}
+blockquote { 
+  font-family: "Helvetica", "Arial", sans-serif; 
+  padding: 10px;
+  border-left: 10px solid blue;
+  margin: 10px;
+  }
