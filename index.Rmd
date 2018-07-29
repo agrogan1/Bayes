@@ -85,6 +85,8 @@ For the sake of simplicity, this example uses a relatively simple set of prior b
 
 # Prior
 
+We set a simple set of prior beliefs, concerning 3 values of $\theta$, the proportion of heads.
+
 ```{r}
 
 theta1 <- c(0.25, 0.50, 0.75) # candidate parameter values
@@ -92,6 +94,12 @@ theta1 <- c(0.25, 0.50, 0.75) # candidate parameter values
 ptheta1 <- c(.25, .50, .25) # prior probabilities
 
 ptheta1 <- ptheta1/sum(ptheta1) # normalize
+
+```
+
+Our values of $\theta$ are `r pander(theta1)`, with probabilities $P(\theta)$ of `r pander(ptheta1)`.
+
+```{r}
 
 barplot(names.arg = theta1, 
         height = ptheta1,
@@ -139,6 +147,14 @@ text(x = seq(1,10), # x from 1 to 10
 
 # Likelihood
 
+The likelihood is the likelihood that a given value of $\theta$ would produce this number of heads.
+
+Since the probability of two independent events *A* and *B* is $P(A,B) = P(A) * P(B)$, we need to calculate $P(heads)^{\text{number of heads}}$ and multiply this by $P(tails)^{\text{number of tails}}$. 
+
+Thus:
+
+$$\mathcal{L}(\theta) = \theta^{\text{number of heads}} * (1-\theta)^{\text{number of tails}}$$
+
 ```{r}
 
 likelihood1 <- theta1^n_heads * (1 - theta1)^n_tails # likelihood
@@ -151,9 +167,21 @@ barplot(names.arg = theta1,
 
 # Posterior
 
+We then calculate the denominator of Bayes theorem:  
+
+$$\Sigma [\mathcal{L}(\theta) * P(\theta)]$$
+
 ```{r}
 
 pdata1 <- sum(likelihood1 * ptheta1) # normalize
+
+```
+
+We then use Bayes Rule to calculate the posterior:
+
+$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$ 
+
+```{r}
 
 posterior1 <- likelihood1 * ptheta1 / pdata1 # Bayes Rule
 
@@ -163,8 +191,6 @@ barplot(names.arg = theta1,
 
 
 ```
-
-# Estimates
 
 ```{r}
 
