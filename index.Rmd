@@ -67,11 +67,13 @@ Mathematically Bayes Theorem is as follows:
 
 $$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$ 
 
-More colloquially, Bayes Theorem may be written as follows:
+In words, Bayes Theorem may be written as follows:
 
 $$posterior = \frac{likelihood * prior}{data}$$
 
 > Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs given the data.
+
+More colloquially, perhaps, Bayes Theorem allows us to state our prior beliefs, and then to update those beliefs with data, thus arriving at an updated set of beliefs.
 
 # This Example
 
@@ -104,7 +106,7 @@ Our values of $\theta$ are `r pander(theta1)`, with probabilities $P(\theta)$ of
 barplot(names.arg = theta1, 
         height = ptheta1,
         main = "prior probabilities",
-        col = "gold") # graph
+        col = "#FFBB00") # graph
 
 ```
 
@@ -146,6 +148,7 @@ plot(x = seq(1,10), # x from 1 to 10
      cex = 5, # size
      lwd = 2, # line width
      axes=FALSE,
+     main = "10 Coin Tosses",
      xlab = " ",
      ylab = " ") 
 
@@ -172,7 +175,7 @@ likelihood1 <- theta1^n_heads * (1 - theta1)^n_tails # likelihood
 barplot(names.arg = theta1, 
         height = likelihood1,
         main = "likelihood",
-        col = "blue") # graph
+        col = "#375E97") # graph
 
 ```
 
@@ -209,7 +212,7 @@ posterior1 <- likelihood1 * ptheta1 / pdata1 # Bayes Rule
 barplot(names.arg = theta1, 
         height = posterior1,
         main = "posterior",
-        col = "darkgreen") # graph
+        col = "#3F681C") # graph
 
 
 ```
