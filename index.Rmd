@@ -3,6 +3,16 @@ title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
 date: "`r format(Sys.Date(), format='%B %d, %Y')`"
 output:
+  tufte::tufte_handout:
+    number_sections: yes
+    toc: yes
+  ioslides_presentation:
+    smaller: yes
+  pdf_document:
+    fig_height: 3
+    highlight: haddock
+    toc: yes
+  slidy_presentation: default
   html_document:
     code_folding: hide
     css: styles.css
@@ -15,16 +25,6 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  ioslides_presentation:
-    smaller: yes
-  pdf_document:
-    fig_height: 3
-    highlight: haddock
-    toc: yes
-  slidy_presentation: default
-  tufte::tufte_handout:
-    number_sections: yes
-    toc: yes
   tint::tintHtml:
     fig_height: 3
     highlight: haddock
@@ -42,6 +42,8 @@ knitr::opts_chunk$set(echo = TRUE,
 library(pander)
 
 library(tufte)
+
+library(tibble)
 
 ```
 
@@ -105,7 +107,7 @@ barplot(names.arg = theta1,
 
 ```{r}
 
-myBayesianEstimates <- data.frame(theta1, ptheta1)
+myBayesianEstimates <- tibble(theta1, ptheta1)
 
 pander(myBayesianEstimates) # nice table
 
@@ -138,9 +140,9 @@ n_tails <- sum(data1 == 0) # number of tails
 plot(x = seq(1,10), # x from 1 to 10
      y = rep(1,10), # y = 1
      col = data1_factor, # color by data 
-     cex = 5, # size
+     cex = 3, # size
      lwd = 2, # line width
-     axes=FALSE,
+     axes = FALSE,
      main = "10 Coin Tosses",
      xlab = " ",
      ylab = " ") 
@@ -153,9 +155,11 @@ text(x = seq(1,10), # x from 1 to 10
 
 # Likelihood
 
-The likelihood is the likelihood that a given value of $\theta$ would produce this number of heads.
+The likelihood is the probability that a given value of $\theta$ would produce this number of heads.
 
-Since the probability of two independent events $A$ and $B$ is $P(A,B) = P(A) * P(B)$, we need to calculate $[P(heads)]^{\text{number of heads}}$ and multiply this by $[P(tails)]^{\text{number of tails}}$. 
+The probability of multiple independent events $A$, $B$, $C$, etc. is $P(A,B,C, ...) = P(A) * P(B) * P(C) * ...$.
+
+Therefore, in this case, the likelihood is $[P(heads)]^{\text{number of heads}}$ and multiply this by $[P(tails)]^{\text{number of tails}}$. 
 
 Thus:
 
@@ -176,7 +180,7 @@ At this point our estimates include not only a value of $\theta$ and $P(\theta)$
 
 ```{r}
 
-myBayesianEstimates <- data.frame(theta1, ptheta1, likelihood1)
+myBayesianEstimates <- tibble(theta1, ptheta1, likelihood1)
 
 pander(myBayesianEstimates) # nice table
 
@@ -214,7 +218,7 @@ Our estimates now include $\theta$, $P(\theta)$, $\mathcal{L}(\theta)$ and $P(\t
 
 ```{r}
 
-myBayesianEstimates <- data.frame(theta1, ptheta1, likelihood1, posterior1)
+myBayesianEstimates <- tibble(theta1, ptheta1, likelihood1, posterior1)
 
 pander(myBayesianEstimates) # nice table
 
