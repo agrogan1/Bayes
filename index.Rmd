@@ -4,51 +4,44 @@ author: "Andy Grogan-Kaylor"
 date: "`r format(Sys.Date(), format='%B %d, %Y')`"
 output:
   html_document:
+    code_folding: hide
+    css: styles.css
     fig_height: 3
     highlight: haddock
     keep_md: no
     number_sections: yes
     theme: yeti
-    css: styles.css
-    code_folding: hide
     toc: yes
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  tint::tintHtml:
-    number_sections: yes
-    toc: yes
-    fig_height: 3
-    highlight: haddock
-  revealjs::revealjs_presentation:
-    fig_height: 4
-    highlight: haddock
-    reveal_options:
-      chalkboard:
-        theme: chalkboard
-        toggleChalkboardButton: yes
-        toggleNotesButton: yes
-      previewLinks: yes
-      progress: yes
-      slideNumber: yes
-    reveal_plugins:
-    - chalkboard
-    - zoom
-    self_contained: no
-    theme: default
-    transition: convex
-  slidy_presentation: default
   ioslides_presentation:
     smaller: yes
+  pdf_document:
+    fig_height: 3
+    highlight: haddock
+    toc: yes
+  slidy_presentation: default
+  tufte::tufte_handout:
+    number_sections: yes
+    toc: yes
+  tint::tintHtml:
+    fig_height: 3
+    highlight: haddock
+    number_sections: yes
+    toc: yes
 subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 ---
 
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE,
-                      fig.fullwidth = TRUE)
+                      fig.fullwidth = TRUE,
+                      fig.margin = TRUE)
 
 library(pander)
+
+library(tufte)
 
 ```
 
@@ -140,7 +133,7 @@ n_tails <- sum(data1 == 0) # number of tails
 
 ```
 
-```{r}
+```{r, fig.fullwidth = FALSE, fig.margin = TRUE}
 
 plot(x = seq(1,10), # x from 1 to 10
      y = rep(1,10), # y = 1
