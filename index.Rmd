@@ -3,16 +3,6 @@ title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
 date: "`r format(Sys.Date(), format='%B %d, %Y')`"
 output:
-  tufte::tufte_handout:
-    number_sections: yes
-    toc: yes
-  ioslides_presentation:
-    smaller: yes
-  pdf_document:
-    fig_height: 3
-    highlight: haddock
-    toc: yes
-  slidy_presentation: default
   html_document:
     code_folding: hide
     css: styles.css
@@ -25,6 +15,16 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  ioslides_presentation:
+    smaller: yes
+  pdf_document:
+    fig_height: 3
+    highlight: haddock
+    toc: yes
+  slidy_presentation: default
+  tufte::tufte_handout:
+    number_sections: yes
+    toc: yes
   tint::tintHtml:
     fig_height: 3
     highlight: haddock
@@ -57,6 +57,8 @@ library(tibble)
 ```
 
 # Bayes Rule
+
+> A draft interactive version of these ideas can be found [here](https://agrogan.shinyapps.io/shinyBayes2/).
 
 Mathematically Bayes Theorem is as follows:
 
@@ -224,7 +226,9 @@ pander(myBayesianEstimates) # nice table
 
 ```
 
+# Credits
 
+Prepared by Andy Grogan-Kaylor [agrogan@umich.edu](agrogan@umich.edu), [www.umich.edu/~agrogan](www.umich.edu/~agrogan).
 
 
 
