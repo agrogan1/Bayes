@@ -11,7 +11,7 @@
 
 <meta name="author" content="Andy Grogan-Kaylor" />
 
-<meta name="date" content="2018-08-07" />
+<meta name="date" content="2018-08-09" />
 
 <title>Bayesian Calculations: Simulation of Coin Flipping</title>
 
@@ -265,13 +265,17 @@ div.tocify {
 <h1 class="title toc-ignore">Bayesian Calculations: Simulation of Coin Flipping</h1>
 <h3 class="subtitle"><em>Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior</em></h3>
 <h4 class="author"><em>Andy Grogan-Kaylor</em></h4>
-<h4 class="date"><em>August 07, 2018</em></h4>
+<h4 class="date"><em>August 09, 2018</em></h4>
 
 </div>
 
 
+<div id="background" class="section level1">
+<h1><span class="header-section-number">1</span> Background</h1>
+<p>Bayes Theorem allows us to state our <em>prior</em> beliefs, to calculate the <em>likelihood</em> of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of <em>posterior</em> beliefs. However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.</p>
+</div>
 <div id="bayes-rule" class="section level1">
-<h1><span class="header-section-number">1</span> Bayes Rule</h1>
+<h1><span class="header-section-number">2</span> Bayes Rule</h1>
 <blockquote>
 <p>A draft interactive version of these ideas can be found <a href="https://agrogan.shinyapps.io/shinyBayes2/">here</a>.</p>
 </blockquote>
@@ -282,10 +286,9 @@ div.tocify {
 <blockquote>
 <p>Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs given the data.</p>
 </blockquote>
-<p>More colloquially, perhaps, Bayes Theorem allows us to state our prior beliefs, and then to update those beliefs with data, thus arriving at an updated set of beliefs.</p>
 </div>
 <div id="this-example" class="section level1">
-<h1><span class="header-section-number">2</span> This Example</h1>
+<h1><span class="header-section-number">3</span> This Example</h1>
 <p>In this example, we provide an example of using Bayes Theorem to examine our conclusions about the proportion of heads when a coin is flipped 10 times.</p>
 <p>Conventionally, we call this proportion that we are trying to estimate <span class="math inline">\(\theta\)</span>.</p>
 <p>For the sake of simplicity, this example uses a relatively simple set of prior beliefs about 3 possible values for the proportion <span class="math inline">\(\theta\)</span>.</p>
@@ -294,7 +297,7 @@ div.tocify {
 </blockquote>
 </div>
 <div id="prior" class="section level1">
-<h1><span class="header-section-number">3</span> Prior</h1>
+<h1><span class="header-section-number">4</span> Prior</h1>
 <p>We set a simple set of prior beliefs, concerning 3 values of <span class="math inline">\(\theta\)</span>, the proportion of heads.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">theta1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>) <span class="co"># candidate parameter values</span>
 
@@ -338,7 +341,7 @@ ptheta1 &lt;-<span class="st"> </span>ptheta1<span class="op">/</span><span clas
 </table>
 </div>
 <div id="the-data" class="section level1">
-<h1><span class="header-section-number">4</span> The Data</h1>
+<h1><span class="header-section-number">5</span> The Data</h1>
 <p>10 coin flips. 1 Heads. 9 Tails.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">data1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>) <span class="co"># the data</span>
 
@@ -364,7 +367,7 @@ n_tails &lt;-<span class="st"> </span><span class="kw">sum</span>(data1 <span cl
 <p><img src="data:image/png;base64,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gNYfaOI+JnawRAFdbcvfiXRSuGRVr1jzgSbuY2IHS9xg4uLZNJlS17mOswG992/lvL5kla9Y84Em7mNiB0vcYOLSybQZU5WA1h9o4j4mdrBEAV3tVh9r9/P2Fal+xZoPNHEfEztY4gYTF2Y1mlPXciHr9/PWNbnDFWs+0MR9TOxgiRtMnB/WalBVz8/zkVz6t9zhMH9Zlv7t6ww0cR8TO1jiBhPnT6XVoLrmK3mffi5dlztdseYDTdzHxA6WuMHE2TNpNqmu53IoZzbXcChfmpnNX3GgifuY2MESN5g4dyLtRlX2fB3LO+bz1eH68tz3gjUfaOI+JnawxA0mlk+j5bC6nufcbeJhzm4GmriPiR0scYOJxbNoOq2ytvl81fyCtf9/iIm7mNjBEjeYWDiHxvPqat3P4jXb2UAT9zGxgyVuMPH6FFoPrK5ZO8+aX632//cwcRcTO1jiBhPH4zeZCrADAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUIPR/XRlM69eoCt4AAAAASUVORK5CYII=" width="672" /></p>
 </div>
 <div id="likelihood" class="section level1">
-<h1><span class="header-section-number">5</span> Likelihood</h1>
+<h1><span class="header-section-number">6</span> Likelihood</h1>
 <p>The likelihood is the probability that a given value of <span class="math inline">\(\theta\)</span> would produce this number of heads.</p>
 <p>The probability of multiple independent events <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, etc. is <span class="math inline">\(P(A,B,C, ...) = P(A) * P(B) * P(C) * ...\)</span>.</p>
 <p>Therefore, in this case, the likelihood is <span class="math inline">\([P(heads)]^{\text{number of heads}}\)</span> and multiply this by <span class="math inline">\([P(tails)]^{\text{number of tails}}\)</span>.</p>
@@ -414,7 +417,7 @@ n_tails &lt;-<span class="st"> </span><span class="kw">sum</span>(data1 <span cl
 </table>
 </div>
 <div id="posterior" class="section level1">
-<h1><span class="header-section-number">6</span> Posterior</h1>
+<h1><span class="header-section-number">7</span> Posterior</h1>
 <p>We then calculate the denominator of Bayes theorem:</p>
 <p><span class="math display">\[\Sigma [\mathcal{L}(\theta) * P(\theta)]\]</span></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pdata1 &lt;-<span class="st"> </span><span class="kw">sum</span>(likelihood1 <span class="op">*</span><span class="st"> </span>ptheta1) <span class="co"># normalize</span></code></pre></div>
@@ -469,8 +472,9 @@ n_tails &lt;-<span class="st"> </span><span class="kw">sum</span>(data1 <span cl
 </table>
 </div>
 <div id="credits" class="section level1">
-<h1><span class="header-section-number">7</span> Credits</h1>
+<h1><span class="header-section-number">8</span> Credits</h1>
 <p>Prepared by Andy Grogan-Kaylor <a href="agrogan@umich.edu" class="uri">agrogan@umich.edu</a>, <a href="www.umich.edu/~agrogan" class="uri">www.umich.edu/~agrogan</a>.</p>
+<p>Questions, comments and corrections are most welcome.</p>
 </div>
 
 

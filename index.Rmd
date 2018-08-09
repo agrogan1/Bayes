@@ -56,6 +56,10 @@ library(tibble)
 
 ```
 
+# Background
+
+Bayes Theorem allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
+
 # Bayes Rule
 
 > A draft interactive version of these ideas can be found [here](https://agrogan.shinyapps.io/shinyBayes2/).
@@ -69,8 +73,6 @@ In words, Bayes Theorem may be written as follows:
 $$posterior = \frac{likelihood * prior}{data}$$
 
 > Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs given the data.
-
-More colloquially, perhaps, Bayes Theorem allows us to state our prior beliefs, and then to update those beliefs with data, thus arriving at an updated set of beliefs.
 
 # This Example
 
@@ -229,6 +231,8 @@ pander(myBayesianEstimates) # nice table
 # Credits
 
 Prepared by Andy Grogan-Kaylor [agrogan@umich.edu](agrogan@umich.edu), [www.umich.edu/~agrogan](www.umich.edu/~agrogan).
+
+Questions, comments and corrections are most welcome.
 
 
 
