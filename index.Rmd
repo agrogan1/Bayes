@@ -3,33 +3,21 @@ title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
 date: "`r format(Sys.Date(), format='%B %d, %Y')`"
 output:
+  tufte::tufte_handout:
+    number_sections: yes
+    toc: yes
   html_document:
     code_folding: hide
-    css: styles.css
     fig_height: 3
     highlight: haddock
     keep_md: no
     number_sections: yes
     theme: yeti
+    css: styles.css
     toc: yes
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  ioslides_presentation:
-    smaller: yes
-  pdf_document:
-    fig_height: 3
-    highlight: haddock
-    toc: yes
-  slidy_presentation: default
-  tufte::tufte_handout:
-    number_sections: yes
-    toc: yes
-  tint::tintHtml:
-    fig_height: 3
-    highlight: haddock
-    number_sections: yes
-    toc: yes
 subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 ---
 

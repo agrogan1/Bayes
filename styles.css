@@ -22,6 +22,14 @@ li {
 blockquote { 
   font-family: "Helvetica", "Arial", sans-serif; 
   padding: 10px;
-  border-left: 10px solid blue;
+  border-left: 10px solid #375E97;
   margin: 10px;
   }
+.list-group-item.active, 
+.list-group-item.active:focus, 
+.list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #375E97;
+    border-color: #375E97;
+}
