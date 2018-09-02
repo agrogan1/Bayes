@@ -3,9 +3,6 @@ title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
 date: "`r format(Sys.Date(), format='%B %d, %Y')`"
 output:
-  tufte::tufte_handout:
-    number_sections: yes
-    toc: yes
   html_document:
     code_folding: hide
     fig_height: 3
@@ -18,6 +15,9 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  tufte::tufte_handout:
+    number_sections: yes
+    toc: yes
 subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 ---
 
