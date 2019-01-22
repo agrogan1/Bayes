@@ -18,6 +18,7 @@ output:
   tufte::tufte_handout:
     number_sections: yes
     toc: yes
+    highlight: haddock
 subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 ---
 
@@ -60,7 +61,7 @@ In words, Bayes Theorem may be written as follows:
 
 $$posterior = \frac{likelihood * prior}{data}$$
 
-> Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs given the data.
+> Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs, given the data.
 
 # This Example
 
