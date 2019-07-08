@@ -128,7 +128,7 @@ n_tails <- sum(data1 == 0) # number of tails
 
 ```
 
-```{r, fig.fullwidth = FALSE, fig.margin = TRUE}
+```{r}
 
 plot(x = seq(1,10), # x from 1 to 10
      y = rep(1,10), # y = 1
