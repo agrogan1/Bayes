@@ -1,7 +1,7 @@
 ---
 title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
-date: "`r format(Sys.Date(), format='%B %d, %Y')`"
+date: "`r Sys.Date()`"
 output:
   html_document:
     code_folding: hide
@@ -47,7 +47,7 @@ library(tibble)
 
 # Background
 
-Bayes Theorem allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
+[Bayes Theorem](./Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
 
 # Bayes Rule
 
