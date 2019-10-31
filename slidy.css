@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+h1, h2, h3 {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+body { 
+  font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', 'Palatino', 'Microsoft YaHei', 'Songti SC', serif; 
+}
+.author, .date {
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+}
+slide.title-slide{
+    background-color: #418FDE; 
+}
+.title-slide {
+  background-color: #418FDE; 
+}
+.slide.titlepage {
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  background-color: #418FDE;
+}
+#nextsteps {
+   color: black;
+   background-color: #FFFF00;
+   text-align: left;
+   font-size: 125%;
+}
+#majorsection {
+   color: white;
+   background-color: #000000;
+   text-align: center;
+   font-size: 300%;
+}
+.emphasized {
+   font-size: 200%;
+   text-align: center;
+}
+
