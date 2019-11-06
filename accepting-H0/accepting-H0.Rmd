@@ -6,21 +6,9 @@ output:
   html_document:
     highlight: haddock
     theme: default
-  beamer_presentation:
+  pdf_document: 
     highlight: haddock
-  ioslides_presentation:
-    highlight: haddock
-  slidy_presentation:
-    css: ../slidy.css
-    fig_caption: yes
-    highlight: haddock
-    theme: default
-  xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      countIncrementalSlides: no
-      highlightLines: yes
-      highlightStyle: github
+    latex_engine: xelatex
 subtitle: Important Substantive Cases
 institute: University of Michigan
 ---
@@ -53,14 +41,14 @@ description <- c("Equivalence of 2 Treatments or Interventions",
                  "x --> y Association is Completely Mediated; No Direct Effect",
                  "Removing an Association From A Theory")
 
-statistic <- c("$β_1 = β_2$",
-               "$β_{intervention} = 0$",
-               "$β_{interaction} = 0$",
-               "$β_{xmy} != 0$; $β_{xy} = 0$",
-               "$β_x = 0$")
+statistic <- c("$\\beta_1 = \\beta_2$",
+               "$\\beta_{intervention} = 0$",
+               "$\\beta_{interaction} = 0$",
+               "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
+               "$\\beta_x = 0$")
 
 example <- c("One treatment is much more expensive, or time consuming than another",
-             "???",
+             "Evidence consistently suggests that a particular treatment has near zero effect",
              "(1) Warm and supportive parenting is equally beneficial across different contexts or countries. (2) Men and women are more similar than different *wrt* psychological processes (Hyde)",
              "The relationship of the treatment and the outcome is completely mediated by mechanism *m*",
              "There is no evidence that x is associated with y")
