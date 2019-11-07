@@ -3,12 +3,12 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
   html_document:
     highlight: haddock
     theme: default
+  pdf_document: 
+    highlight: haddock
+    latex_engine: xelatex
 subtitle: Important Substantive Cases
 institute: University of Michigan
 ---
@@ -53,16 +53,16 @@ example <- c("One treatment is much more expensive, or time consuming than anoth
              "The relationship of the treatment and the outcome is completely mediated by mechanism *m*",
              "There is no evidence that x is associated with y")
 
-mydata <- data.frame(case, 
+Bayesdata <- data.frame(case, 
                      description,
                      statistic,
                      example)
 
 library(rmarkdown)
 
-save(mydata, file = "accepting-H0.RData")
+save(Bayesdata, file = "accepting-H0.RData")
 
-pander(mydata, split.cells = 10)
+pander(Bayesdata, split.cells = 10)
 
 ```
 
