@@ -3,12 +3,12 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  html_document:
-    highlight: haddock
-    theme: default
   pdf_document: 
     highlight: haddock
     latex_engine: xelatex
+  html_document:
+    highlight: haddock
+    theme: default
 subtitle: Important Substantive Cases
 institute: University of Michigan
 ---
@@ -59,6 +59,8 @@ mydata <- data.frame(case,
                      example)
 
 library(rmarkdown)
+
+save(mydata, file = "accepting-H0.RData")
 
 pander(mydata, split.cells = 10)
 
