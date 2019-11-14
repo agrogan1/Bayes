@@ -38,7 +38,7 @@ case <- c("Equivalence Testing",
 description <- c("Equivalence of 2 Treatments or Interventions",
                  "There is No Evidence That Intervention X is Effective",
                  "Equivalence of a Predictor Across Contexts (Moderation)",
-                 "x --> y Association is Completely Mediated; No Direct Effect",
+                 "$x \\rightarrow y$ Association is Completely Mediated; No Direct Effect",
                  "Removing an Association From A Theory")
 
 statistic <- c("$\\beta_1 = \\beta_2$",
