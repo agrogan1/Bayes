@@ -3,10 +3,6 @@ title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
-    number_sections: yes
-    toc: yes
-    highlight: haddock
   html_document:
     code_folding: hide
     fig_height: 3
@@ -19,6 +15,10 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  tufte::tufte_handout:
+    number_sections: yes
+    toc: yes
+    highlight: haddock
 subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
 ---
 
@@ -152,11 +152,11 @@ The likelihood is the probability that a given value of $\theta$ would produce t
 
 The probability of multiple independent events $A$, $B$, $C$, etc. is $P(A,B,C, ...) = P(A) * P(B) * P(C) * ...$.
 
-Therefore, in this case, the likelihood is $[P(heads)]^{\text{number of heads}}$ and multiply this by $[P(tails)]^{\text{number of tails}}$. 
+Therefore, in this case, the likelihood is proportional to $[P(heads)]^{\text{number of heads}}$ and multiply this by $[P(tails)]^{\text{number of tails}}$. 
 
 Thus:
 
-$$\mathcal{L}(\theta) = \theta^{\text{number of heads}} * (1-\theta)^{\text{number of tails}}$$
+$$\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} * (1-\theta)^{\text{number of tails}}$$
 
 ```{r}
 
