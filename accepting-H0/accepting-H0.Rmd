@@ -41,11 +41,11 @@ description <- c("Equivalence of 2 Treatments or Interventions",
                  "$x \\rightarrow y$ Association is Completely Mediated; No Direct Effect",
                  "Removing an Association From A Theory")
 
-statistic <- c("$\\beta_1 = \\beta_2$",
-               "$\\beta_{intervention} = 0$",
-               "$\\beta_{interaction} = 0$",
-               "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
-               "$\\beta_x = 0$")
+H0 <- c("$\\beta_1 = \\beta_2$",
+        "$\\beta_{intervention} = 0$",
+        "$\\beta_{interaction} = 0$",
+        "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
+        "$\\beta_x = 0$")
 
 example <- c("One treatment is much more expensive, or time consuming than another",
              "Evidence consistently suggests that a particular treatment has near zero effect",
@@ -55,7 +55,7 @@ example <- c("One treatment is much more expensive, or time consuming than anoth
 
 Bayesdata <- data.frame(case, 
                      description,
-                     statistic,
+                     H0,
                      example)
 
 library(rmarkdown)
@@ -63,6 +63,12 @@ library(rmarkdown)
 save(Bayesdata, file = "accepting-H0.RData")
 
 pander(Bayesdata, split.cells = 10)
+
+# knitr::kable(Bayesdata,
+#              col.names = c("Case", 
+#                            "Description",
+#                            "Null Hypothesis",
+#                            "Example"))
 
 ```
 
