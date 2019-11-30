@@ -62,17 +62,28 @@ Bayesdata <- data.frame(case,
                      H0,
                      example)
 
-library(rmarkdown)
-
 save(Bayesdata, file = "accepting-H0.RData")
 
 pander(Bayesdata, split.cells = 10)
 
-# knitr::kable(Bayesdata,
-#              col.names = c("Case", 
-#                            "Description",
-#                            "Null Hypothesis",
-#                            "Example"))
+# library(rmarkdown)
+# 
+# library(kableExtra)
+# 
+# library(knitr)
+# 
+# kable(Bayesdata,
+#       col.names = c("Case",
+#                     "Description",
+#                     "Null Hypothesis",
+#                     "Example")) %>%
+#   column_spec(c(1,2,3), 
+#               bold = F, 
+#               border_right = T) %>%
+#   row_spec(c(1,3,5), 
+#            bold = F, 
+#            color = "white", 
+#            background = "#D7261E")
 
 ```
 
