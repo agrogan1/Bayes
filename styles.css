@@ -33,13 +33,12 @@ ol {
     margin: 0 0 .85em;
     padding: 0 15px;
     opacity: 1.00;
-    border-left: 10px solid red;
+    border-left: 10px solid #ffcb05;
 }
-
 blockquote {
   background: #FFFFFF;
   color: #000;
-  border-left: 5px solid red;
+  border-left: 5px solid #ffcb05;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
 }
