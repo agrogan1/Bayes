@@ -1,17 +1,17 @@
 ---
 title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
-date: "`r Sys.time()`"
+date: "`r Sys.Date()`"
 output:
+  pdf_document: 
+    highlight: haddock
+    latex_engine: xelatex
   html_document:
     highlight: haddock
     theme: default
     css: ../styles.css
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
-subtitle: Important Substantive Cases
 institute: University of Michigan
+bibliography: ../Bayes.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -22,9 +22,13 @@ knitr::opts_chunk$set(echo = FALSE,
                       warning = FALSE,
                       message = FALSE)
 
+library(knitr)
+
 ```
 
-# The Value of Accepting the Null Hypothesis ($H_0$)
+# Important Substantive Cases
+
+The Value of Accepting the Null Hypothesis $H_0$
 
 ```{r}
 
@@ -34,6 +38,7 @@ case <- c("Equivalence Testing",
           "Equivalence Testing",
           "Retiring Interventions",
           "Contextual Equivalence",
+          "Family Member Equivalence",
           "Full Mediation",
           "Theory Simplification")
 
@@ -41,6 +46,7 @@ description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "Equivalence Of 2 Groups On An Outcome",
                  "There Is No Evidence That Intervention X Is Effective",
                  "Equivalence of a Predictor Across Contexts (Moderation)",
+                 "Equivalence of a Predictor Across Family Members",
                  "$x \\rightarrow y$ Association Is Completely Mediated; No Direct Effect",
                  "Removing An Association From A Theory")
 
@@ -48,13 +54,15 @@ H0 <- c("$\\beta_1 = \\beta_2$",
         "$\\bar{x_1} = \\bar{x_2}$",
         "$\\beta_{intervention} = 0$",
         "$\\beta_{interaction} = 0$",
+        "$\\beta_{parent1} = \\beta_{parent2}$",
         "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
         "$\\beta_x = 0$")
 
-example <- c("The effect of Treatment A is indistinguishable from the effect of Treatment B (especially important if one treatment is much more expensive, or time consuming than another).",
-             "Men and women are more similar than different *wrt* psychological processes (Hyde).", 
+example <- c("The effect of Treatment 1 is indistinguishable from the effect of Treatment 2 (especially important if one treatment is much more expensive, or time consuming than another).",
+             "Men and women are more similar than different *wrt* psychological processes [@Hyde2005].", 
              "Evidence consistently suggests that a particular treatment has near zero effect.",
              "Warm and supportive parenting is equally beneficial across different contexts or countries.",
+             "Parenting from one parent is equivalent to parenting from another parent",
              "The relationship of the treatment and the outcome is completely mediated by mechanism *m*.",
              "There is no evidence that x is associated with y.")
 
@@ -67,35 +75,9 @@ save(Bayesdata, file = "accepting-H0.RData")
 
 pander(Bayesdata, split.cells = 10)
 
-# library(rmarkdown)
-# 
-# library(kableExtra)
-# 
-# library(knitr)
-# 
-# kable(Bayesdata,
-#       col.names = c("Case",
-#                     "Description",
-#                     "Null Hypothesis",
-#                     "Example")) %>%
-#   column_spec(c(1,2,3), 
-#               bold = F, 
-#               border_right = T) %>%
-#   row_spec(c(1,3,5), 
-#            bold = F, 
-#            color = "white", 
-#            background = "#D7261E")
-
 ```
 
-```{r, echo=FALSE, eval=FALSE}
-
-# | Case | Example |
-# |------|---------|
-# | Equivalence Testing |
-
-```
-
+# References
 
 
 
