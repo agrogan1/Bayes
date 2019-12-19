@@ -3,13 +3,13 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
   html_document:
     highlight: haddock
     theme: default
     css: ../styles.css
+  pdf_document: 
+    highlight: haddock
+    latex_engine: xelatex
 institute: University of Michigan
 bibliography: ../Bayes.bib
 ---
