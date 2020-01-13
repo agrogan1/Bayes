@@ -40,7 +40,7 @@ knitr::include_graphics("BayesianDoughnut.png")
 
 ```
 
-# The Value of Accepting the Null Hypothesis
+# The Value of Accepting the Null Hypothesis (Equivalence Testing)
 
 [https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html](https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html)
 
