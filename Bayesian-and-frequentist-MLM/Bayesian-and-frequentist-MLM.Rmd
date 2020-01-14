@@ -3,11 +3,11 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output: 
-  tufte::tufte_handout:
+  tufte::tufte_html: 
     highlight: haddock
     number_sections: yes
     toc: yes
-  tufte::tufte_html: 
+  tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
     toc: yes
@@ -50,7 +50,7 @@ library(ggthemes)
 
 # Introduction
 
-$$y_{ij} = \beta_0 + \beta_1 x_1 + u_{0i} + e_{ij}$$
+$$y_{ij} = \beta_0 + \beta_1 x_{1i} + u_{0j} + e_{ij}$$
 
 All multilevel models account for group structure, in estimating the association of $x$ and $y$.
 
@@ -68,15 +68,30 @@ Bayesian multilevel models may be better with small samples, especially samples 
 
 # Full Distribution of Parameters
 
-Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects)--both singly and jointly--rather than only point estimates.
+Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
 ```{r, fig.height=3, fig.cap="Full Distribution of Parameters"}
 
-beta1 <- rnorm(1000, 0, 10)
+# inspired by a coding approach at
+# https://stackoverflow.com/questions/11530010/how-to-simulate-bimodal-distribution
 
-beta2 <- rbeta(1000, 0.5, 2)
+# u0
 
-mydensity <- kde2d(beta1, beta2)
+u0 <- rnorm(1000, 0.5, 2)
+
+# u1
+
+u1a <- rnorm(1000, 0, .1)
+
+u1b <- rnorm(1000, 1, .1)
+
+flag <- rbinom(1000, size=1, prob=.5)
+
+u1 <- u1a * (1 - flag) + u1b * flag 
+
+# density plot
+
+mydensity <- kde2d(u0, u1)
 
 par(mar = rep(2, 4)) # adjust margins
 
@@ -84,8 +99,8 @@ persp(mydensity,
       theta = -45,
       phi = 10,
       main = "Joint Parameter Distribution",
-      xlab = "beta1",
-      ylab = "beta2",
+      xlab = "random intercept",
+      ylab = "random slope",
       zlab = "probability",
       lwd = .5)
 
