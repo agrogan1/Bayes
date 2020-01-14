@@ -70,7 +70,19 @@ Bayesian multilevel models may be better with small samples, especially samples 
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
-```{r, fig.height=3, fig.cap="Full Distribution of Parameters"}
+```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
+
+beta1 <- rbeta(1000, 1.0, 2.5)
+
+ggplot(data = NULL,
+       aes(x = beta1)) + 
+  geom_density() +
+  theme_tufte() + 
+  labs(title = "Distribution of Beta1") 
+
+```
+
+```{r, fig.height=3, fig.cap="Joint Distribution of Parameters"}
 
 # inspired by a coding approach at
 # https://stackoverflow.com/questions/11530010/how-to-simulate-bimodal-distribution
@@ -98,7 +110,7 @@ par(mar = rep(2, 4)) # adjust margins
 persp(mydensity,
       theta = -45,
       phi = 10,
-      main = "Joint Parameter Distribution",
+      main = "Distribution of Random Effects",
       xlab = "random intercept",
       ylab = "random slope",
       zlab = "probability",
