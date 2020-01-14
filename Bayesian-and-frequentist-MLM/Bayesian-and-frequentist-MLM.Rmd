@@ -1,0 +1,145 @@
+---
+title: "Bayesian and Frequentist Multilevel Modeling"
+author: "Andy Grogan-Kaylor"
+date: "`r Sys.Date()`"
+output: 
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  tint::tintPdf:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+    latex_engine: xelatex
+header-includes: \usepackage{draftwatermark}
+bibliography: ["Bayesian-and-frequentist-MLM.bib"]
+biblio-style: "apalike"
+link-citations: true
+---
+
+\SetWatermarkText{ROUGH DRAFT}
+\SetWatermarkFontSize{3cm}
+
+```{r setup, include=FALSE}
+
+library(tint)
+
+# invalidate cache when the package version changes
+
+knitr::opts_chunk$set(tidy = FALSE, 
+                      # cache.extra = packageVersion('tint'),
+                      echo = FALSE,
+                      warning = FALSE,
+                      message = FALSE,
+                      fig.margin = TRUE)
+
+options(htmltools.dir.version = FALSE)
+
+library(MASS)
+
+library(ggplot2)
+
+library(ggthemes)
+
+```
+
+# Introduction
+
+$$y_{ij} = \beta_0 + \beta_1 x_1 + u_{0i} + e_{ij}$$
+
+All multilevel models account for group structure, in estimating the association of $x$ and $y$.
+
+Bayesian models may offer some advantages over frequentist models, but may be substantially slower to converge.
+
+# Prior Information
+
+Bayesian models allow one to incorporate prior information about a parameter of interest.
+
+Prior information may come from the prior research literature, e.g. from systematic reviews or meta-analyses, or expert opinion or clinical wisdom.
+
+# Smaller Samples
+
+Bayesian multilevel models may be better with small samples, especially samples with small numbers of Level 2 units [@Hox2012]. It is not clear to what degree this improvement in performance is dependent upon the use of informative priors.
+
+# Full Distribution of Parameters
+
+Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects)--both singly and jointly--rather than only point estimates.
+
+```{r, fig.height=3, fig.cap="Full Distribution of Parameters"}
+
+beta1 <- rnorm(1000, 0, 10)
+
+beta2 <- rbeta(1000, 0.5, 2)
+
+mydensity <- kde2d(beta1, beta2)
+
+par(mar = rep(2, 4)) # adjust margins
+
+persp(mydensity,
+      theta = -45,
+      phi = 10,
+      main = "Joint Parameter Distribution",
+      xlab = "beta1",
+      ylab = "beta2",
+      zlab = "probability",
+      lwd = .5)
+
+# pairs(data.frame(beta1,beta2))
+
+# library(GGally)
+# 
+# ggpairs(data.frame(beta1,beta2),
+#         lower = list(continuous = "density"))
+
+```
+
+# Accepting $H_0$ is Possible
+
+Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018]. This may have consequences for affirming similarity, universality, or treatment invariance [@Morey2018]. 
+
+Also, accepting certain null hypotheses may allow for the simplification of theory.
+
+# Distributional Models
+
+Bayesian estimators allow one to directly model $\sigma_{u_0}$, the variance of the Level 2 units as a function of covariates [@Burkner2018].
+
+# Non-Linear Terms
+
+```{r, fig.cap="Non-Linear Terms"}
+
+# options(scipen = 999)
+
+x <- rnorm(100, 0, 10)
+
+e <- rnorm(100, 0, 1000)
+
+y <- x^3 + e
+
+ggplot(data=NULL,
+       aes(x = x,
+           y = y)) + 
+  geom_point() + 
+  geom_smooth() +
+  labs(title = "Non-Linear Smoother") +
+  # theme_minimal()
+  theme_tufte()
+
+```
+
+
+Bayesian estimators allow for the incorporation of non-linear terms [@Burkner2018].[^overfitting]
+
+[^overfitting]: Such non-linear terms offer ways of non-parametrically fitting curvature. Do they represent over-fitting? Do they provide substantively interpretable results?
+
+# Maximal Models
+
+Bayesian estimators allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0.
+
+# References
+
+
+
+
+
+
