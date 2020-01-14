@@ -7,6 +7,10 @@ output:
     highlight: haddock
     number_sections: yes
     toc: yes
+  tufte::tufte_html: 
+    highlight: haddock
+    number_sections: yes
+    toc: yes
   tint::tintPdf:
     highlight: haddock
     number_sections: yes
