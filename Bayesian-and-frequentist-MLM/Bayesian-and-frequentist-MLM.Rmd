@@ -3,11 +3,11 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output: 
-  tufte::tufte_html: 
+  tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
     toc: yes
-  tufte::tufte_handout:
+  tufte::tufte_html: 
     highlight: haddock
     number_sections: yes
     toc: yes
@@ -76,7 +76,7 @@ beta1 <- rbeta(1000, 1.0, 2.5)
 
 ggplot(data = NULL,
        aes(x = beta1)) + 
-  geom_density() +
+  geom_density(fill="blue", alpha = .25) +
   theme_tufte() + 
   labs(title = "Distribution of Beta1") 
 
