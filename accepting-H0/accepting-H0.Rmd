@@ -25,6 +25,14 @@ library(knitr)
 
 ```
 
+# Background
+
+In standard frequentist models, we cannot formally accept the Null Hypothesis $H_0$, but can only reject, or fail to reject, $H_0$.
+
+Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018]. 
+
+Accepting $H_0$ may have consequences for affirming similarity, universality, or treatment invariance [@Morey2018]. 
+
 # Important Substantive Cases
 
 The Value of Accepting the Null Hypothesis $H_0$
