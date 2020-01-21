@@ -2,7 +2,11 @@
 title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
-output: 
+output:
+  html_document: 
+    highlight: haddock
+    number_sections: yes
+    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
