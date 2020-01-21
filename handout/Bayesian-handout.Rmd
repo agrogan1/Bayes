@@ -3,15 +3,15 @@ title: "Bayesian Materials"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tint::tintHtml:
-    highlight: haddock
-    number_sections: yes
-    toc: yes    
   tint::tintPdf:
     highlight: haddock
     number_sections: yes
     toc: yes
     latex_engine: xelatex
+  tint::tintHtml:
+    highlight: haddock
+    number_sections: yes
+    toc: yes    
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +24,7 @@ library(ggplot2)
 
 ```
 
-# Thinking Through Bayesian Ideas
+# Thinking Through Bayesian Ideas (Using Prior Information)
 
 [https://agrogan.shinyapps.io/Thinking-Through-Bayes/](https://agrogan.shinyapps.io/Thinking-Through-Bayes/)
 
@@ -40,7 +40,7 @@ knitr::include_graphics("BayesianDoughnut.png")
 
 ```
 
-# The Value of Accepting the Null Hypothesis (Equivalence Testing)
+# The Value of Accepting the Null Hypothesis (e.g. Equivalence Testing)
 
 [https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html](https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html)
 
