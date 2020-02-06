@@ -3,12 +3,12 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
   html_document: 
     css: ../styles.css
     highlight: haddock
+  pdf_document: 
+    highlight: haddock
+    latex_engine: xelatex
 institute: University of Michigan
 bibliography: ../Bayes.bib
 ---
@@ -47,7 +47,8 @@ case <- c("Equivalence Testing",
           "Contextual Equivalence",
           "Family Member Equivalence",
           "Full Mediation",
-          "Theory Simplification")
+          "Theory Simplification",
+          "Theory Rejection")
 
 description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "Equivalence Of 2 Groups On An Outcome",
@@ -55,7 +56,8 @@ description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "Equivalence of a Predictor Across Contexts (Moderation)",
                  "Equivalence of a Predictor Across Family Members",
                  "$x \\rightarrow y$ Association Is Completely Mediated; No Direct Effect",
-                 "Removing An Association From A Theory")
+                 "Removing An Association From A Theory",
+                 "Rejecting A Theory")
 
 H0 <- c("$\\beta_1 = \\beta_2$",
         "$\\bar{x_1} = \\bar{x_2}$",
@@ -63,7 +65,8 @@ H0 <- c("$\\beta_1 = \\beta_2$",
         "$\\beta_{interaction} = 0$",
         "$\\beta_{parent1} = \\beta_{parent2}$",
         "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
-        "$\\beta_x = 0$")
+        "$\\beta_x = 0$",
+        "$\\beta_{theory} = 0$")
 
 example <- c("The effect of Treatment 1 is indistinguishable from the effect of Treatment 2 (especially important if one treatment is much more expensive, or time consuming than another).",
              "Men and women are more similar than different *wrt* psychological processes [@Hyde2005].", 
@@ -71,7 +74,8 @@ example <- c("The effect of Treatment 1 is indistinguishable from the effect of 
              "Warm and supportive parenting is equally beneficial across different contexts or countries.",
              "Parenting from one parent is equivalent to parenting from another parent",
              "The relationship of the treatment and the outcome is completely mediated by mechanism *m*.",
-             "There is no evidence that x is associated with y.")
+             "There is no evidence that x is associated with y.",
+             "There is strong evidence (*contra* Theory X) that x is not associated with y.")
 
 Bayesdata <- data.frame(case, 
                      description,
