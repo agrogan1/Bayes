@@ -4,9 +4,13 @@ author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
   html_document: 
+    fig_height: 3
     highlight: haddock
     number_sections: yes
     toc: yes
+    toc_float:
+      collapsed: yes
+      smooth_scroll: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
@@ -25,6 +29,31 @@ bibliography: ["Bayesian-and-frequentist-MLM.bib"]
 biblio-style: "apalike"
 link-citations: true
 ---
+
+<style>
+h1, h2 {
+  color: navy;
+  font-family: "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+.list-group-item.active, 
+.list-group-item.active:focus, 
+.list-group-item.active:hover {
+    z-index: 2;
+    color: gold;
+    background-color: navy;
+    border-color: blue;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    color: gold;
+    background-color: navy;
+}
+.nav-pills > li.active > a:hover {
+    color: gold;
+    background-color: navy;
+
+}
+</style>
 
 \SetWatermarkText{ROUGH DRAFT}
 \SetWatermarkFontSize{3cm}
@@ -76,13 +105,20 @@ Bayesian models of all kinds provide full distributions of the parameters (e.g. 
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 
-beta1 <- rbeta(1000, 1.0, 2.5)
+beta1 <- rbeta(10000, 1.0, 2.5)
 
 ggplot(data = NULL,
        aes(x = beta1)) + 
   geom_density(fill="blue", alpha = .25) +
+  geom_vline(xintercept = median(beta1)) +
+  geom_text(aes(x=median(beta1), 
+                label="\nmedian", y = 1), 
+            colour="red", 
+            angle= -90) +
   theme_tufte() + 
-  labs(title = "Distribution of Beta1") 
+  labs(title = "Distribution of \u03b2",
+       subtitle = "\u03b2 is Skewed",
+       x = "\u03b2") 
 
 ```
 
