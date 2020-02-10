@@ -3,10 +3,6 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
   html_document:
     fig_height: 3
     highlight: haddock
@@ -15,6 +11,10 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
 header-includes: \usepackage{draftwatermark}
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
