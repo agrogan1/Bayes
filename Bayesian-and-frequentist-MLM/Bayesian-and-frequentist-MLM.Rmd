@@ -3,7 +3,11 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  html_document: 
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  html_document:
     fig_height: 3
     highlight: haddock
     number_sections: yes
@@ -11,23 +15,10 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-  tufte::tufte_html: 
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-  tint::tintPdf:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-    latex_engine: xelatex
 header-includes: \usepackage{draftwatermark}
-bibliography: ["Bayesian-and-frequentist-MLM.bib"]
-biblio-style: "apalike"
-link-citations: true
+link-citations: yes
+bibliography: Bayesian-and-frequentist-MLM.bib
+biblio-style: apalike
 ---
 
 <style>
@@ -85,9 +76,17 @@ library(ggthemes)
 
 $$y_{ij} = \beta_0 + \beta_1 x_{1i} + u_{0j} + e_{ij}$$
 
-All multilevel models account for group structure, in estimating the association of $x$ and $y$.
+All multilevel models account for group structure, in estimating the association of $x$ and $y$, by including a random intercept ($u_0$), and possibly one or more random intercept terms ($u_1, u_2, etc....$).
 
 Bayesian models may offer some advantages over frequentist models, but may be substantially slower to converge.
+
+# Conceptual Appropriateness
+
+Following [@Kruschke2014] all Bayesian models have a *conceptual appropriateness*. 
+
+In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
+
+In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating the *full probability distribution* of an estimate of this parameter.
 
 # Prior Information
 
@@ -102,6 +101,8 @@ Bayesian multilevel models may be better with small samples, especially samples 
 # Full Distribution of Parameters
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
+
+Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful.
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 
@@ -150,7 +151,7 @@ par(mar = rep(2, 4)) # adjust margins
 persp(mydensity,
       theta = -45,
       phi = 10,
-      main = "Distribution of Random Effects",
+      main = "Joint Distribution of Random Effects",
       xlab = "random intercept",
       ylab = "random slope",
       zlab = "probability",
@@ -173,7 +174,7 @@ Also, accepting certain null hypotheses may allow for the simplification of theo
 
 # Distributional Models
 
-Bayesian estimators allow one to directly model $\sigma_{u_0}$, the variance of the Level 2 units as a function of covariates [@Burkner2018].
+Bayesian estimators allow one to directly model $\sigma_{u_0}$, the variance of the Level 2 units, as a function of covariates [@Burkner2018].
 
 # Non-Linear Terms
 
