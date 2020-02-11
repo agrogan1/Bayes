@@ -11,6 +11,7 @@ output:
     latex_engine: xelatex
 institute: University of Michigan
 bibliography: ../Bayes.bib
+mainfont: Tw Cen MT
 ---
 
 ```{r setup, include=FALSE}
