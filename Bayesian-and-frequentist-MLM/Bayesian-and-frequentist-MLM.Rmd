@@ -11,6 +11,10 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  tufte::tufte_html: 
+    highlight: haddock
+    number_sections: yes
+    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
@@ -21,7 +25,8 @@ bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
 ---
 
-<style>
+```{css, echo=FALSE}
+
 h1, h2 {
   color: navy;
   font-family: "Helvetica", "Arial", sans-serif; 
@@ -44,7 +49,9 @@ h1, h2 {
     background-color: navy;
 
 }
-</style>
+
+```
+
 
 \SetWatermarkText{ROUGH DRAFT}
 \SetWatermarkFontSize{3cm}
@@ -86,7 +93,7 @@ Following [@Kruschke2014] all Bayesian models have a *conceptual appropriateness
 
 In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
 
-In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating the *full probability distribution* of an estimate of this parameter.
+In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating a *full probability distribution* for this parameter.
 
 # Prior Information
 
