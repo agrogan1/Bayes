@@ -213,7 +213,7 @@ Bayesian estimators allow for the incorporation of non-linear terms [@Burkner201
 
 # Maximal Models
 
-Bayesian estimators allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0.
+Bayesian estimators allow for the estimation of so called *maximal models* [@Barr2013; @Frank2018], which allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0.
 
 # References
 
