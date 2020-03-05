@@ -1,0 +1,22 @@
+h1, h2 {
+  color: navy;
+  font-family: "Helvetica", "Arial", sans-serif; 
+  font-weight: normal;
+}
+.list-group-item.active, 
+.list-group-item.active:focus, 
+.list-group-item.active:hover {
+    z-index: 2;
+    color: gold;
+    background-color: navy;
+    border-color: blue;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    color: gold;
+    background-color: navy;
+}
+.nav-pills > li.active > a:hover {
+    color: gold;
+    background-color: navy;
+
+}
