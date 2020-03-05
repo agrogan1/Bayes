@@ -3,7 +3,15 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   html_document:
+    css: UM.css
     fig_height: 3
     highlight: haddock
     number_sections: yes
@@ -11,11 +19,9 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  tufte::tufte_html: 
-    highlight: haddock
-    number_sections: yes
+  pdf_document:
     toc: yes
-  tufte::tufte_handout:
+  tufte::tufte_html:
     highlight: haddock
     number_sections: yes
     toc: yes
@@ -24,34 +30,6 @@ link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
 ---
-
-```{css, echo=FALSE}
-
-h1, h2 {
-  color: navy;
-  font-family: "Helvetica", "Arial", sans-serif; 
-  font-weight: normal;
-}
-.list-group-item.active, 
-.list-group-item.active:focus, 
-.list-group-item.active:hover {
-    z-index: 2;
-    color: gold;
-    background-color: navy;
-    border-color: blue;
-}
-.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
-    color: gold;
-    background-color: navy;
-}
-.nav-pills > li.active > a:hover {
-    color: gold;
-    background-color: navy;
-
-}
-
-```
-
 
 \SetWatermarkText{ROUGH DRAFT}
 \SetWatermarkFontSize{3cm}
@@ -94,6 +72,8 @@ Following [@Kruschke2014] all Bayesian models have a *conceptual appropriateness
 In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
 
 In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating a *full probability distribution* for this parameter.
+
+Such an approach means that we have the ability to accept the null hypothesis $H_0$ [@Kruschke2018]. This ability to accept $H_0$ might possibly lead to theory simplification [@Morey2018], as well as to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
 
 # Prior Information
 
@@ -172,12 +152,6 @@ persp(mydensity,
 #         lower = list(continuous = "density"))
 
 ```
-
-# Accepting $H_0$ is Possible
-
-Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018]. This may have consequences for affirming similarity, universality, or treatment invariance [@Morey2018]. 
-
-Also, accepting certain null hypotheses may allow for the simplification of theory.
 
 # Distributional Models
 
