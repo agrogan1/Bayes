@@ -206,14 +206,15 @@ ggplot(data=NULL,
 
 ```
 
-
 Bayesian estimators allow for the incorporation of non-linear terms [@Burkner2018].[^overfitting]
 
 [^overfitting]: Such non-linear terms offer ways of non-parametrically fitting curvature. Do they represent over-fitting? Do they provide substantively interpretable results?
 
 # Maximal Models
 
-Bayesian estimators allow for the estimation of so called *maximal models* [@Barr2013; @Frank2018], which allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0.
+Bayesian estimators allow for the estimation of so called *maximal models* [@Barr2013; @Frank2018], which allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0. 
+
+In contrast, [@Matuschek2017] argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data."
 
 # References
 

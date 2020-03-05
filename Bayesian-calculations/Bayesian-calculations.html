@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Andy Grogan-Kaylor" />
 
-<meta name="date" content="2019-11-14" />
+<meta name="date" content="2020-03-04" />
 
 <title>Bayesian Calculations: Simulation of Coin Flipping</title>
 
@@ -1289,7 +1288,7 @@ window.initializeCodeFolding = function(show) {
 
     // create a collapsable div to wrap the code in
     var div = $('<div class="collapse r-code-collapse"></div>');
-    if (show)
+    if (show || $(this)[0].classList.contains('fold-show'))
       div.addClass('in');
     var id = 'rcode-643E0F36' + currentIndex++;
     div.attr('id', id);
@@ -1324,6 +1323,19 @@ window.initializeCodeFolding = function(show) {
   });
 
 }
+</script>
+<script>
+window.initializeSourceEmbed = function(filename) {
+  $("#rmd-download-source").click(function() {
+    var src = $("#rmd-source-code").html();
+    var a = document.createElement('a');
+    a.href = "data:text/x-r-markdown;base64," + src;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+};
 </script>
 
 
@@ -1449,51 +1461,11 @@ h6 {
 .table th:not([align]) {
   text-align: left;
 }
+#rmd-source-code {
+  display: none;
+}
 </style>
 
-<style type="text/css">h1 {
-color: #333333;
-font-family: "Helvetica", "Arial", sans-serif; font-weight: bold;
-}
-h2 {
-color: black;
-font-family: "Helvetica", "Arial", sans-serif; font-weight: normal;
-}
-h3 {
-color: black;
-font-family: "Helvetica", "Arial", sans-serif; font-weight: normal;
-}
-p {
-color: black;
-font-family: "Helvetica", "Arial", sans-serif; font-size: 110%;
-}
-ul {
-font-family: "Helvetica", "Arial", sans-serif; }
-ol {
-font-family: "Helvetica", "Arial", sans-serif; }
-.caption { display: block;
-color: red;
-font-weight: bold;
-}
-.book .book-body .page-wrapper .page-inner section.normal blockquote {
-margin: 0 0 .85em;
-padding: 0 15px;
-opacity: 1.00;
-border-left: 10px solid red;
-}
-blockquote {
-background: #FFFFFF;
-color: #000;
-border-left: 5px solid red;
-margin: 1.5em 10px;
-padding: 0.5em 10px;
-}
-blockquote p {
-display: inline;
-}
-.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
-background-color: black;
-}</style>
 
 
 
@@ -1509,7 +1481,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -1571,6 +1542,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -1602,6 +1574,12 @@ summary {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -1675,6 +1653,8 @@ div.tocify {
 <ul class="dropdown-menu" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
 </ul>
 </div>
 
@@ -1683,7 +1663,7 @@ div.tocify {
 <h1 class="title toc-ignore">Bayesian Calculations: Simulation of Coin Flipping</h1>
 <h3 class="subtitle">Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior</h3>
 <h4 class="author">Andy Grogan-Kaylor</h4>
-<h4 class="date">2019-11-14</h4>
+<h4 class="date">2020-03-04</h4>
 
 </div>
 
@@ -1895,6 +1875,7 @@ div.tocify {
 <p>Questions, comments and corrections are most welcome.</p>
 </div>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAnQmF5ZXNpYW4gQ2FsY3VsYXRpb25zOiBTaW11bGF0aW9uIG9mIENvaW4gRmxpcHBpbmcnCmF1dGhvcjogIkFuZHkgR3JvZ2FuLUtheWxvciIKZGF0ZTogImByIFN5cy5EYXRlKClgIgpvdXRwdXQ6CiAgaHRtbF9kb2N1bWVudDoKICAgIGNvZGVfZm9sZGluZzogaGlkZQogICAgY29kZV9kb3dubG9hZDogdHJ1ZQogICAgZmlnX2hlaWdodDogMwogICAgaGlnaGxpZ2h0OiBoYWRkb2NrCiAgICBrZWVwX21kOiBubwogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMKICAgIHRoZW1lOiBkZWZhdWx0CiAgICB0b2M6IHllcwogICAgdG9jX2Zsb2F0OgogICAgICBjb2xsYXBzZWQ6IHllcwogICAgICBzbW9vdGhfc2Nyb2xsOiB5ZXMKICB0dWZ0ZTo6dHVmdGVfaGFuZG91dDoKICAgIG51bWJlcl9zZWN0aW9uczogeWVzCiAgICB0b2M6IHllcwogICAgaGlnaGxpZ2h0OiBoYWRkb2NrCnN1YnRpdGxlOiBQcmlvciBXaXRoIDMgVmFsdWVzOyBEYXRhIG9uIENvaW4gRmxpcHM7IExpa2VsaWhvb2QgYW5kIFBvc3RlcmlvcgotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQoKa25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFLAogICAgICAgICAgICAgICAgICAgICAgZmlnLmZ1bGx3aWR0aCA9IFRSVUUsCiAgICAgICAgICAgICAgICAgICAgICBmaWcubWFyZ2luID0gVFJVRSkKCmxpYnJhcnkocGFuZGVyKQoKbGlicmFyeSh0dWZ0ZSkKCmxpYnJhcnkodGliYmxlKQoKYGBgCgpgYGB7ciwgZXZhbCA9IEZBTFNFLCBlY2hvID0gRkFMU0V9CgojIFAoQXxCKSA9IFtQKEJ8QSlQKEEpIC8gUChCKV0KIyBQKEh8RCkgPSBbUChEfEgpUChIKSAvIFAoRCldCgojIHBvc3RlcmlvciBpcyBwcm9wb3J0aW9uYWwgdG8gcHJpb3IgdGltZXMgbGlrZWxpaG9vZAoKYGBgCgojIEJhY2tncm91bmQKCltCYXllcyBUaGVvcmVtXSguL0JheWVzLVRoZW9yZW0vQmF5ZXMtVGhlb3JlbS5odG1sKSBhbGxvd3MgdXMgdG8gc3RhdGUgb3VyICpwcmlvciogYmVsaWVmcywgdG8gY2FsY3VsYXRlIHRoZSAqbGlrZWxpaG9vZCogb2Ygb3VyIGRhdGEgZ2l2ZW4gdGhvc2UgYmVsaWVmcywgYW5kIHRoZW4gdG8gdXBkYXRlIHRob3NlIGJlbGllZnMgd2l0aCBkYXRhLCB0aHVzIGFycml2aW5nIGF0IGEgc2V0IG9mICpwb3N0ZXJpb3IqIGJlbGllZnMuICBIb3dldmVyLCBCYXllc2lhbiBjYWxjdWxhdGlvbnMgY2FuIGJlIGRpZmZpY3VsdCB0byB1bmRlcnN0YW5kLiBUaGlzIGRvY3VtZW50IGF0dGVtcHRzIHRvIHByb3ZpZGUgYSBzaW1wbGUgd2Fsa3Rocm91Z2ggb2Ygc29tZSBCYXllc2lhbiBjYWxjdWxhdGlvbnMuCgojIEJheWVzIFJ1bGUKCj4gQSBkcmFmdCBpbnRlcmFjdGl2ZSB2ZXJzaW9uIG9mIHRoZXNlIGlkZWFzIGNhbiBiZSBmb3VuZCBbaGVyZV0oaHR0cHM6Ly9hZ3JvZ2FuLnNoaW55YXBwcy5pby9zaGlueUJheWVzMi8pLgoKTWF0aGVtYXRpY2FsbHkgQmF5ZXMgVGhlb3JlbSBpcyBhcyBmb2xsb3dzOgoKJCRQKEh8RCkgPSBcZnJhY3tQKER8SClQKEgpfXtQKEQpfSQkIAoKSW4gd29yZHMsIEJheWVzIFRoZW9yZW0gbWF5IGJlIHdyaXR0ZW4gYXMgZm9sbG93czoKCiQkcG9zdGVyaW9yID0gXGZyYWN7bGlrZWxpaG9vZCAqIHByaW9yfXtkYXRhfSQkCgo+IE91ciBwb3N0ZXJpb3IgYmVsaWVmcyBhcmUgcHJvcG9ydGlvbmFsIHRvIG91ciBwcmlvciBiZWxpZWZzLCBtdWx0aXBsaWVkIGJ5IHRoZSBsaWtlbGlob29kIG9mIHRob3NlIGJlbGllZnMsIGdpdmVuIHRoZSBkYXRhLgoKIyBUaGlzIEV4YW1wbGUKCkluIHRoaXMgZXhhbXBsZSwgd2UgcHJvdmlkZSBhbiBleGFtcGxlIG9mIHVzaW5nIEJheWVzIFRoZW9yZW0gdG8gZXhhbWluZSBvdXIgY29uY2x1c2lvbnMgYWJvdXQgdGhlIHByb3BvcnRpb24gb2YgaGVhZHMgd2hlbiBhIGNvaW4gaXMgZmxpcHBlZCAxMCB0aW1lcy4gCgpDb252ZW50aW9uYWxseSwgd2UgY2FsbCB0aGlzIHByb3BvcnRpb24gdGhhdCB3ZSBhcmUgdHJ5aW5nIHRvIGVzdGltYXRlICRcdGhldGEkLgoKRm9yIHRoZSBzYWtlIG9mIHNpbXBsaWNpdHksIHRoaXMgZXhhbXBsZSB1c2VzIGEgcmVsYXRpdmVseSBzaW1wbGUgc2V0IG9mIHByaW9yIGJlbGllZnMgYWJvdXQgMyBwb3NzaWJsZSB2YWx1ZXMgZm9yIHRoZSBwcm9wb3J0aW9uICRcdGhldGEkLgoKPiBSIGNvZGUgaW4gdGhpcyBleGFtcGxlIGlzIGFkYXB0ZWQgYW5kIHNpbXBsaWZpZWQgIGZyb20gS3J1c2Noa2UgKDIwMTEpLCBwLiA3MAoKIyBQcmlvcgoKV2Ugc2V0IGEgc2ltcGxlIHNldCBvZiBwcmlvciBiZWxpZWZzLCBjb25jZXJuaW5nIDMgdmFsdWVzIG9mICRcdGhldGEkLCB0aGUgcHJvcG9ydGlvbiBvZiBoZWFkcy4KCmBgYHtyfQoKdGhldGExIDwtIGMoMC4yNSwgMC41MCwgMC43NSkgIyBjYW5kaWRhdGUgcGFyYW1ldGVyIHZhbHVlcwoKcHRoZXRhMSA8LSBjKC4yNSwgLjUwLCAuMjUpICMgcHJpb3IgcHJvYmFiaWxpdGllcwoKcHRoZXRhMSA8LSBwdGhldGExL3N1bShwdGhldGExKSAjIG5vcm1hbGl6ZQoKYGBgCgpPdXIgdmFsdWVzIG9mICRcdGhldGEkIGFyZSBgciBwYW5kZXIodGhldGExKWAsIHdpdGggcHJvYmFiaWxpdGllcyAkUChcdGhldGEpJCBvZiBgciBwYW5kZXIocHRoZXRhMSlgLgoKYGBge3J9CgpiYXJwbG90KG5hbWVzLmFyZyA9IHRoZXRhMSwgCiAgICAgICAgaGVpZ2h0ID0gcHRoZXRhMSwKICAgICAgICBtYWluID0gInByaW9yIHByb2JhYmlsaXRpZXMiLAogICAgICAgIGNvbCA9ICIjRkZCQjAwIikgIyBncmFwaAoKYGBgCgpgYGB7cn0KCm15QmF5ZXNpYW5Fc3RpbWF0ZXMgPC0gdGliYmxlKHRoZXRhMSwgcHRoZXRhMSkKCnBhbmRlcihteUJheWVzaWFuRXN0aW1hdGVzKSAjIG5pY2UgdGFibGUKCmBgYAoKIyBUaGUgRGF0YQoKMTAgY29pbiBmbGlwcy4gMSBIZWFkcy4gOSBUYWlscy4KCmBgYHtyfQoKZGF0YTEgPC0gYygxLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwLCAwKSAjIHRoZSBkYXRhCgpkYXRhMV9mYWN0b3IgPC0gZmFjdG9yKGRhdGExLAogICAgICAgICAgICAgICAgICAgICAgIGxldmVscyA9IGMoMCwxKSwKICAgICAgICAgICAgICAgICAgICAgICBsYWJlbHMgPSBjKCJUIiwgIkgiKSkKCmBgYAoKYGBge3J9CgpuX2hlYWRzIDwtIHN1bShkYXRhMSA9PSAxKSAjIG51bWJlciBvZiBoZWFkcwoKbl90YWlscyA8LSBzdW0oZGF0YTEgPT0gMCkgIyBudW1iZXIgb2YgdGFpbHMKCmBgYAoKYGBge3J9CgpwbG90KHggPSBzZXEoMSwxMCksICMgeCBmcm9tIDEgdG8gMTAKICAgICB5ID0gcmVwKDEsMTApLCAjIHkgPSAxCiAgICAgY29sID0gZGF0YTFfZmFjdG9yLCAjIGNvbG9yIGJ5IGRhdGEgCiAgICAgY2V4ID0gMywgIyBzaXplCiAgICAgbHdkID0gMiwgIyBsaW5lIHdpZHRoCiAgICAgYXhlcyA9IEZBTFNFLAogICAgIG1haW4gPSAiMTAgQ29pbiBUb3NzZXMiLAogICAgIHhsYWIgPSAiICIsCiAgICAgeWxhYiA9ICIgIikgCgp0ZXh0KHggPSBzZXEoMSwxMCksICMgeCBmcm9tIDEgdG8gMTAKICAgICB5ID0gcmVwKDEsMTApLCAjIHkgPSAxCiAgICAgbGFiZWxzID0gZGF0YTFfZmFjdG9yKSAjIGxhYmVsIHdpdGggZGF0YTFfZmFjdG9yCgpgYGAKCiMgTGlrZWxpaG9vZAoKVGhlIGxpa2VsaWhvb2QgaXMgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSBnaXZlbiB2YWx1ZSBvZiAkXHRoZXRhJCB3b3VsZCBwcm9kdWNlIHRoaXMgbnVtYmVyIG9mIGhlYWRzLgoKVGhlIHByb2JhYmlsaXR5IG9mIG11bHRpcGxlIGluZGVwZW5kZW50IGV2ZW50cyAkQSQsICRCJCwgJEMkLCBldGMuIGlzICRQKEEsQixDLCAuLi4pID0gUChBKSAqIFAoQikgKiBQKEMpICogLi4uJC4KClRoZXJlZm9yZSwgaW4gdGhpcyBjYXNlLCB0aGUgbGlrZWxpaG9vZCBpcyBwcm9wb3J0aW9uYWwgdG8gJFtQKGhlYWRzKV1ee1x0ZXh0e251bWJlciBvZiBoZWFkc319JCBhbmQgbXVsdGlwbHkgdGhpcyBieSAkW1AodGFpbHMpXV57XHRleHR7bnVtYmVyIG9mIHRhaWxzfX0kLiAKClRodXM6CgokJFxtYXRoY2Fse0x9KFx0aGV0YSkgXHByb3B0byBcdGhldGFee1x0ZXh0e251bWJlciBvZiBoZWFkc319ICogKDEtXHRoZXRhKV57XHRleHR7bnVtYmVyIG9mIHRhaWxzfX0kJAoKYGBge3J9CgpsaWtlbGlob29kMSA8LSB0aGV0YTFebl9oZWFkcyAqICgxIC0gdGhldGExKV5uX3RhaWxzICMgbGlrZWxpaG9vZAoKYmFycGxvdChuYW1lcy5hcmcgPSB0aGV0YTEsIAogICAgICAgIGhlaWdodCA9IGxpa2VsaWhvb2QxLAogICAgICAgIG1haW4gPSAibGlrZWxpaG9vZCIsCiAgICAgICAgY29sID0gIiMzNzVFOTciKSAjIGdyYXBoCgpgYGAKCkF0IHRoaXMgcG9pbnQgb3VyIGVzdGltYXRlcyBpbmNsdWRlIG5vdCBvbmx5IGEgdmFsdWUgb2YgJFx0aGV0YSQgYW5kICRQKFx0aGV0YSkkLCBidXQgYWxzbyB0aGUgbGlrZWxpaG9vZCwgJFxtYXRoY2Fse0x9KFx0aGV0YSkkLgoKYGBge3J9CgpteUJheWVzaWFuRXN0aW1hdGVzIDwtIHRpYmJsZSh0aGV0YTEsIHB0aGV0YTEsIGxpa2VsaWhvb2QxKQoKcGFuZGVyKG15QmF5ZXNpYW5Fc3RpbWF0ZXMpICMgbmljZSB0YWJsZQoKYGBgCgojIFBvc3RlcmlvcgoKV2UgdGhlbiBjYWxjdWxhdGUgdGhlIGRlbm9taW5hdG9yIG9mIEJheWVzIHRoZW9yZW06ICAKCiQkXFNpZ21hIFtcbWF0aGNhbHtMfShcdGhldGEpICogUChcdGhldGEpXSQkCgpgYGB7cn0KCnBkYXRhMSA8LSBzdW0obGlrZWxpaG9vZDEgKiBwdGhldGExKSAjIG5vcm1hbGl6ZQoKYGBgCgpXZSB0aGVuIHVzZSBCYXllcyBSdWxlIHRvIGNhbGN1bGF0ZSB0aGUgcG9zdGVyaW9yOgoKJCRQKEh8RCkgPSBcZnJhY3tQKER8SClQKEgpfXtQKEQpfSQkIAoKYGBge3J9Cgpwb3N0ZXJpb3IxIDwtIGxpa2VsaWhvb2QxICogcHRoZXRhMSAvIHBkYXRhMSAjIEJheWVzIFJ1bGUKCmJhcnBsb3QobmFtZXMuYXJnID0gdGhldGExLCAKICAgICAgICBoZWlnaHQgPSBwb3N0ZXJpb3IxLAogICAgICAgIG1haW4gPSAicG9zdGVyaW9yIiwKICAgICAgICBjb2wgPSAiIzNGNjgxQyIpICMgZ3JhcGgKCgpgYGAKCk91ciBlc3RpbWF0ZXMgbm93IGluY2x1ZGUgJFx0aGV0YSQsICRQKFx0aGV0YSkkLCAkXG1hdGhjYWx7TH0oXHRoZXRhKSQgYW5kICRQKFx0aGV0YSB8IEQpJC4KCmBgYHtyfQoKbXlCYXllc2lhbkVzdGltYXRlcyA8LSB0aWJibGUodGhldGExLCBwdGhldGExLCBsaWtlbGlob29kMSwgcG9zdGVyaW9yMSkKCnBhbmRlcihteUJheWVzaWFuRXN0aW1hdGVzKSAjIG5pY2UgdGFibGUKCmBgYAoKIyBDcmVkaXRzCgpQcmVwYXJlZCBieSBBbmR5IEdyb2dhbi1LYXlsb3IgW2Fncm9nYW5AdW1pY2guZWR1XShhZ3JvZ2FuQHVtaWNoLmVkdSksIFt3d3cudW1pY2guZWR1L35hZ3JvZ2FuXSh3d3cudW1pY2guZWR1L35hZ3JvZ2FuKS4KClF1ZXN0aW9ucywgY29tbWVudHMgYW5kIGNvcnJlY3Rpb25zIGFyZSBtb3N0IHdlbGNvbWUuCgoKCg==</div>
 
 
 </div>
@@ -1932,6 +1913,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
+  window.initializeSourceEmbed("Bayesian-calculations.Rmd");
   window.initializeCodeFolding("hide" === "show");
 });
 </script>
