@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.1)  5 MAR 2020 09:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.1)  9 MAR 2020 08:52
 entering extended mode
 **./Bayesian-and-frequentist-MLM.tex
 (Bayesian-and-frequentist-MLM.tex
@@ -1153,32 +1153,32 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 [1{C:/Users/agrogan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 ]
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf, id=77, 
-289.08pt x 216.81pt>
-File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf Gra
-phic file (type pdf)
-<use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-1-1.pdf  used on input line 157.
-(pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf, id=78, 
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf, id=77, 
 289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-2-1.pdf  used on input line 161.
+d-chunk-2-1.pdf  used on input line 157.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf, id=80, 
-289.08pt x 180.675pt>
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf, id=78, 
+289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-3-1.pdf  used on input line 175.
+d-chunk-3-1.pdf  used on input line 161.
+(pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
+
+LaTeX Warning: Marginpar on page 2 moved.
+
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-4-1.pdf, id=80, 
+289.08pt x 180.675pt>
+File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-4-1.pdf Gra
+phic file (type pdf)
+<use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
+d-chunk-4-1.pdf  used on input line 175.
 (pdftex.def)             Requested size: 143.99709pt x 89.99817pt.
 
 LaTeX Warning: Marginpar on page 2 moved.
@@ -1197,9 +1197,9 @@ LaTeX Warning: Marginpar on page 2 moved.
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-[2 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf> <.
-/Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf> <./Baye
-sian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>]
+[2 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf> <.
+/Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf> <./Baye
+sian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-4-1.pdf>]
 LaTeX Font Info:    Try loading font information for T1+fvm on input line 208.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
@@ -1238,7 +1238,7 @@ fpl/fplrc8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/urw/palatino/uplri8a.pfb>
-Output written on Bayesian-and-frequentist-MLM.pdf (3 pages, 135432 bytes).
+Output written on Bayesian-and-frequentist-MLM.pdf (3 pages, 135603 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  30 named destinations out of 1000 (max. 500000)

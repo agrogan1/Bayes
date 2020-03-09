@@ -3,13 +3,6 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
   html_document:
     css: UM.css
     fig_height: 3
@@ -19,6 +12,13 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
   pdf_document:
     toc: yes
   tufte::tufte_html:
@@ -30,6 +30,19 @@ link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
 ---
+
+```{r, echo=FALSE, eval=FALSE}
+
+# Bayes may perform better (see cites in MBOX)
+
+# weak ICC
+# random slopes close to 0 
+# non normal parameters, both \beta and \u's
+# Small N *especially at Level 2*
+
+```
+
+
 
 \SetWatermarkText{ROUGH DRAFT}
 \SetWatermarkFontSize{3cm}
