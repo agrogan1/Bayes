@@ -39,6 +39,9 @@ biblio-style: apalike
 # random slopes close to 0 
 # non normal parameters, both \beta and \u's
 # Small N *especially at Level 2*
+# Stunnenberg et al. (2018) looked at the 
+# probability that the effect would be 
+# clinically meaningful for a particular patient.
 
 ```
 
