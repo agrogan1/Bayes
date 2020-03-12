@@ -3,6 +3,13 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   html_document:
     css: UM.css
     fig_height: 3
@@ -12,13 +19,6 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
   pdf_document:
     toc: yes
   tufte::tufte_html:
@@ -44,7 +44,6 @@ biblio-style: apalike
 # clinically meaningful for a particular patient.
 
 ```
-
 
 
 \SetWatermarkText{ROUGH DRAFT}
@@ -77,15 +76,17 @@ library(ggthemes)
 
 $$y_{ij} = \beta_0 + \beta_1 x_{1i} + u_{0j} + e_{ij}$$
 
-All multilevel models account for group structure, in estimating the association of $x$ and $y$, by including a random intercept ($u_0$), and possibly one or more random intercept terms ($u_1, u_2, etc....$).
+All multilevel models account for group structure, in estimating the association of $x$ and $y$, by including a random intercept ($u_0$), and possibly one or more random slope terms ($u_1, u_2, etc....$).
 
-Bayesian models may offer some advantages over frequentist models, but may be substantially slower to converge.
+Bayesian models may offer some advantages over frequentist models, but may be *substantially* slower to converge.
 
 # Conceptual Appropriateness
 
 Following [@Kruschke2014] all Bayesian models have a *conceptual appropriateness*. 
 
 In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
+
+# Accepting the Null Hypothesis ($H_0$)
 
 In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating a *full probability distribution* for this parameter.
 
@@ -105,7 +106,7 @@ Bayesian multilevel models may be better with small samples, especially samples 
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
-Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful.
+Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014].
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 
@@ -168,6 +169,10 @@ persp(mydensity,
 #         lower = list(continuous = "density"))
 
 ```
+
+As Stata Corporation notes, "In a Bayesian multilevel model, *random effects* are model parameters just like regression coefficients and variance components" [@StataCorp2020].  This ability to estimate the *distributions* of these random effects means that the *distribution* of the random effect for one group can be compared to another. For example, the *distribution* of a parameter in one country could be directly compared to the *distribution* of that same parameter in another country. One could even estimate the probability that a particular $\beta$ had a higher value in one group (e.g. country), than in another. As Balov [-@Balov2016] suggests, this Bayesian approach allows us to "quantify the credibility" of these comparisons, which would not be possible with a frequentist approach.
+
+As an example, Stunnenberg et al. [-@Stunnenberg2018] conducted a Bayesian analysis where the results of the multilevel analysis were used to inform treatment decisions. Here the data were repeated measures on patients, and thus the patients were the groups: "On completion of each treatment set, a Bayesian analysis was conducted to calculate the posterior probability of mexiletine [treatment] producing a clinically meaningful difference in the individual patient." 
 
 # Distributional Models
 
