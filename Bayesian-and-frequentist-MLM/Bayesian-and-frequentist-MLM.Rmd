@@ -3,12 +3,12 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
+    toc: yes
+  distill::distill_article:
+    highlight: haddock
     toc: yes
   html_document:
     css: UM.css
@@ -204,6 +204,7 @@ ggplot(data=NULL,
   theme_tufte()
 
 ```
+
 
 Bayesian estimators allow for the incorporation of non-linear terms [@Burkner2018].[^overfitting]
 
