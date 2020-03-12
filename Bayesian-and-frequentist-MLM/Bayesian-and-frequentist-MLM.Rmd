@@ -3,12 +3,12 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
-    toc: yes
-  distill::distill_article:
-    highlight: haddock
     toc: yes
   html_document:
     css: UM.css
@@ -19,7 +19,10 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
-  pdf_document:
+  pdf_document: 
+    fig_caption: yes
+    fig_height: 3
+    number_sections: yes
     toc: yes
   tufte::tufte_html:
     highlight: haddock
@@ -29,6 +32,7 @@ header-includes: \usepackage{draftwatermark}
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
+citation_url: https://agrogan1.github.io/Bayes/Bayesian-and-frequentist-MLM/Bayesian-and-frequentist-MLM.html
 ---
 
 ```{r, echo=FALSE, eval=FALSE}
@@ -212,6 +216,9 @@ Bayesian estimators allow for the estimation of so called *maximal models* [@Bar
 In contrast, [@Matuschek2017] argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data."
 
 # References
+
+
+
 
 
 
