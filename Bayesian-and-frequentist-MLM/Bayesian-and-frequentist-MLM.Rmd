@@ -39,13 +39,9 @@ citation_url: https://agrogan1.github.io/Bayes/Bayesian-and-frequentist-MLM/Baye
 
 # Bayes may perform better (see cites in MBOX)
 
-# weak ICC
 # random slopes close to 0 
 # non normal parameters, both \beta and \u's
 # Small N *especially at Level 2*
-# Stunnenberg et al. (2018) looked at the 
-# probability that the effect would be 
-# clinically meaningful for a particular patient.
 
 ```
 
@@ -184,7 +180,7 @@ Bayesian estimators allow one to directly model $\sigma_{u_0}$, the variance of 
 
 # Non-Linear Terms
 
-```{r, fig.cap="Non-Linear Terms"}
+```{r, fig.height=3, fig.cap="Non-Linear Terms"}
 
 # options(scipen = 999)
 
@@ -205,10 +201,7 @@ ggplot(data=NULL,
 
 ```
 
-
-Bayesian estimators allow for the incorporation of non-linear terms [@Burkner2018].[^overfitting]
-
-[^overfitting]: Such non-linear terms offer ways of non-parametrically fitting curvature. Do they represent over-fitting? Do they provide substantively interpretable results?
+Bayesian estimators allow for the incorporation of non-linear terms [@Burkner2018]. Such non-linear terms offer ways of non-parametrically fitting curvature. An open question is whether such methods represent a kind of over-fitting.  A related question is the degree to which non-linear terms provide substantively interpretable results.
 
 # Maximal Models
 
