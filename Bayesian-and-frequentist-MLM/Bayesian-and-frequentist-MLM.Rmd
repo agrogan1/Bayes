@@ -3,12 +3,12 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
+    toc: yes
+  distill::distill_article:
+    highlight: haddock
     toc: yes
   html_document:
     css: UM.css
@@ -71,7 +71,7 @@ Bayesian models may offer some advantages over frequentist models, but may be *s
 
 # Conceptual Appropriateness
 
-Following [@Kruschke2014] all Bayesian models have a *conceptual appropriateness*. 
+Following Kruschke [-@Kruschke2014] all Bayesian models have a *conceptual appropriateness*. 
 
 In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
 
@@ -87,6 +87,14 @@ Bayesian models allow one to incorporate prior information about a parameter of 
 
 Prior information may come from the prior research literature, e.g. from systematic reviews or meta-analyses, or expert opinion or clinical wisdom.
 
+Kruschke [-@Kruschke2014] points out that "No analysis is immune to false alarms, because randomly sampled data will occasionally contain accidental coincidences of outlying values." However, according to Kruschke [-@Kruschke2014] careful use of priors may reduce the probability of false alarms.
+
+# Multiple Comparisons
+
+As Kruschke [-@Kruschke2014] observes, multiple comparisons (especially when they are *post hoc*) are less of a concern for Bayesian analysis than they are for a frequentist analysis: 
+
+> "In a Bayesian analysis, however, there is just one posterior distribution over the parameters that describe the conditions. That posterior distribution is unaffected by the intentions of the experimenter, and the posterior distribution can be examined from multiple perspectives however is suggested by insight and curiosity."
+
 # Smaller Samples
 
 Bayesian multilevel models may be better with small samples, especially samples with small numbers of Level 2 units [@Hox2012]. It is not clear to what degree this improvement in performance is dependent upon the use of informative priors.
@@ -95,7 +103,7 @@ Bayesian multilevel models may be better with small samples, especially samples 
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
-Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014; @Finch2017].
+Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014].
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 
@@ -204,7 +212,7 @@ Bayesian estimators allow for the incorporation of non-linear terms [@Burkner201
 
 Bayesian estimators allow for the estimation of so called *maximal models* [@Barr2013; @Frank2018], which allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0. 
 
-In contrast, [@Matuschek2017] argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data."
+In contrast, Matuschek et al. [-@Matuschek2017] argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data."
 
 # References
 

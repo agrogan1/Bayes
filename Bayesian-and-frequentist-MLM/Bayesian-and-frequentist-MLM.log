@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.25)  14 MAR 2020 14:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.25)  15 MAR 2020 11:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -653,63 +653,70 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <85.35826> not available
-(Font)              size <35.83> substituted on input line 127.
+(Font)              size <35.83> substituted on input line 119.
 
 [1{/Users/agrogan/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf, id=92, 
-289.08pt x 216.81pt>
+
+Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
+set up.
+This message occurred on input line 177.
+
+[2]
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf, id=112,
+ 289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-1-1.pdf  used on input line 164.
+d-chunk-1-1.pdf  used on input line 186.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf, id=93, 
-289.08pt x 216.81pt>
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf, id=113,
+ 289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-2-1.pdf  used on input line 168.
+d-chunk-2-1.pdf  used on input line 190.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
 
-LaTeX Warning: Marginpar on page 2 moved.
+LaTeX Warning: Marginpar on page 3 moved.
 
-
-Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
-set up.
-This message occurred on input line 186.
-
-[2 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf> <.
-/Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf>]
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf, id=128,
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf, id=118,
  289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-3-1.pdf  used on input line 206.
+d-chunk-3-1.pdf  used on input line 228.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
 
-Overfull \hbox (1.97888pt too wide) in paragraph at lines 209--215
+Overfull \hbox (1.97888pt too wide) in paragraph at lines 231--237
 \T1/cmr/m/n/10 (Burkner []2018[]). Such non-linear terms of-fer ways of non-par
 ametrically 
  []
 
+
+Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
+set up.
+This message occurred on input line 246.
+
+[3 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf> <.
+/Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf> <./Baye
+sian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-39.
+61.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 
 Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
 set up.
-This message occurred on input line 251.
+This message occurred on input line 307.
 
-[3 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>]
-Overfull \hbox (15.22858pt too wide) in paragraph at lines 302--308
+[4]
+Overfull \hbox (15.22858pt too wide) in paragraph at lines 320--326
 [][]\T1/cmr/m/n/10 Van de Schoot, Rens, David Ka-plan, Jaap Denis-sen, Jens B. 
 Asendorpf, 
  []
@@ -719,36 +726,37 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
 
 Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
 set up.
-This message occurred on input line 311.
+This message occurred on input line 329.
 
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
 (./Bayesian-and-frequentist-MLM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 311.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
 Package rerunfilecheck Info: File `Bayesian-and-frequentist-MLM.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 3BD66ECE0310C8B27A111773731DEE51;1464.
+(rerunfilecheck)             Checksum: D79A82F1597AD12604A76051201223D0;1613.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 49.52826pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 311.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
  ) 
 Here is how much of TeX's memory you used:
- 12921 strings out of 483172
- 187531 string characters out of 5964868
- 456703 words of memory out of 5000000
- 27623 multiletter control sequences out of 15000+600000
- 544986 words of font info for 60 fonts, out of 8000000 for 9000
+ 12927 strings out of 483172
+ 187608 string characters out of 5964868
+ 456750 words of memory out of 5000000
+ 27626 multiletter control sequences out of 15000+600000
+ 545751 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  47i,12n,51p,311b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
  </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600p
 k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600p
+k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600p
 k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
 k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600p
 k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
@@ -764,10 +772,10 @@ public/amsfonts/cm/cmr5.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmr7.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr8.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Bayesian-and-frequentist-MLM.pdf (4 pages, 190229 bytes).
+Output written on Bayesian-and-frequentist-MLM.pdf (5 pages, 199530 bytes).
 PDF statistics:
- 510 PDF objects out of 1000 (max. 8388607)
- 213 compressed objects within 3 object streams
- 38 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 557 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 
