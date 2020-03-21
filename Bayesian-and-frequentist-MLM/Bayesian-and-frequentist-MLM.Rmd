@@ -81,6 +81,12 @@ In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *d
 
 Such an approach means that we have the ability to accept the null hypothesis $H_0$ [@Kruschke2018]. This ability to accept $H_0$ might possibly lead to theory simplification [@Morey2018], as well as to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
 
+# Model Comparison
+
+Relatedly, Bayesian approaches allow one to compare an alternative model $H_A$ with a null model $H_0$, or to simply compare two alternative statistical models ($H_1$ vs. $H_2$). Bayesian models may have a better perspective on these kinds of statistical comparisons than do frequentist approaches. As Jarosz et al. [-@Jarosz2014] note: 
+
+> "All Bayesian approaches are comparisons of models. This means that a Bayes factor considers the likelihood of both the null and the alternative hypothesis. From the researcher’s standpoint, this is likely closer to their overall goal than simply rejecting the null hypothesis."
+
 # Prior Information
 
 Bayesian models allow one to incorporate prior information about a parameter of interest.
@@ -103,7 +109,7 @@ Bayesian multilevel models may be better with small samples, especially samples 
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
-Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014].
+Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014; @Finch2017].
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 

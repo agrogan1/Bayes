@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.25)  15 MAR 2020 11:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.20)  21 MAR 2020 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Bayesian-and-frequentist-MLM.tex
 (./Bayesian-and-frequentist-MLM.tex
-LaTeX2e <2020-02-02> patch level 3
-L3 programming layer <2020-02-21>
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-02-25>
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/tufte-latex/tufte-handout.
 cls
 Document Class: tufte-handout 2015/06/21 v3.5.2 Tufte-handout class
@@ -18,8 +18,8 @@ File: tufte-common.def 2015/06/21 v3.5.2 Common code for the Tufte-LaTeX styles
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/Us
 ers/agrogan/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks14
-\XKV@tempa@toks=\toks15
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))
 \XKV@depth=\count167
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -91,7 +91,7 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \aftertitleunit=\skip53
 \ttl@plus=\dimen137
 \ttl@minus=\dimen138
-\ttl@toksa=\toks16
+\ttl@toksa=\toks17
 \titlewidth=\dimen139
 \titlewidthlast=\dimen140
 \titlewidthfirst=\dimen141
@@ -238,7 +238,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen152
 \Gm@layouthoffset=\dimen153
 \Gm@layoutvoffset=\dimen154
-\Gm@dimlist=\toks17
+\Gm@dimlist=\toks18
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/changepage/changepage.st
 y
 Package: changepage 2009/10/20 v1.0c check page and change page layout
@@ -254,7 +254,7 @@ Package: paralist 2017/01/22 v2.7 Extended list environments
 \plpartopsep=\skip73
 \plitemsep=\skip74
 \plparsep=\skip75
-\pl@lab=\toks18
+\pl@lab=\toks19
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
 )
@@ -400,7 +400,7 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks19
+\@emptytoks=\toks20
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -414,7 +414,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
+\@emptytoks=\toks21
 \ex@=\dimen164
 )) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -442,21 +442,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip17
 \c@parentequation=\count282
 \dspbrk@lvl=\count283
-\tag@help=\toks21
+\tag@help=\toks22
 \row@=\count284
 \column@=\count285
 \maxfields@=\count286
-\andhelp@=\toks22
+\andhelp@=\toks23
 \eqnshift@=\dimen167
 \alignsep@=\dimen168
 \tagshift@=\dimen169
 \tagwidth@=\dimen170
 \totwidth@=\dimen171
 \lineht@=\dimen172
-\@envbody=\toks23
+\@envbody=\toks24
 \multlinegap=\skip94
 \multlinetaggap=\skip95
-\mathdisplay@stack=\toks24
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/fixltx2e.sty
@@ -472,8 +472,8 @@ Already applied: [0000/00/00] Old fixltx2e package on input line 53.
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks25
-\inpenc@posthook=\toks26
+\inpenc@prehook=\toks26
+\inpenc@posthook=\toks27
 ) (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -518,7 +518,7 @@ Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \UL@box=\box97
 \UL@hyphenbox=\box98
 \UL@skip=\skip99
-\UL@hook=\toks27
+\UL@hook=\toks28
 \UL@height=\dimen188
 \UL@pe=\count291
 \UL@pixel=\dimen189
@@ -638,7 +638,7 @@ fg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\langwohyphens=\language3
+\langwohyphens=\language5
 (./Bayesian-and-frequentist-MLM.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -653,7 +653,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <85.35826> not available
-(Font)              size <35.83> substituted on input line 119.
+(Font)              size <35.83> substituted on input line 118.
 
 [1{/Users/agrogan/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -664,49 +664,48 @@ set up.
 This message occurred on input line 177.
 
 [2]
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf, id=112,
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf, id=119,
  289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-1-1.pdf  used on input line 186.
+d-chunk-1-1.pdf  used on input line 205.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf, id=113,
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf, id=120,
  289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-2-1.pdf  used on input line 190.
+d-chunk-2-1.pdf  used on input line 209.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
 
 LaTeX Warning: Marginpar on page 3 moved.
 
-<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf, id=118,
+
+Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
+set up.
+This message occurred on input line 244.
+
+[3 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf> <.
+/Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf>]
+<Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf, id=154,
  289.08pt x 216.81pt>
 File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-3-1.pdf  used on input line 228.
+d-chunk-3-1.pdf  used on input line 247.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
 
-Overfull \hbox (1.97888pt too wide) in paragraph at lines 231--237
+Overfull \hbox (1.97888pt too wide) in paragraph at lines 250--256
 \T1/cmr/m/n/10 (Burkner []2018[]). Such non-linear terms of-fer ways of non-par
 ametrically 
  []
 
-
-Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
-set up.
-This message occurred on input line 246.
-
-[3 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf> <.
-/Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf> <./Baye
-sian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-61.
+80.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -715,8 +714,8 @@ Class tufte-handout Warning: Proper spacing of small-caps letters has not been
 set up.
 This message occurred on input line 307.
 
-[4]
-Overfull \hbox (15.22858pt too wide) in paragraph at lines 320--326
+[4 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>]
+Overfull \hbox (15.22858pt too wide) in paragraph at lines 349--355
 [][]\T1/cmr/m/n/10 Van de Schoot, Rens, David Ka-plan, Jaap Denis-sen, Jens B. 
 Asendorpf, 
  []
@@ -726,56 +725,57 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 358.
 
 Class tufte-handout Warning: Proper spacing of small-caps letters has not been 
 set up.
-This message occurred on input line 329.
+This message occurred on input line 358.
 
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 358.
 (./Bayesian-and-frequentist-MLM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 358.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 358.
 Package rerunfilecheck Info: File `Bayesian-and-frequentist-MLM.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: D79A82F1597AD12604A76051201223D0;1613.
+(rerunfilecheck)             Checksum: 7B33B3B2DA2AFA5AA9E3A317726E0DC5;1741.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 49.52826pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 329.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 358.
  ) 
 Here is how much of TeX's memory you used:
- 12927 strings out of 483172
- 187608 string characters out of 5964868
- 456750 words of memory out of 5000000
- 27626 multiletter control sequences out of 15000+600000
+ 12932 strings out of 482913
+ 187679 string characters out of 5958407
+ 458108 words of memory out of 5000000
+ 27874 multiletter control sequences out of 15000+600000
  545751 words of font info for 61 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 47i,12n,51p,311b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
- </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600p
-k> </Users/agrogan/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm3583.600p
-k></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr5.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr7.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Bayesian-and-frequentist-MLM.pdf (5 pages, 199530 bytes).
+ 47i,12n,51p,311b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </Users/agrogan/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt10
+00.600pk> </Users/agrogan/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecrm0800.600pk> </Users/agrogan/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecrm0900.600pk> </Users/agrogan/Library/TinyTeX/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecti1000.600pk> </Users/agrogan/Library/TinyTeX/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecrm1000.600pk> </Users/agrogan/Library/TinyTeX/texmf-var
+/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </Users/agrogan/Library/TinyTeX/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </Users/agrogan/Library/Tin
+yTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </Users/agrogan/Libr
+ary/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm3583.600pk></Users/agroga
+n/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/
+agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr5.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr7.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb>
+Output written on Bayesian-and-frequentist-MLM.pdf (5 pages, 202420 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 40 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 576 PDF objects out of 1000 (max. 8388607)
+ 239 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 
