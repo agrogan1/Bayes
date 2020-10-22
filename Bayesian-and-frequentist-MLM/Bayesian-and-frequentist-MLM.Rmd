@@ -3,10 +3,6 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
   distill::distill_article:
     highlight: haddock
     toc: yes
@@ -19,12 +15,16 @@ output:
     toc_float:
       collapsed: yes
       smooth_scroll: yes
+  tufte::tufte_html:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
   pdf_document: 
     fig_caption: yes
     fig_height: 3
     number_sections: yes
     toc: yes
-  tufte::tufte_html:
+  tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
     toc: yes
@@ -123,7 +123,7 @@ ggplot(data = NULL,
                 label="\nmedian", y = 1), 
             colour="red", 
             angle= -90) +
-  theme_tufte() + 
+  theme_minimal() + 
   labs(title = "Distribution of \u03b2",
        subtitle = "\u03b2 is Skewed",
        x = "\u03b2") 
@@ -199,8 +199,7 @@ ggplot(data=NULL,
   geom_point() + 
   geom_smooth() +
   labs(title = "Non-Linear Smoother") +
-  # theme_minimal()
-  theme_tufte()
+  theme_minimal()
 
 ```
 
