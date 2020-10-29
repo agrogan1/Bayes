@@ -6,24 +6,6 @@ output:
   distill::distill_article:
     highlight: haddock
     toc: yes
-  html_document:
-    css: UM.css
-    fig_height: 3
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-    toc_float:
-      collapsed: yes
-      smooth_scroll: yes
-  tufte::tufte_html:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
-  pdf_document: 
-    fig_caption: yes
-    fig_height: 3
-    number_sections: yes
-    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
@@ -35,7 +17,7 @@ biblio-style: apalike
 citation_url: https://agrogan1.github.io/Bayes/Bayesian-and-frequentist-MLM/Bayesian-and-frequentist-MLM.html
 ---
 
-\SetWatermarkText{ROUGH DRAFT}
+\SetWatermarkText{DRAFT}
 \SetWatermarkFontSize{3cm}
 
 ```{r setup, include=FALSE}
