@@ -3,12 +3,12 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes  
   pdf_document: 
     highlight: haddock
     latex_engine: xelatex
+  distill::distill_article:
+    highlight: haddock
+    toc: yes  
   html_document: 
     css: ../styles.css
     highlight: haddock
@@ -62,7 +62,7 @@ description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "Removing An Association From A Theory",
                  "Rejecting A Theory")
 
-H0 <- c("$\\beta_1 = \\beta_2$",
+H_0 <- c("$\\beta_1 = \\beta_2$",
         "$\\bar{x_1} = \\bar{x_2}$",
         "$\\beta_{intervention} = 0$",
         "$\\beta_{interaction} = 0$",
@@ -82,7 +82,7 @@ example <- c("The effect of Treatment 1 is indistinguishable from the effect of 
 
 Bayesdata <- data.frame(case, 
                      description,
-                     H0,
+                     H_0,
                      example)
 
 save(Bayesdata, file = "accepting-H0.RData")
