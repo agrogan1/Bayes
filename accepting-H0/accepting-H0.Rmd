@@ -3,15 +3,15 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
-  distill::distill_article:
-    highlight: haddock
-    toc: yes  
   html_document: 
     css: ../styles.css
     highlight: haddock
+  distill::distill_article:
+    highlight: haddock
+    toc: yes  
+  pdf_document: 
+    highlight: haddock
+    latex_engine: xelatex
 institute: University of Michigan
 bibliography: ../Bayes.bib
 ---
@@ -34,7 +34,7 @@ In standard frequentist models, we cannot formally accept the Null Hypothesis $H
 
 Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018]. 
 
-Accepting $H_0$ may have consequences for affirming similarity, universality, or treatment invariance [@Morey2018]. 
+Accepting $H_0$ may have consequences for affirming similarity, universality, or treatment invariance [@Morey2018]. The ability to accept $H_0$ may also lead to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
 
 # Important Substantive Cases
 
