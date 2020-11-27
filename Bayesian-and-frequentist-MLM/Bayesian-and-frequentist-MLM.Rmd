@@ -3,22 +3,18 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
     toc: yes
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-header-includes: \usepackage{draftwatermark}
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
 citation_url: https://agrogan1.github.io/Bayes/Bayesian-and-frequentist-MLM/Bayesian-and-frequentist-MLM.html
 ---
-
-\SetWatermarkText{DRAFT}
-\SetWatermarkFontSize{3cm}
 
 ```{r setup, include=FALSE}
 
@@ -57,11 +53,11 @@ Following Kruschke [-@Kruschke2014] all Bayesian models have a *conceptual appro
 
 In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
 
-# Accepting the Null Hypothesis ($H_0$)
-
 In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating a *full probability distribution* for this parameter.
 
-Such an approach means that we have the ability to accept the null hypothesis $H_0$ [@Kruschke2018]. This ability to accept $H_0$ might possibly lead to theory simplification [@Morey2018], as well as to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
+# Accepting the Null Hypothesis ($H_0$)
+
+The Bayesian approach means that we have the ability to accept the null hypothesis $H_0$ [@Kruschke2018]. This ability to accept $H_0$ might possibly lead to theory simplification [@Morey2018], as well as to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
 
 # Model Comparison
 
