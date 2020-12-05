@@ -3,12 +3,12 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
+    toc: yes
+  distill::distill_article:
+    highlight: haddock
     toc: yes
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
@@ -57,7 +57,7 @@ In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *d
 
 # Accepting the Null Hypothesis ($H_0$)
 
-The Bayesian approach means that we have the ability to accept the null hypothesis $H_0$ [@Kruschke2018]. This ability to accept $H_0$ might possibly lead to theory simplification [@Morey2018], as well as to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
+The Bayesian approach means that we have the ability to accept the null hypothesis $H_0$ [@Kruschke2018]. This ability to accept $H_0$ might possibly lead to theory simplification [@Gallistel2009; @Morey2018], as well as to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
 
 # Model Comparison
 

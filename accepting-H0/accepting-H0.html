@@ -11,7 +11,7 @@
 
 <meta name="author" content="Andy Grogan-Kaylor" />
 
-<meta name="date" content="2020-11-27" />
+<meta name="date" content="2020-12-05" />
 
 <title>The Value of Accepting the Null Hypothesis</title>
 
@@ -206,6 +206,54 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<style type="text/css">
+a.anchor-section {margin-left: 10px; visibility: hidden; color: inherit;}
+a.anchor-section::before {content: '#';}
+.hasAnchor:hover a.anchor-section {visibility: visible;}
+</style>
+<script>// Anchor sections v1.0 written by Atsushi Yasumoto on Oct 3rd, 2020.
+document.addEventListener('DOMContentLoaded', function() {
+  // Do nothing if AnchorJS is used
+  if (typeof window.anchors === 'object' && anchors.hasOwnProperty('hasAnchorJSLink')) {
+    return;
+  }
+
+  const h = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  // Do nothing if sections are already anchored
+  if (Array.from(h).some(x => x.classList.contains('hasAnchor'))) {
+    return null;
+  }
+
+  // Use section id when pandoc runs with --section-divs
+  const section_id = function(x) {
+    return ((x.classList.contains('section') || (x.tagName === 'SECTION'))
+            ? x.id : '');
+  };
+
+  // Add anchors
+  h.forEach(function(x) {
+    const id = x.id || section_id(x.parentElement);
+    if (id === '') {
+      return null;
+    }
+    let anchor = document.createElement('a');
+    anchor.href = '#' + id;
+    anchor.classList = ['anchor-section'];
+    x.classList.add('hasAnchor');
+    x.appendChild(anchor);
+  });
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
 
 
 
@@ -348,7 +396,7 @@ summary {
 
 <h1 class="title toc-ignore">The Value of Accepting the Null Hypothesis</h1>
 <h4 class="author">Andy Grogan-Kaylor</h4>
-<h4 class="date">2020-11-27</h4>
+<h4 class="date">2020-12-05</h4>
 
 </div>
 
@@ -357,7 +405,7 @@ summary {
 <h1>Background</h1>
 <p>In standard frequentist models, we cannot formally accept the Null Hypothesis <span class="math inline">\(H_0\)</span>, but can only reject, or fail to reject, <span class="math inline">\(H_0\)</span>.</p>
 <p>Bayesian models allow one to both accept and reject <span class="math inline">\(H_0\)</span> <span class="citation">(Kruschke and Liddell 2018)</span>.</p>
-<p>Accepting <span class="math inline">\(H_0\)</span> may have consequences for affirming similarity, universality, or treatment invariance <span class="citation">(Morey, Homer, and Proulx 2018)</span>. The ability to accept <span class="math inline">\(H_0\)</span> may also lead to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of <span class="math inline">\(H_0\)</span> <span class="citation">(Kruschke and Liddell 2018)</span>.</p>
+<p>Accepting <span class="math inline">\(H_0\)</span> may have consequences for affirming similarity, universality, or treatment invariance <span class="citation">(Gallistel 2009; Morey, Homer, and Proulx 2018)</span>. The ability to accept <span class="math inline">\(H_0\)</span> may also lead to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of <span class="math inline">\(H_0\)</span> <span class="citation">(Kruschke and Liddell 2018)</span>.</p>
 </div>
 <div id="important-substantive-cases" class="section level1">
 <h1>Important Substantive Cases</h1>
@@ -432,6 +480,9 @@ summary {
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
+<div id="ref-Gallistel2009">
+<p>Gallistel, C R. 2009. “The importance of proving the null.” <em>Psychological Review</em> 116 (2): 439–53. <a href="https://doi.org/10.1037/a0015251">https://doi.org/10.1037/a0015251</a>.</p>
+</div>
 <div id="ref-Hyde2005">
 <p>Hyde, Janet Shibley. 2005. “The Gender Similarities Hypothesis.” <em>American Psychologist</em> 60 (6): 581–92. <a href="https://doi.org/10.1037/0003-066X.60.6.581">https://doi.org/10.1037/0003-066X.60.6.581</a>.</p>
 </div>
@@ -453,7 +504,7 @@ summary {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
