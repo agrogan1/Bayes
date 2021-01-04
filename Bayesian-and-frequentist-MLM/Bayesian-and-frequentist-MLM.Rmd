@@ -3,12 +3,12 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
-    toc: yes
-  distill::distill_article:
-    highlight: haddock
     toc: yes
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
@@ -87,7 +87,7 @@ Bayesian multilevel models may be better with small samples, especially samples 
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
-Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014; @Finch2017].
+Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful [@Rindskopf2020]. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014; @Finch2017].
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 
