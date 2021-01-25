@@ -3,28 +3,15 @@ title: 'Bayesian Calculations: Simulation of Coin Flipping'
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
-    number_sections: yes
-    toc: yes
-  html_document:
-    code_folding: hide
-    code_download: true
-    fig_height: 3
+  distill::distill_article:
     highlight: haddock
-    keep_md: no
-    number_sections: yes
-    theme: default
     toc: yes
-    toc_float:
-      collapsed: yes
-      smooth_scroll: yes
-subtitle: Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior
+subtitle: 'Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior'
 ---
 
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = TRUE,
-                      fig.fullwidth = TRUE,
                       fig.margin = TRUE)
 
 library(pander)
@@ -32,6 +19,8 @@ library(pander)
 library(tufte)
 
 library(tibble)
+
+library(ggplot2)
 
 ```
 
@@ -49,8 +38,6 @@ library(tibble)
 [Bayes Theorem](./Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
 
 # Bayes Rule
-
-> A draft interactive version of these ideas can be found [here](https://agrogan.shinyapps.io/shinyBayes2/).
 
 Mathematically Bayes Theorem is as follows:
 
@@ -90,10 +77,13 @@ Our values of $\theta$ are `r pander(theta1)`, with probabilities $P(\theta)$ of
 
 ```{r}
 
-barplot(names.arg = theta1, 
-        height = ptheta1,
-        main = "prior probabilities",
-        col = "#FFBB00") # graph
+ggplot(data = NULL,
+       aes(x = theta1,
+           y = ptheta1)) +
+  geom_bar(stat = "identity", 
+           fill = "#FFBB00") +
+  labs(title = "Prior Probabilities") +
+  theme_minimal()
 
 ```
 
@@ -127,21 +117,28 @@ n_tails <- sum(data1 == 0) # number of tails
 
 ```
 
-```{r}
+```{r, fig.height=2}
 
-plot(x = seq(1,10), # x from 1 to 10
-     y = rep(1,10), # y = 1
-     col = data1_factor, # color by data 
-     cex = 3, # size
-     lwd = 2, # line width
-     axes = FALSE,
-     main = "10 Coin Tosses",
-     xlab = " ",
-     ylab = " ") 
 
-text(x = seq(1,10), # x from 1 to 10
-     y = rep(1,10), # y = 1
-     labels = data1_factor) # label with data1_factor
+x <- seq(1,10)
+
+y <- rep(1,10)
+
+coindata <- data.frame(x, y, data1_factor)
+
+ggplot(coindata,
+       aes(x = x,
+           y = y,
+           label = data1_factor,
+           color = data1_factor)) +
+  geom_point(size = 10, shape = 1, pch=19) +
+  geom_text() +
+  labs(x = "",
+       y = "") +
+  scale_color_manual(values = c("black", "red")) +
+  theme_void() +
+  theme(legend.position = "none")
+
 
 ```
 
@@ -161,10 +158,13 @@ $$\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} * (1-\theta)^{\tex
 
 likelihood1 <- theta1^n_heads * (1 - theta1)^n_tails # likelihood
 
-barplot(names.arg = theta1, 
-        height = likelihood1,
-        main = "likelihood",
-        col = "#375E97") # graph
+ggplot(data = NULL,
+       aes(x = theta1,
+           y = likelihood1)) +
+  geom_bar(stat = "identity", 
+           fill = "#375E97") +
+  labs(title = "Likelihood") +
+  theme_minimal()
 
 ```
 
@@ -198,11 +198,13 @@ $$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$
 
 posterior1 <- likelihood1 * ptheta1 / pdata1 # Bayes Rule
 
-barplot(names.arg = theta1, 
-        height = posterior1,
-        main = "posterior",
-        col = "#3F681C") # graph
-
+ggplot(data = NULL,
+       aes(x = theta1,
+           y = posterior1)) +
+  geom_bar(stat = "identity", 
+           fill = "#3F681C") +
+  labs(title = "Posterior") +
+  theme_minimal()
 
 ```
 
