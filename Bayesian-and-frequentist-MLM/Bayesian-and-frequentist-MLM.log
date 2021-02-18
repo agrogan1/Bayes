@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.1)  25 JAN 2021 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.1)  18 FEB 2021 14:42
 entering extended mode
 **./Bayesian-and-frequentist-MLM.tex
 (Bayesian-and-frequentist-MLM.tex
@@ -1177,7 +1177,7 @@ File: Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf Gra
 phic file (type pdf)
 <use Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: Bayesian-and-frequentist-MLM_files/figure-latex/unname
-d-chunk-3-1.pdf  used on input line 247.
+d-chunk-3-1.pdf  used on input line 249.
 (pdftex.def)             Requested size: 143.99709pt x 107.9978pt.
 [3 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-1-1.pdf> <.
 /Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-2-1.pdf>]
@@ -1185,19 +1185,19 @@ d-chunk-3-1.pdf  used on input line 247.
 LaTeX Warning: Marginpar on page 4 moved.
 
 
-Overfull \hbox (6.78981pt too wide) in paragraph at lines 250--256
+Overfull \hbox (6.78981pt too wide) in paragraph at lines 252--258
 \T1/pplj/m/n/10 (Burkner []2018[]). Such non-linear terms of-fer ways of non-pa
 rametrically 
  []
 
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 280.
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 282.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bera\t1fvm.fd"
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 280.
+(Font)              scaled to size 8.50006pt on input line 282.
 [4 <./Bayesian-and-frequentist-MLM_files/figure-latex/unnamed-chunk-3-1.pdf>]
-Overfull \hbox (14.25975pt too wide) in paragraph at lines 358--364
+Overfull \hbox (14.25975pt too wide) in paragraph at lines 360--366
 [][]\T1/pplj/m/n/10 Van de Schoot, Rens, David Ka-plan, Jaap Denis-sen, Jens B.
  Asendorpf, 
  []
@@ -1207,16 +1207,16 @@ Package bibentry Warning: You have used \nobibliography*
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 367.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 369.
 [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 367.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 369.
 (Bayesian-and-frequentist-MLM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 367.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 367.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 369.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 369.
 Package rerunfilecheck Info: File `Bayesian-and-frequentist-MLM.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: D7338661D6890ECE8A996ECC886FE6EA;1753.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 367.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 369.
  ) 
 Here is how much of TeX's memory you used:
  13822 strings out of 493305
@@ -1234,7 +1234,7 @@ fpl/fplrc8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/fpl/fplrij8a.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/bera/fvmr8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/urw/palatino/uplri8a.pfb>
-Output written on Bayesian-and-frequentist-MLM.pdf (5 pages, 149907 bytes).
+Output written on Bayesian-and-frequentist-MLM.pdf (5 pages, 149936 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  46 named destinations out of 1000 (max. 500000)
