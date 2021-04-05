@@ -41,7 +41,47 @@ library(ggthemes)
 
 # Introduction
 
-$$y_{ij} = \beta_0 + \beta_1 x_{1i} + u_{0j} + e_{ij}$$
+```{r, fig.height=3, fig.cap="Simulated Multilevel Model"}
+
+N1 <- 100 # L1 sample size
+
+N2 <- 10 # L2 sample size
+
+x <- rnorm(N1, 100, 10)
+
+e <- rnorm(N1, 0, 10)
+
+u0 <- rnorm(N2, 0, .5)
+
+u0 <- rep(u0, 10, each = 10)
+
+u1 <- rnorm(N2, 0, .5)
+
+u1 <- rep(u1, 10, each = 10)
+
+group <- rep(seq(1,10), each = 10)
+
+group <- factor(group)
+
+y <- x + e + u0 + u1 * x # regression relationship
+
+mydata <- data.frame(x, e, u0, u1, y, group)
+
+library(ggplot2)
+
+ggplot(data = mydata,
+       aes(x = x,
+           y = y)) +
+  geom_point(aes(color = group)) +
+  geom_smooth(aes(color = group), method = "lm") +
+  theme_minimal() +
+  # scale_color_viridis_d() +
+  labs(title = "Multilevel Model")
+
+```
+
+
+$$y_{ij} = \beta_0 + \beta_1 x_{1i} + u_{0j} + u_{1j} x + e_{ij}$$
 
 All multilevel models account for group structure, in estimating the association of $x$ and $y$, by including a random intercept ($u_0$), and possibly one or more random slope terms ($u_1, u_2, etc....$).
 
