@@ -3,12 +3,12 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
+    toc: yes
+  distill::distill_article:
+    highlight: haddock
     toc: yes
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
@@ -121,13 +121,13 @@ As Kruschke [-@Kruschke2014] observes, multiple comparisons (especially when the
 
 # Smaller Samples
 
-Bayesian multilevel models may be better with small samples, especially samples with small numbers of Level 2 units [@Hox2012]. It is not clear to what degree this improvement in performance is dependent upon the use of informative priors.
+Bayesian multilevel models may be better with small samples, especially samples with small numbers of Level 2 units [@Hox2012]. Some of this advantage may occur when parameters are not normally distributed. It is not clear to what degree this improvement in performance is dependent upon the use of informative priors.
 
 # Full Distribution of Parameters
 
 Bayesian models of all kinds provide full distributions of the parameters (e.g. $\beta$'s and random effects ($u$'s))--both singly and jointly--rather than only point estimates.
 
-Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful [@Rindskopf2020]. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014; @Finch2017].
+Information about the full distribution of a parameter, such as the estimate of the probability distribution of values of a risk factor, a protective factor, or the effect of an intervention, may be substantively meaningful [@Rindskopf2020]. Such information may be especially important when the distribution of a regression parameter is non-normal [@VandeSchoot2014; @Finch2017] e.g. in smaller samples.
 
 ```{r, fig.height=3, fig.cap="Distribution of a Single Parameter"}
 
