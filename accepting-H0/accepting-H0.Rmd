@@ -63,9 +63,9 @@ description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "Rejecting A Theory")
 
 H_0 <- c("$\\beta_1 = \\beta_2$",
-        "$\\bar{x_1} = \\bar{x_2}$",
+        "$\\bar{y_1} = \\bar{y_2}$; or in multilevel modeling $u_0 = 0$",
         "$\\beta_{intervention} = 0$",
-        "$\\beta_{interaction} = 0$",
+        "$\\beta_{interaction} = 0$; or in multilevel modeling $u_k = 0$",
         "$\\beta_{parent1} = \\beta_{parent2}$",
         "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
         "$\\beta_x = 0$",

@@ -11,7 +11,7 @@
 
 <meta name="author" content="Andy Grogan-Kaylor" />
 
-<meta name="date" content="2020-12-05" />
+<meta name="date" content="2021-04-19" />
 
 <title>The Value of Accepting the Null Hypothesis</title>
 
@@ -206,45 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
-<style type="text/css">
-a.anchor-section {margin-left: 10px; visibility: hidden; color: inherit;}
-a.anchor-section::before {content: '#';}
-.hasAnchor:hover a.anchor-section {visibility: visible;}
-</style>
-<script>// Anchor sections v1.0 written by Atsushi Yasumoto on Oct 3rd, 2020.
-document.addEventListener('DOMContentLoaded', function() {
-  // Do nothing if AnchorJS is used
-  if (typeof window.anchors === 'object' && anchors.hasOwnProperty('hasAnchorJSLink')) {
-    return;
-  }
-
-  const h = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-
-  // Do nothing if sections are already anchored
-  if (Array.from(h).some(x => x.classList.contains('hasAnchor'))) {
-    return null;
-  }
-
-  // Use section id when pandoc runs with --section-divs
-  const section_id = function(x) {
-    return ((x.classList.contains('section') || (x.tagName === 'SECTION'))
-            ? x.id : '');
-  };
-
-  // Add anchors
-  h.forEach(function(x) {
-    const id = x.id || section_id(x.parentElement);
-    if (id === '') {
-      return null;
-    }
-    let anchor = document.createElement('a');
-    anchor.href = '#' + id;
-    anchor.classList = ['anchor-section'];
-    x.classList.add('hasAnchor');
-    x.appendChild(anchor);
-  });
-});
-</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -284,6 +245,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <style type="text/css">h1 {color: #333333;font-family: "Helvetica", "Arial", sans-serif; font-weight: bold;}h2 {color: black;font-family: "Helvetica", "Arial", sans-serif; font-weight: normal;}h3 {color: black;font-family: "Helvetica", "Arial", sans-serif; font-weight: normal;}p {color: black;font-family: "Helvetica", "Arial", sans-serif; font-size: 110%;}ul {font-family: "Helvetica", "Arial", sans-serif; }ol {font-family: "Helvetica", "Arial", sans-serif; }.caption { display: block;color: red;font-weight: bold;}.book .book-body .page-wrapper .page-inner section.normal blockquote {margin: 0 0 .85em;padding: 0 15px;opacity: 1.00;border-left: 10px solid #ffcb05;}blockquote {background: #FFFFFF;color: #000;border-left: 5px solid #ffcb05;margin: 1.5em 10px;padding: 0.5em 10px;}blockquote p {display: inline;}.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {background-color: black;}</style>
 
@@ -396,7 +358,7 @@ summary {
 
 <h1 class="title toc-ignore">The Value of Accepting the Null Hypothesis</h1>
 <h4 class="author">Andy Grogan-Kaylor</h4>
-<h4 class="date">2020-12-05</h4>
+<h4 class="date">2021-04-19</h4>
 
 </div>
 
@@ -435,7 +397,7 @@ summary {
 <tr class="even">
 <td align="center">Equivalence Testing</td>
 <td align="center">Equivalence Of 2 Groups On An Outcome</td>
-<td align="center"><span class="math inline">\(\bar{x_1} = \bar{x_2}\)</span></td>
+<td align="center"><span class="math inline">\(\bar{y_1} = \bar{y_2}\)</span>; or in multilevel modeling <span class="math inline">\(u_0 = 0\)</span></td>
 <td align="center">Men and women are more similar than different <em>wrt</em> psychological processes <span class="citation">(Hyde 2005)</span>.</td>
 </tr>
 <tr class="odd">
@@ -447,7 +409,7 @@ summary {
 <tr class="even">
 <td align="center">Contextual Equivalence</td>
 <td align="center">Equivalence of a Predictor Across Contexts (Moderation)</td>
-<td align="center"><span class="math inline">\(\beta_{interaction} = 0\)</span></td>
+<td align="center"><span class="math inline">\(\beta_{interaction} = 0\)</span>; or in multilevel modeling <span class="math inline">\(u_k = 0\)</span></td>
 <td align="center">Warm and supportive parenting is equally beneficial across different contexts or countries.</td>
 </tr>
 <tr class="odd">
