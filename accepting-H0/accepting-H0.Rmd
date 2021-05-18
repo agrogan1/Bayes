@@ -3,12 +3,12 @@ title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
   distill::distill_article:
     highlight: haddock
     toc: yes  
+  pdf_document: 
+    highlight: haddock
+    latex_engine: xelatex
   html_document: 
     css: ../styles.css
     highlight: haddock
@@ -25,6 +25,8 @@ knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE)
 
 library(knitr)
+
+library(kableExtra)
 
 ```
 
@@ -87,7 +89,13 @@ Bayesdata <- data.frame(case,
 
 save(Bayesdata, file = "accepting-H0.RData")
 
-pander(Bayesdata, split.cells = 10)
+# pander(Bayesdata, split.cells = 10)
+
+Bayesdata %>%
+  kbl() %>%
+  kable_paper("hover", 
+              full_width = T,
+              html_font = "Roboto")
 
 ```
 
