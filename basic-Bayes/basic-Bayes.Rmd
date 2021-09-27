@@ -9,17 +9,17 @@ author:
     affiliation_url: https://www.umich.edu
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
   distill::distill_article:
     highlight: haddock
     toc: no
   pdf_document: 
-    fig_height: 3
+    fig_height: 2
     highlight: haddock
     latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+  tufte::tufte_handout:
+    highlight: haddock
     number_sections: yes
     toc: yes
 ---
@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = FALSE,
 $$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ 
 
 <aside>
-```{r, fig.cap="Thomas Bayes"}
+```{r, fig.cap="Thomas Bayes", out.width = "20%"}
 
 knitr::include_graphics("../Thomas_Bayes.png")
 
