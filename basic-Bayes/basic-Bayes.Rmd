@@ -1,0 +1,64 @@
+---
+title: "Basic Bayes"
+description: |
+  A very quick over view of some of the features and benefits of Bayesian analysis
+author:
+  - name: Andy Grogan-Kaylor
+    url: https://agrogan1.github.io/
+    affiliation: University of Michigan
+    affiliation_url: https://www.umich.edu
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    highlight: haddock
+    toc: no
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
+  pdf_document: 
+    fig_height: 3
+    highlight: haddock
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+# Bayes Theorem:
+
+$$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ 
+
+<aside>
+```{r, fig.cap="Thomas Bayes"}
+
+knitr::include_graphics("../Thomas_Bayes.gif")
+
+```
+</aside>
+
+# In Words:
+
+$\text{posterior} \propto \text{likelihood} \times \text{prior}$ 
+
+# Benefits
+
+1. In Bayesian analysis, we are *not* assessing the plausibility of the data ($P(D|H)$), given the assumption of a null hypothesis $H_0: \text{parameter value} = 0$. This feature of Bayesian analysis has a few key implications:
+
+    + We are actually estimating--*the probability of a particular hypothesis given the data*--what we often *think* we are estimating in Frequentist analysis. Thus, after conducting a Bayesian analysis, we can simply say, "The probability of our hypothesis ($P(H|D)$) given the data is *x*," rather than engaging in complicated statements about "Were the null hypothesis to be true, we estimate that it is *p* likely that we would see data as extreme, or more extreme, than we actually observed."
+    + Because we are directly estimating the probability of hypotheses, we can not only evaluate the probability of the null hypothesis ($H_0$), but also accept the null hypothesis ($H_0$), something that we are never supposed to be able to do in frequentist analysis. Being able to accept the null hypothesis may have implications for *equivalency testing* and *theory simplification* and may reduce publication bias, if we are not always looking for ways to reject $H_0$.
+2. In Bayesian analysis, we are able to incorporate prior information ($P(H)$). Prior information may reflect particular beliefs about the likely value of a parameter, and have higher (vague prior) or lower (informative prior) levels of uncertainty. Prior information may come from a number of sources:
+    + Prior history of a project.
+    + Meta-analyses or systematic reviews of the question being considered.
+    + Expert knowledge, or community beliefs or wisdom.
+3. Because Bayesian estimation relies on *Markov Chain Monte Carlo (MCMC)* simulation methods, Bayesian methods may perform better when there are small samples. In multilevel modeling, Bayesian methods may perform better 
+
+
+
+
+
