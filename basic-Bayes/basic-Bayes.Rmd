@@ -9,19 +9,19 @@ author:
     affiliation_url: https://www.umich.edu
 date: "`r Sys.Date()`"
 output:
-  tufte::tufte_handout:
+  distill::distill_article:
     highlight: haddock
-    number_sections: yes
-    toc: yes
+    toc: no
   pdf_document: 
     fig_height: 2
     highlight: haddock
     latex_engine: xelatex
     number_sections: yes
     toc: yes
-  distill::distill_article:
+  tufte::tufte_handout:
     highlight: haddock
-    toc: no
+    number_sections: yes
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
