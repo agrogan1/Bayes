@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.30)  28 SEP 2021 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.30)  29 SEP 2021 09:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -683,7 +683,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 File: ../Thomas_Bayes.png Graphic file (type png)
 <use ../Thomas_Bayes.png>
 Package pdftex.def Info: ../Thomas_Bayes.png  used on input line 88.
-(pdftex.def)             Requested size: 28.79578pt x 26.9901pt.
+(pdftex.def)             Requested size: 62.39937pt x 58.48654pt.
 LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 
 110.
 (/Users/agrogan/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplj.fd
@@ -707,13 +707,13 @@ Package rerunfilecheck Info: File `basic-Bayes.out' has not changed.
 (rerunfilecheck)             Checksum: 2DEC028B8AF15221CD88432C6C9FE26B;290.
  ) 
 Here is how much of TeX's memory you used:
- 12741 strings out of 480559
- 187784 string characters out of 5902451
- 521029 words of memory out of 5000000
- 30057 multiletter control sequences out of 15000+600000
+ 12742 strings out of 480559
+ 187789 string characters out of 5902451
+ 519032 words of memory out of 5000000
+ 30058 multiletter control sequences out of 15000+600000
  436716 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 81i,11n,83p,259b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,11n,83p,259b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/agrogan/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</User
 s/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 /Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
@@ -723,7 +723,7 @@ a.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/public/fpl/fplrij8
 a.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8
 a.pfb></Users/agrogan/Library/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri
 8a.pfb>
-Output written on basic-Bayes.pdf (2 pages, 137455 bytes).
+Output written on basic-Bayes.pdf (2 pages, 137240 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream

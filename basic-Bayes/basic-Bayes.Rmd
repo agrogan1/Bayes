@@ -9,6 +9,10 @@ author:
     affiliation_url: https://www.umich.edu
 date: "`r Sys.Date()`"
 output:
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
   distill::distill_article:
     highlight: haddock
     toc: no
@@ -18,16 +22,12 @@ output:
     latex_engine: xelatex
     number_sections: yes
     toc: yes
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
-    toc: yes
 ---
 
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = FALSE,
-                      fig.margin = TRUE)
+                      fig.margin = FALSE)
 
 ```
 
