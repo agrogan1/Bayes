@@ -9,13 +9,13 @@ author:
     affiliation_url: https://www.umich.edu
 date: "`r Sys.Date()`"
 output:
+  distill::distill_article:
+    highlight: haddock
+    toc: no
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
     toc: yes
-  distill::distill_article:
-    highlight: haddock
-    toc: no
   pdf_document: 
     fig_height: 2
     highlight: haddock
@@ -57,7 +57,7 @@ $\text{posterior} \propto \text{likelihood} \times \text{prior}$
     + Prior history of a project.
     + Meta-analyses or systematic reviews of the question being considered.
     + Expert knowledge, or community beliefs or wisdom.
-3. Because Bayesian estimation relies on *Markov Chain Monte Carlo (MCMC)* simulation methods, Bayesian methods may perform better when there are small samples. In multilevel modeling, Bayesian methods may perform better when there are small *level 1* and/or *level 2* samples.
+3. Because Bayesian estimation relies on *Markov Chain Monte Carlo (MCMC)* simulation methods, Bayesian methods may perform better when there are small samples. In multilevel modeling, Bayesian methods may perform better when there are small *level 1* and/or *level 2* samples. Adequate model performance will likely depend upon having good prior information.
 
 
 
