@@ -3,6 +3,9 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   tufte::tufte_handout:
     highlight: haddock
     number_sections: yes
@@ -12,9 +15,6 @@ output:
     highlight: haddock
     latex_engine: xelatex
     number_sections: yes
-    toc: yes
-  distill::distill_article:
-    highlight: haddock
     toc: yes
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
@@ -130,7 +130,7 @@ As Kruschke [-@Kruschke2014] observes, multiple comparisons (especially when the
 
 # Smaller Samples
 
-Bayesian multilevel models may be better with small samples, especially samples with small numbers of Level 2 units [@Hox2012]. Some of this advantage may occur when parameters are not normally distributed. It appears that much of this improvement in performance is dependent upon the use of informative priors [@Smid2020], and that Bayesian models with small samples may provide worse estimates than maximum likelihood estimates when less informative, or inaccurate, priors are used.
+Bayesian multilevel models may be better with small samples [@VandeSchoot2015], especially samples with small numbers of Level 2 units [@Hox2012]. Some of this advantage may occur when parameters are not normally distributed. It appears that much of this improvement in performance is dependent upon the use of informative priors [@Smid2020], and that Bayesian models with small samples may provide worse estimates than maximum likelihood estimates when less informative, or inaccurate, priors are used.
 
 # Full Distribution of Parameters
 
