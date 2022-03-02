@@ -3,24 +3,22 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
+  distill::distill_article:
+    highlight: haddock
+    toc: yes
   pdf_document: 
     fig_height: 3
     highlight: haddock
     latex_engine: xelatex
     number_sections: yes
     toc: yes
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-  tufte::tufte_handout:
-    highlight: haddock
+  tint::tintPdf:
+    toc: no
     number_sections: yes
-    toc: yes
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
 citation_url: https://agrogan1.github.io/Bayes/Bayesian-and-frequentist-MLM/Bayesian-and-frequentist-MLM.html
-mainfont: Arial
 ---
 
 ```{r setup, include=FALSE}
@@ -100,7 +98,7 @@ Bayesian models may offer some advantages over frequentist models, but may be *s
 
 Following Kruschke [-@Kruschke2014] all Bayesian models have a *conceptual appropriateness*. 
 
-In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). Quite often, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is not a substantively interesting or substantively meaningful hypothesis. 
+In frequentist reasoning we are estimating the probability of observing data at least as extreme as our data, while assuming a null hypothesis ($H_0$). As has been noted, $H_0$, *e.g.* $\beta = 0$, or $\bar{x}_A - \bar{x}_B = 0$, is very often not a substantively interesting or substantively meaningful hypothesis. 
 
 In Bayesian analysis, we are not rejecting a null hypothesis. Instead, we are *directly estimating the value of a parameter* such as $\beta$ and are indeed estimating a *full probability distribution* for this parameter.
 
@@ -130,7 +128,7 @@ As Kruschke [-@Kruschke2014] observes, multiple comparisons (especially when the
 
 # Smaller Samples
 
-Bayesian multilevel models may be better with small samples [@VandeSchoot2015], especially samples with small numbers of Level 2 units [@Hox2012]. Some of this advantage may occur when parameters are not normally distributed. It appears that much of this improvement in performance is dependent upon the use of informative priors [@Smid2020], and that Bayesian models with small samples may provide worse estimates than maximum likelihood estimates when less informative, or inaccurate, priors are used.
+Bayesian multilevel models may be better with small samples [@VandeSchoot2015], especially samples with small numbers of Level 2 units [@Hox2012]. Some of this advantage may occur when parameters are not normally distributed. It appears that much of this improvement in performance is dependent upon the use of informative priors [@Smid2020], and that Bayesian models with small samples may provide worse estimates than maximum likelihood estimates when less informative, or inaccurate, priors are used [@McNeish2016].
 
 # Full Distribution of Parameters
 
