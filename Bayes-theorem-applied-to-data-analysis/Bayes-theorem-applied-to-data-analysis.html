@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Bayes Theorem</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Andy Grogan-Kaylor" />
+    <meta name="date" content="2022-03-09" />
+    <script src="libs/header-attrs-2.12/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Bayes Theorem
+## Applied To Data Analysis
+### Andy Grogan-Kaylor
+### University of Michigan
+### 2022-03-09
+
+---
+
+
+&lt;style type="text/css"&gt;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap');
+.title-slide { 
+  color: #ffcb05;
+  background-color: #00274C; 
+}
+.title-slide h1 {
+    color: #ffcb05;
+}
+pre {
+  white-space: pre-wrap;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+body { 
+    font-family: 'Montserrat', sans-serif;
+}
+.author, .date {
+  font-family: 'Montserrat', sans-serif;
+}
+blockquote { 
+  border-left: 5px solid #ffcb05; 
+  margin: 1.5em 10px; 
+  padding: 0.5em 10px;
+}
+
+&lt;/style&gt;
+
+
+
+# How To Navigate This Presentation
+
+* Use the &lt;span style="font-size:100px"&gt;&amp;#8678;&lt;/span&gt; and &lt;span style="font-size:100px"&gt;&amp;#8680;&lt;/span&gt; keys to move through the presentation.
+* Press *o* for *panel overview*.
+
+---
+# Derivation
+
+--
+
+|               | D=1                  | D=0                             |
+|:--------------|:---------------------|:--------------------------------|
+| H=1           | `\(P(D, H)\)`            | `\(P(\text{not} D, H)\)`            |
+| H=0           | `\(P(D, \text{not} H)\)` | `\(P(\text{not} D, \text{not} H)\)` |
+
+--
+
+From the definition of conditional probability: 
+
+--
+
+`\(P(D|H) = P(D,H) / P(H)\)`
+
+--
+
+`\(P(H|D) = P(D,H) / P(D)\)`
+
+---
+# Then: 
+
+--
+
+`\(P(D|H)P(H) = P(D,H)\)`
+
+--
+
+`\(P(H|D)P(D) = P(D,H)\)`
+
+--
+
+# Then:
+
+`\(P(D|H)P(H) = P(H|D)P(D)\)`
+
+---
+# Bayes Theorem:
+
+`\(P(H|D) = \frac{P(D|H) P(H)}{P(D)}\)` 
+
+--
+# In Words:
+
+`\(\text{posterior} \propto \text{likelihood} \times \text{prior}\)` 
+
+
+
+---
+# Example 
+
+Consider an example using 1,000 hypothetical studies. We imagine that only 10% of interventions are likely to have results. We adopt standard assumptions of adopting an `\(\alpha\)`, or chance of detecting an effect when one is not there of 5%. We similarly assume 80% power `\(\beta\)`, or a 20% chance of failing to detect an effect when it is not present. 
+
+--
+
+|  Data (D)                | D=1 (effect)        | D=0 (no effect)    |
+|:-------------------------|:--------------------|:-------------------|
+| Hypothesis (H)           | 100 effects         | 900 non-effects    |
+| H=1 (conclude effect)    | 80 true positives   | 45 false positives |
+| H=0 (conclude no effect) | 20 false negatives  | 855 true negatives |
+
+--
+
+&gt; With thanks to the [Wikipedia article](https://en.wikipedia.org/wiki/Bayes%27_theorem#Cancer_rate) on this topic for inspiration for this example.
+
+---
+class: center, top
+# Visualization
+
+&lt;img src="Bayes-theorem-applied-to-data-analysis_files/figure-html/unnamed-chunk-3-1.png" width="80%" /&gt;
+
+
+---
+# Calculations
+
+--
+
+`$$P(\text{effect} | \text{conclude effect}) = \frac{P(\text{conclude effect} | \text{effect}) P(\text{effect})}{P(\text{conclude effect})}$$`
+
+--
+
+`$$=\frac{P(\text{conclude effect} | \text{effect}) P(\text{effect})}{P(\text{conclude effect} | \text{effect}) P(\text{effect}) + P(\text{conclude effect} | \text{no effect}) P(\text{no effect})}$$`
+
+--
+
+`$$P(\text{effect} | \text{conclude effect}) = \frac{.8 \times .1}{.08 + .045} = .64$$`
+
+--
+
+&gt; See also [Thinking Through Bayesian Ideas](https://agrogan.shinyapps.io/Thinking-Through-Bayes/)
+
+---
+# Discussion
+
+--
+* Calculations suggest that a true effect is likely in 64% of the cases where one concludes the presence of an effect.
+
+--
+
+* Consequently, calculations suggest that 36% of the time, when one concludes there is an effect, there is actually no effect. 
+
+--
+
+* Put another way, despite setting `\(\alpha = .05\)`, 36% of cases result in a false positive.
+
+--
+
+* Notice how the Bayesian approach lets us estimate the probability of different hypotheses given the data. In some cases, this may afford us the opportunity to accept our null hypothesis `\(H_0\)`.
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
