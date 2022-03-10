@@ -4,17 +4,19 @@
     <title>Bayes Theorem</title>
     <meta charset="utf-8" />
     <meta name="author" content="Andy Grogan-Kaylor" />
-    <meta name="date" content="2022-03-09" />
+    <meta name="date" content="2022-03-10" />
     <script src="libs/header-attrs-2.12/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link href="libs/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view-0.2.6/tile-view.js"></script>
+    <link href="libs/animate.css-3.7.2/animate.xaringan.css" rel="stylesheet" />
     <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
     <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
     <script src="libs/shareon-1.4.1/shareon.min.js"></script>
     <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <script src="libs/xaringanExtra-progressBar-0.0.1/progress-bar.js"></script>
   </head>
   <body>
     <textarea id="source">
@@ -24,7 +26,7 @@ class: center, middle, inverse, title-slide
 ## Applied To Data Analysis
 ### Andy Grogan-Kaylor
 ### University of Michigan
-### 2022-03-09
+### 2022-03-10
 
 ---
 
@@ -67,6 +69,7 @@ blockquote {
 * Press *o* for *panel overview*.
 
 ---
+class: animated, fadeIn
 # Derivation
 
 --
@@ -89,6 +92,7 @@ From the definition of conditional probability:
 `\(P(H|D) = P(D,H) / P(D)\)`
 
 ---
+class: animated, fadeIn
 # Then: 
 
 --
@@ -106,6 +110,7 @@ From the definition of conditional probability:
 `\(P(D|H)P(H) = P(H|D)P(D)\)`
 
 ---
+class: animated, fadeIn
 # Bayes Theorem:
 
 `\(P(H|D) = \frac{P(D|H) P(H)}{P(D)}\)` 
@@ -118,6 +123,7 @@ From the definition of conditional probability:
 
 
 ---
+class: animated, fadeIn
 # Example 
 
 Consider an example using 1,000 hypothetical studies. We imagine that only 10% of interventions are likely to have results. We adopt standard assumptions of adopting an `\(\alpha\)`, or chance of detecting an effect when one is not there of 5%. We similarly assume 80% power `\(\beta\)`, or a 20% chance of failing to detect an effect when it is not present. 
@@ -135,32 +141,34 @@ Consider an example using 1,000 hypothetical studies. We imagine that only 10% o
 &gt; With thanks to the [Wikipedia article](https://en.wikipedia.org/wiki/Bayes%27_theorem#Cancer_rate) on this topic for inspiration for this example.
 
 ---
-class: center, top
+class: animated, fadeIn, center, top
 # Visualization
 
 &lt;img src="Bayes-theorem-applied-to-data-analysis_files/figure-html/unnamed-chunk-3-1.png" width="80%" /&gt;
 
 
 ---
+class: animated, fadeIn
 # Calculations
 
 --
 
-`$$P(\text{effect} | \text{conclude effect}) = \frac{P(\text{conclude effect} | \text{effect}) P(\text{effect})}{P(\text{conclude effect})}$$`
+`$$P(\text{H=1} | \text{D=1}) = \frac{P(\text{D=1} | \text{H=1}) P(\text{H=1})}{P(\text{D})}$$`
 
 --
 
-`$$=\frac{P(\text{conclude effect} | \text{effect}) P(\text{effect})}{P(\text{conclude effect} | \text{effect}) P(\text{effect}) + P(\text{conclude effect} | \text{no effect}) P(\text{no effect})}$$`
+`$$=\frac{P(\text{D=1} | \text{H=1}) P(\text{H=1})}{P(\text{D=1} | \text{H=1}) P(\text{H=1}) + P(\text{D=0} | \text{H=1}) P(\text{H=1})}$$`
 
 --
 
-`$$P(\text{effect} | \text{conclude effect}) = \frac{.8 \times .1}{.08 + .045} = .64$$`
+`$$P(\text{H=1} | \text{D=1}) = \frac{.8 \times .1}{.08 + .045} = .64$$`
 
 --
 
 &gt; See also [Thinking Through Bayesian Ideas](https://agrogan.shinyapps.io/Thinking-Through-Bayes/)
 
 ---
+class: animated, fadeIn
 # Discussion
 
 --

@@ -51,9 +51,11 @@ knitr::opts_chunk$set(echo = FALSE,
 
 xaringanExtra::use_tile_view()
 
-# xaringanExtra::use_slide_tone()
+xaringanExtra::use_animate_css()
 
 xaringanExtra::use_share_again()
+
+xaringanExtra::use_progress_bar(color = "#ffcb05", location = "bottom")
 
 ```
 
@@ -63,6 +65,7 @@ xaringanExtra::use_share_again()
 * Press *o* for *panel overview*.
 
 ---
+class: animated, fadeIn
 # Derivation
 
 --
@@ -85,6 +88,7 @@ $P(D|H) = P(D,H) / P(H)$
 $P(H|D) = P(D,H) / P(D)$
 
 ---
+class: animated, fadeIn
 # Then: 
 
 --
@@ -102,6 +106,7 @@ $P(H|D)P(D) = P(D,H)$
 $P(D|H)P(H) = P(H|D)P(D)$
 
 ---
+class: animated, fadeIn
 # Bayes Theorem:
 
 $P(H|D) = \frac{P(D|H) P(H)}{P(D)}$ 
@@ -129,6 +134,7 @@ $P(D|H) = \frac{P(H|D)P(D)}{\int P(H|D_i)P(D_i) dD}$
 ```
 
 ---
+class: animated, fadeIn
 # Example 
 
 Consider an example using 1,000 hypothetical studies. We imagine that only 10% of interventions are likely to have results. We adopt standard assumptions of adopting an $\alpha$, or chance of detecting an effect when one is not there of 5%. We similarly assume 80% power $\beta$, or a 20% chance of failing to detect an effect when it is not present. 
@@ -146,7 +152,7 @@ Consider an example using 1,000 hypothetical studies. We imagine that only 10% o
 > With thanks to the [Wikipedia article](https://en.wikipedia.org/wiki/Bayes%27_theorem#Cancer_rate) on this topic for inspiration for this example.
 
 ---
-class: center, top
+class: animated, fadeIn, center, top
 # Visualization
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, out.width="80%", fig.retina=3}
@@ -216,25 +222,27 @@ p1
 
 
 ---
+class: animated, fadeIn
 # Calculations
 
 --
 
-$$P(\text{effect} | \text{conclude effect}) = \frac{P(\text{conclude effect} | \text{effect}) P(\text{effect})}{P(\text{conclude effect})}$$
+$$P(\text{H=1} | \text{D=1}) = \frac{P(\text{D=1} | \text{H=1}) P(\text{H=1})}{P(\text{D})}$$
 
 --
 
-$$=\frac{P(\text{conclude effect} | \text{effect}) P(\text{effect})}{P(\text{conclude effect} | \text{effect}) P(\text{effect}) + P(\text{conclude effect} | \text{no effect}) P(\text{no effect})}$$
+$$=\frac{P(\text{D=1} | \text{H=1}) P(\text{H=1})}{P(\text{D=1} | \text{H=1}) P(\text{H=1}) + P(\text{D=0} | \text{H=1}) P(\text{H=1})}$$
 
 --
 
-$$P(\text{effect} | \text{conclude effect}) = \frac{.8 \times .1}{.08 + .045} = .64$$
+$$P(\text{H=1} | \text{D=1}) = \frac{.8 \times .1}{.08 + .045} = .64$$
 
 --
 
 > See also [Thinking Through Bayesian Ideas](https://agrogan.shinyapps.io/Thinking-Through-Bayes/)
 
 ---
+class: animated, fadeIn
 # Discussion
 
 --
