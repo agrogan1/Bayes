@@ -243,7 +243,7 @@ Bayesian estimators allow for the incorporation of non-linear terms [@Burkner201
 
 Bayesian estimators allow for the estimation of so called *maximal models* [@Barr2013; @Frank2018], which allow for the inclusion of a large number of random slopes, e.g. $u_1, u_2, u_3, ..., etc.$ even when some of those estimated slopes are close to 0. 
 
-It should be noted that  Matuschek et al. [-@Matuschek2017] argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data." In contrast, Nalborczyk et al. [-@nalborczyk_batailler_loevenbruck_vilain_bürkner_2019] argue that maximal models are supported under the Bayesian approach.
+It should be noted that  Matuschek et al. [-@Matuschek2017] argue that such a *maximal* approach may lead to a loss of statistical power and further argue that one should adhere to "a random effect structure that is supported by the data." In contrast, Nalborczyk et al. [-@nalborczyk_batailler_loevenbruck_vilain_bürkner_2019] argue that maximal models are supported under the Bayesian approach. Oberauer [-@Oberauer2022] also argues for including multiple random slopes.
 
 ```{r, echo=FALSE, results='asis'}
 
