@@ -3,10 +3,6 @@ title: "Bayesian and Frequentist Multilevel Modeling"
 author: "Andy Grogan-Kaylor"
 date: "`r Sys.Date()`"
 output:
-  tint::tintPdf:
-    toc: yes
-    number_sections: yes
-    latex_engine: xelatex
   distill::distill_article:
     highlight: haddock
     toc: yes
@@ -16,10 +12,15 @@ output:
     latex_engine: xelatex
     number_sections: yes
     toc: yes
+  tint::tintPdf:
+    toc: yes
+    number_sections: yes
+    latex_engine: xelatex
 link-citations: yes
 bibliography: Bayesian-and-frequentist-MLM.bib
 biblio-style: apalike
 citation_url: https://agrogan1.github.io/Bayes/Bayesian-and-frequentist-MLM/Bayesian-and-frequentist-MLM.html
+mainfont: Arial
 ---
 
 ```{r setup, include=FALSE}
