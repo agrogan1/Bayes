@@ -11,10 +11,6 @@ date: "`r Sys.Date()`"
 output:
   distill::distill_article:
     highlight: haddock
-    toc: no
-  tufte::tufte_handout:
-    highlight: haddock
-    number_sections: yes
     toc: yes
   pdf_document: 
     fig_height: 2
@@ -22,21 +18,25 @@ output:
     latex_engine: xelatex
     number_sections: yes
     toc: yes
+  tufte::tufte_handout:
+    highlight: haddock
+    number_sections: yes
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
 
 knitr::opts_chunk$set(echo = FALSE,
-                      fig.margin = FALSE)
+                      fig.margin = TRUE)
 
 ```
 
-# Bayes Theorem:
+# Bayes Theorem
 
 $$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ 
 
 <aside>
-```{r, fig.cap="Thomas Bayes", out.width = "20%"}
+```{r, fig.cap="Thomas Bayes", fig.margin=TRUE, out.width="50%"}
 
 knitr::include_graphics("../Thomas_Bayes.png")
 
