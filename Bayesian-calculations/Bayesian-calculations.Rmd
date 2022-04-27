@@ -16,8 +16,6 @@ knitr::opts_chunk$set(echo = TRUE,
 
 library(pander)
 
-library(tufte)
-
 library(tibble)
 
 library(ggplot2)
@@ -220,7 +218,7 @@ pander(myBayesianEstimates) # nice table
 
 # Credits
 
-Prepared by Andy Grogan-Kaylor [agrogan@umich.edu](agrogan@umich.edu), [www.umich.edu/~agrogan](www.umich.edu/~agrogan).
+Prepared by Andy Grogan-Kaylor [agrogan@umich.edu](agrogan@umich.edu), [https://agrogan1.github.io/](https://agrogan1.github.io/).
 
 Questions, comments and corrections are most welcome.
 
