@@ -5,13 +5,12 @@ date: "`r Sys.Date()`"
 output:
   distill::distill_article:
     highlight: haddock
-    toc: yes  
-  pdf_document: 
-    highlight: haddock
-    latex_engine: xelatex
-  html_document: 
-    css: ../styles.css
-    highlight: haddock
+    toc: yes
+  pdf_document:
+    toc: yes
+  html_document:
+    toc: yes
+    df_print: paged
 institute: University of Michigan
 bibliography: ../Bayes.bib
 ---
@@ -49,6 +48,8 @@ Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018].
 Accepting $H_0$ may have consequences for affirming similarity, universality, or treatment invariance [@Gallistel2009; @Morey2018]. The ability to accept $H_0$ may also lead to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018].
 
 > This handout is written from a *Bayesian* perspective. However, even from a traditional *frequentist* statistical perspective, it may be helpful to think about the *value* of results that are *not statistically significant*.
+
+\pagebreak
 
 # Important Substantive Cases
 
@@ -101,13 +102,33 @@ Bayesdata <- data.frame(case,
 
 save(Bayesdata, file = "accepting-H0.RData")
 
+```
+
+```{r}
+
 # pander(Bayesdata, split.cells = 10)
 
-Bayesdata %>%
-  kbl() %>%
-  kable_paper("hover", 
-              full_width = T,
-              html_font = "Roboto")
+if(opts_knit$get("rmarkdown.pandoc.to") == 'html5'){
+  
+  Bayesdata %>%
+    kbl() %>%
+    kable_paper("hover", 
+                full_width = T,
+                html_font = "Roboto")
+  
+}
+
+if(opts_knit$get("rmarkdown.pandoc.to") == 'latex'){
+  
+  Bayesdata$H_0 <- gsub("<br>","\n", Bayesdata$H_0) # <br> to \n for LaTeX
+  
+  Bayesdata$H_0 <- gsub("\\\\\\\\","\\\\", Bayesdata$H_0)
+  
+  set.alignment('left')
+  
+  pander(Bayesdata, split.cells = 10)
+  
+}
 
 ```
 
