@@ -12,6 +12,8 @@ output:
     toc: yes
     df_print: paged
 institute: University of Michigan
+citation_url: https://agrogan1.github.io
+slug: "`r paste0('Grogan-Kaylor', format(Sys.Date(), '%Y'), 'null')`"
 bibliography: ../Bayes.bib
 ---
 
@@ -132,7 +134,17 @@ if(opts_knit$get("rmarkdown.pandoc.to") == 'latex'){
 
 ```
 
-# References
+```{r, echo=FALSE, results='asis'}
+
+# print a reference header when not HTML5
+
+if(knitr::opts_knit$get("rmarkdown.pandoc.to") != "html5") {
+  
+  cat("# References")
+  
+}
+
+```
 
 
 
