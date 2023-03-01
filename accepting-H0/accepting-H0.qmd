@@ -1,20 +1,17 @@
 ---
 title: "The Value of Accepting the Null Hypothesis"
 author: "Andy Grogan-Kaylor"
-date: "`r Sys.Date()`"
-output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-  pdf_document:
-    toc: yes
-  html_document:
-    toc: yes
-    df_print: paged
-institute: University of Michigan
-citation_url: https://agrogan1.github.io
-slug: "`r paste0('Grogan-Kaylor', format(Sys.Date(), '%Y'), 'null')`"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
 bibliography: ../Bayes.bib
+nocite: |
+  @Hyde2005
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +30,7 @@ library(kableExtra)
 
 ```{css, echo=FALSE}
 
-d-article blockquote {
+blockquote {
   color: black;
   border-left: 2px solid gold; 
   padding: 0.5em 10px;
@@ -75,27 +72,27 @@ description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "There Is No Evidence That Intervention X Is Effective",
                  "Equivalence of a Predictor Across Contexts (Moderation)",
                  "Equivalence of a Predictor Across Family Members",
-                 "$x \\rightarrow y$ Association Is Completely Mediated; No Direct Effect",
+                 "Association of x and y Is Completely Mediated; No Direct Effect",
                  "Removing An Association From A Theory",
                  "Rejecting A Theory")
 
-H_0 <- c("$\\beta_1 = \\beta_2$",
-        "$\\bar{y_1} = \\bar{y_2}$; or in multilevel modeling $u_0 = 0$",
-        "$\\beta_{intervention} = 0$",
-        "$\\beta_{interaction} = 0$; or in multilevel modeling $u_k = 0$",
-        "$\\beta_{parent1} = \\beta_{parent2}$",
-        "$\\beta_{xmy} \\neq 0$; $\\beta_{xy} = 0$",
-        "$\\beta_x = 0$",
-        "$\\beta_{theory} = 0$")
+H_0 <- c("$$\\beta_1 = \\beta_2$$",
+        "$$\\bar{y_1} = \\bar{y_2}$$ or in multilevel modeling $$u_0 = 0$$",
+        "$$\\beta_{intervention} = 0$$",
+        "$$\\beta_{interaction} = 0$$ or in multilevel modeling $$u_k = 0$$",
+        "$$\\beta_{parent1} = \\beta_{parent2}$$",
+        "$$\\beta_{xmy} \\neq 0$$ $$\\beta_{xy} = 0$$",
+        "$$\\beta_x = 0$$",
+        "$$\\beta_{theory} = 0$$")
 
 example <- c("The effect of Treatment 1 is indistinguishable from the effect of Treatment 2 (especially important if one treatment is much more expensive, or time consuming than another).",
-             "Men and women are more similar than different *wrt* psychological processes [@Hyde2005].", 
+             "Men and women are more similar than different with regard to psychological processes (Hyde2005).", 
              "Evidence consistently suggests that a particular treatment has near zero effect.",
              "Warm and supportive parenting is equally beneficial across different contexts or countries.",
              "Parenting from one parent is equivalent to parenting from another parent",
-             "The relationship of the treatment and the outcome is completely mediated by mechanism *m*.",
+             "The relationship of the treatment and the outcome is completely mediated by mechanism m.",
              "There is no evidence that x is associated with y.",
-             "There is strong evidence (*contra* Theory X) that x is not associated with y.")
+             "There is strong evidence (contra Theory X) that x is not associated with y.")
 
 Bayesdata <- data.frame(case, 
                      description,
@@ -110,13 +107,17 @@ save(Bayesdata, file = "accepting-H0.RData")
 
 # pander(Bayesdata, split.cells = 10)
 
-if(opts_knit$get("rmarkdown.pandoc.to") == 'html5'){
+if(opts_knit$get("rmarkdown.pandoc.to") == 'html'){
+  
+  # kable(Bayesdata) 
   
   Bayesdata %>%
     kbl() %>%
-    kable_paper("hover", 
+    kable_paper("hover",
                 full_width = T,
                 html_font = "Roboto")
+  
+  # pander::pander(Bayesdata)
   
 }
 
