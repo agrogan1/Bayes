@@ -48,7 +48,9 @@ Accepting $H_0$ may have consequences for affirming similarity, universality, or
 
 > This handout is written from a *Bayesian* perspective. However, even from a traditional *frequentist* statistical perspective, it may be helpful to think about the *value* of results that are *not statistically significant*.
 
-\pagebreak
+> A finding of a *null result* is dependent on having enough statistical power that one might plausibly detect an effect were an effect to exist.
+
+{{< pagebreak >}}
 
 # Important Substantive Cases
 
