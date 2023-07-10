@@ -22,6 +22,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -46,7 +65,14 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">2</span>  References</a></li>
+  </ul>
+</nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -79,6 +105,9 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p><span class="citation" data-cites="StataCorp2023">StataCorp (<a href="#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span> provides the following example of a classification table to compare the actual values in a data set with the predicted values in a data set.</p>
 <p><span class="math display">\[\begin{array}{c|cc}
 &amp; \rlap{\text{True}} \\
 \text{Classified} &amp; D &amp; \neg D \\
@@ -87,6 +116,15 @@ ul.task-list li input[type="checkbox"] {
 \hline
 - &amp; P(-, D) &amp; P(-, \neg D) \\
 \end{array}\]</span></p>
+</section>
+<section id="references" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
+<div id="ref-StataCorp2023" class="csl-entry" role="doc-biblioentry">
+StataCorp. (2023). <em>Stata 18 base reference manual</em>. Stata Press.
+</div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->

@@ -14,7 +14,12 @@ format:
     number-sections: true
     colorlinks: true
 bibliography: references.bib
+csl: apa.csl
 ---
+
+# Introduction
+
+@StataCorp2023 provides the following example of a classification table to compare the actual values in a data set with the predicted values in a data set. 
 
 $$\begin{array}{c|cc}
 & \rlap{\text{True}} \\
@@ -24,4 +29,9 @@ $$\begin{array}{c|cc}
 \hline
 - & P(-, D) & P(-, \neg D) \\
 \end{array}$$
+
+# References
+
+::: {#refs}
+:::
 
