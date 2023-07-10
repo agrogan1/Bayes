@@ -1,0 +1,27 @@
+---
+title: "Two by Two Tables and Bayes Theorem"
+author: "Andy Grogan-Kaylor"
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+bibliography: references.bib
+---
+
+$$\begin{array}{c|cc}
+& \rlap{\text{True}} \\
+\text{Classified} & D & \neg D \\
+\hline
++ & P(+, D) & P(+, \neg D) \\
+\hline
+- & P(-, D) & P(-, \neg D) \\
+\end{array}$$
+
