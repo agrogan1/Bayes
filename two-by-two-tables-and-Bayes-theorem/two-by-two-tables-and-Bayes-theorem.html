@@ -59,6 +59,7 @@ div.csl-indent {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -70,7 +71,8 @@ div.csl-indent {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">2</span>  References</a></li>
+  <li><a href="#quantities" id="toc-quantities" class="nav-link" data-scroll-target="#quantities"><span class="toc-section-number">2</span>  Quantities</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">3</span>  References</a></li>
   </ul>
 </nav>
 </div>
@@ -107,7 +109,10 @@ div.csl-indent {
 
 <section id="introduction" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p><span class="citation" data-cites="StataCorp2023">StataCorp (<a href="#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span> provides the following example of a classification table to compare the actual values in a data set with the predicted values in a data set.</p>
+<blockquote class="blockquote">
+<p>The first part of this handout draws heavily on Stata’s documentation, though I have changed the notation slightly.</p>
+</blockquote>
+<p><span class="citation" data-cites="StataCorp2023">StataCorp (<a href="#ref-StataCorp2023" role="doc-biblioref">2023</a>)</span> provides the following example of a <em>classification table</em> to compare the <em>true</em> values in a data set with the <em>predicted</em> values in a data set.</p>
 <p><span class="math display">\[\begin{array}{c|cc}
 &amp; \rlap{\text{True}} \\
 \text{Classified} &amp; D &amp; \neg D \\
@@ -117,8 +122,14 @@ div.csl-indent {
 - &amp; P(-, D) &amp; P(-, \neg D) \\
 \end{array}\]</span></p>
 </section>
-<section id="references" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> References</h1>
+<section id="quantities" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Quantities</h1>
+<p>Stata documentation <span class="citation" data-cites="StataCorp2023">(<a href="#ref-StataCorp2023" role="doc-biblioref">StataCorp, 2023</a>)</span> goes on to define the following quantities.</p>
+<p>Sensitivity <span class="math inline">\(P(+|D)\)</span></p>
+<p>Specificity <span class="math inline">\(P(-|\neg D)\)</span></p>
+</section>
+<section id="references" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
 <div id="ref-StataCorp2023" class="csl-entry" role="doc-biblioentry">
 StataCorp. (2023). <em>Stata 18 base reference manual</em>. Stata Press.

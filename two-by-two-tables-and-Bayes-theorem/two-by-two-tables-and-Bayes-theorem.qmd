@@ -13,13 +13,16 @@ format:
     toc: true
     number-sections: true
     colorlinks: true
+css: styles.css
 bibliography: references.bib
 csl: apa.csl
 ---
 
 # Introduction
 
-@StataCorp2023 provides the following example of a classification table to compare the actual values in a data set with the predicted values in a data set. 
+> The first part of this handout draws heavily on Stata's documentation, though I have changed the notation slightly. 
+
+@StataCorp2023 provides the following example of a *classification table* to compare the *true* values in a data set with the *predicted* values in a data set. 
 
 $$\begin{array}{c|cc}
 & \rlap{\text{True}} \\
@@ -29,6 +32,14 @@ $$\begin{array}{c|cc}
 \hline
 - & P(-, D) & P(-, \neg D) \\
 \end{array}$$
+
+# Quantities
+
+Stata documentation [@StataCorp2023] goes on to define the following quantities. 
+
+Sensitivity $P(+|D)$ 
+
+Specificity $P(-|\neg D)$
 
 # References
 
