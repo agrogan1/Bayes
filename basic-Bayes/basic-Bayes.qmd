@@ -37,6 +37,10 @@ $$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$
 
 $\text{posterior} \propto \text{likelihood} \times \text{prior}$ 
 
+# In Even More Words:
+
+Our posterior (updated) beliefs about the probability of some hypothesis are proportional to our prior beliefs about the probability of that hypothesis multiplied by the likelihood that were our hypothesis true it would have generated the data we observe.
+
 # Benefits
 
 1. In Bayesian analysis, we are *not* assessing the plausibility of the data ($P(D|H)$), given the assumption of a null hypothesis $H_0: \text{parameter value} = 0$. This feature of Bayesian analysis has a few key implications:
