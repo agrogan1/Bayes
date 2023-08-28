@@ -35,6 +35,8 @@
   <link href="Bayestalk_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Bayestalk_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Bayestalk_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Bayestalk_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Bayestalk_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="Bayestalk_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -356,6 +358,26 @@ Andy Grogan-Kaylor
 </section>
 <section id="background" class="slide level2">
 <h2>Background</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Thomas_Bayes.png"></p>
+<figcaption>Thomas Bayes</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Laplace_Pierre-Simon.png"></p>
+<figcaption>Pierre-Simon Laplace</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <p>Bayesian statistics are often touted as the <em>new statistics</em>, that should perhaps supplant traditional <em>frequentist</em> statistics.</p>
 </section>
 <section id="advantages" class="slide level2">
@@ -368,7 +390,41 @@ Andy Grogan-Kaylor
 <p>However, Bayesian statistics may be difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive</p>
 <p>Lastly, the advantages of being able to <em>incorporate prior information</em> and to <em>accept the null hypothesis</em> may be overstated: <em>prior information</em> may be difficult to come by; and social science may be able to move forward quite well without the ability to <em>accept null hypotheses</em>.</p>
 <p>In this presentation I hope to at least introduce some of these ideas, and to generate some discussion of them.</p>
-<div class="footer footer-default">
+</section></section>
+<section>
+<section id="bayes-theorem-as-equation-words-10-minutes" class="title-slide slide level1 center">
+<h1>Bayes Theorem As Equation &amp; Words (10 Minutes)</h1>
+
+</section>
+<section id="equation" class="slide level2">
+<h2>Equation</h2>
+</section>
+<section id="words" class="slide level2">
+<h2>Words</h2>
+</section></section>
+<section>
+<section id="why-do-we-care-should-we-care-40-minutes-total" class="title-slide slide level1 center">
+<h1>Why Do We Care / Should We Care? (40 Minutes Total)</h1>
+
+</section>
+<section id="prior-information-20-minutes" class="slide level2">
+<h2>Prior Information (20 Minutes)</h2>
+</section>
+<section id="accepting-the-null-hypothesis-20-minutes" class="slide level2">
+<h2>Accepting The Null Hypothesis (20 Minutes)</h2>
+</section></section>
+<section>
+<section id="lab-and-questions-work-at-your-own-pace-and-leave-when-youre-done-last-60-minutes" class="title-slide slide level1 center">
+<h1>Lab and Questions (Work At Your Own Pace and Leave When You’re Done) (Last 60 Minutes)</h1>
+<p>Thinking through Bayes is <em>hard</em>. We perhaps learn best by doing.</p>
+</section>
+<section id="our-data" class="slide level2">
+<h2>Our Data</h2>
+</section>
+<section id="bayesian-model" class="slide level2">
+<h2>Bayesian Model</h2>
+
+<img src="Thomas_Bayes.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
 </div>
 </section></section>
@@ -382,6 +438,7 @@ Andy Grogan-Kaylor
   <script src="Bayestalk_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="Bayestalk_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="Bayestalk_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Bayestalk_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="Bayestalk_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -396,22 +453,23 @@ Andy Grogan-Kaylor
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
+        controlsTutorial: true,
 
         // Determines where controls appear, "edges" or "bottom-right"
         controlsLayout: 'edges',
@@ -424,7 +482,7 @@ Andy Grogan-Kaylor
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -529,7 +587,7 @@ Andy Grogan-Kaylor
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'convex',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -574,7 +632,7 @@ Andy Grogan-Kaylor
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
 
           RevealMath,
           RevealNotes,
