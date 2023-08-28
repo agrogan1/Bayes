@@ -1,0 +1,38 @@
+---
+title: "A Discussion Focused Approach to Bayesian Statistics"
+title-slide-attributes:
+    data-background-color: black
+author: "Andy Grogan-Kaylor"
+date: "today"
+format: 
+  revealjs:
+    scrollable: true
+---
+
+# Navigation 
+
+* **o** for outline
+* **f** for full screen
+* **Alt-Click** to zoom
+* Scroll &#8681; to the bottom of each column of slides; then &#8680;
+
+# Beginning
+
+## Background
+
+Bayesian statistics are often touted as the *new statistics*, that should perhaps supplant traditional *frequentist* statistics. 
+
+## Advantages
+
+Bayesian statistics have the advantage of being able to incorporate prior information (e.g. clinical wisdom & insight, community knowledge, results of meta-analyses and literature reviews). 
+
+Bayesian statistics also have the advantage that we are not simply deciding whether to reject the null hypotheses, $P(D|H_0)$ but are rather able to evaluate the probability of a hypothesis, $P(H|D)$. In essence, this means that we can sometimes decide to *accept* the null hypothesis, rather than *failing to reject the null hypothesis*.
+
+## Disadvantages
+
+However, Bayesian statistics may be difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive 
+
+Lastly, the advantages of being able to *incorporate prior information* and to *accept the null hypothesis* may be overstated: *prior information* may be difficult to come by; and social science may be able to move forward quite well without the ability to *accept null hypotheses*.
+
+In this presentation I hope to at least introduce some of these ideas, and to generate some discussion of them. 
+
