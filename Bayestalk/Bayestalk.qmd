@@ -7,6 +7,11 @@ date: "today"
 format: 
   revealjs:
     scrollable: true
+    transition: convex
+    controls: true
+    controls-tutorial: true
+    slide-number: true
+    chalkboard: true
 ---
 
 # Navigation 
