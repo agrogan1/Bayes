@@ -1,51 +1,38 @@
 ---
 title: "Derivation of Bayes Theorem"
 author: "Andy Grogan-Kaylor"
-date: "`r Sys.Date()`"
-output: 
-  distill::distill_article:
-    highlight: haddock
-    toc: no
-  slidy_presentation: 
-    fig_caption: yes
-    incremental: yes
-    css: ../UMslidy.css
-  tufte::tufte_html:
-    highlight: haddock
-    number_sections: yes
-    toc: no
-  html_document: 
-    highlight: haddock
-    theme: flatly
+date: "today"
+format: 
+  html:
+    css: styles.css
+    toc: true
+    number-sections: true
+    theme:
+      light: cosmo
+      dark: vapor
 ---
-
-```{r setup, include=FALSE}
-
-knitr::opts_chunk$set(echo = TRUE)
-
-```
 
 # Derivation
 
 > Following inspiration from Kruschke (2011).
 
-# From the definition of conditional probability: 
+# From The Definition Of Conditional Probability: 
 
 $P(A|B) = P(A,B) / P(B)$
 
 $P(B|A) = P(A,B) / P(A)$
 
-# Then: 
+# Multiply Each Fraction By The Denominator: 
 
 $P(A|B)P(B) = P(A,B)$
 
 $P(B|A)P(A) = P(A,B)$
 
-# Then:
+# Set The Two Expressions To Be Equivalent:
 
 $P(A|B)P(B) = P(B|A)P(A)$
 
-# Then:
+# Divide by $P(B)$:
 
 $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
 
