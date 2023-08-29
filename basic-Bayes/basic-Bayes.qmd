@@ -32,10 +32,9 @@ knitr::opts_chunk$set(echo = FALSE,
 
 $$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ 
 
-
 # In Words:
 
-$\text{posterior} \propto \text{likelihood} \times \text{prior}$ 
+$$\text{posterior} \propto \text{likelihood} \times \text{prior}$$ 
 
 # In Even More Words:
 
