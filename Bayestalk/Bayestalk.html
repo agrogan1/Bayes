@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.433">
 
   <meta name="author" content="Andy Grogan-Kaylor">
-  <meta name="dcterms.date" content="2023-08-28">
+  <meta name="dcterms.date" content="2023-08-29">
   <title>A Discussion Focused Approach to Bayesian Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="Bayestalk_files/libs/revealjs/dist/theme/quarto.css">
   <link href="Bayestalk_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -339,7 +404,7 @@ Andy Grogan-Kaylor
 </div>
 </div>
 
-  <p class="date">2023-08-28</p>
+  <p class="date">2023-08-29</p>
 </section>
 <section id="navigation" class="title-slide slide level1 center">
 <h1>Navigation</h1>
@@ -398,9 +463,15 @@ Andy Grogan-Kaylor
 </section>
 <section id="equation" class="slide level2">
 <h2>Equation</h2>
+<p><span class="math display">\[P(H|D) = \frac{P(D|H) P(H)}{P(D)}\]</span></p>
 </section>
 <section id="words" class="slide level2">
 <h2>Words</h2>
+<p><span class="math display">\[\text{posterior} \propto \text{likelihood} \times \text{prior}\]</span></p>
+</section>
+<section id="in-even-more-words" class="slide level2">
+<h2>In Even More Words:</h2>
+<p>Our posterior (updated) beliefs about the probability of some hypothesis are proportional to our prior beliefs about the probability of that hypothesis multiplied by the likelihood that were our hypothesis true it would have generated the data we observe.</p>
 </section></section>
 <section>
 <section id="why-do-we-care-should-we-care-40-minutes-total" class="title-slide slide level1 center">
@@ -409,9 +480,16 @@ Andy Grogan-Kaylor
 </section>
 <section id="prior-information-20-minutes" class="slide level2">
 <h2>Prior Information (20 Minutes)</h2>
+<p><a href="https://agrogan.shinyapps.io/Thinking-Through-Bayes/">https://agrogan.shinyapps.io/Thinking-Through-Bayes/</a></p>
 </section>
-<section id="accepting-the-null-hypothesis-20-minutes" class="slide level2">
+<section id="accepting-the-null-hypothesis-20-minutes" class="slide level2 smaller">
 <h2>Accepting The Null Hypothesis (20 Minutes)</h2>
+<p>In Bayesian analysis, we are <em>not</em> assessing the plausibility of the data (<span class="math inline">\(P(D|H)\)</span>), given the assumption of a null hypothesis <span class="math inline">\(H_0: \text{parameter value} = 0\)</span>. This feature of Bayesian analysis has a few key implications:</p>
+<ul>
+<li><p>We are actually estimating–<em>the probability of a particular hypothesis given the data</em>–what we often <em>think</em> we are estimating in Frequentist analysis. Thus, after conducting a Bayesian analysis, we can simply say, “The probability of our hypothesis (<span class="math inline">\(P(H|D)\)</span>) given the data is <em>x</em>,” rather than engaging in complicated statements about “Were the null hypothesis to be true, we estimate that it is <em>p</em> likely that we would see data as extreme, or more extreme, than we actually observed.”</p></li>
+<li><p>Because we are directly estimating the probability of hypotheses, we can not only evaluate the probability of the null hypothesis (<span class="math inline">\(H_0\)</span>), but also accept the null hypothesis (<span class="math inline">\(H_0\)</span>), something that we are never supposed to be able to do in frequentist analysis. Being able to accept the null hypothesis may have implications for <em>equivalency testing</em> and <em>theory simplification</em> and may reduce publication bias, if we are not always looking for ways to reject <span class="math inline">\(H_0\)</span>.</p></li>
+</ul>
+<p><a href="https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html">https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html</a></p>
 </section></section>
 <section>
 <section id="lab-and-questions-work-at-your-own-pace-and-leave-when-youre-done-last-60-minutes" class="title-slide slide level1 center">
@@ -420,9 +498,108 @@ Andy Grogan-Kaylor
 </section>
 <section id="our-data" class="slide level2">
 <h2>Our Data</h2>
+<p>We are using data from my text on multilevel modeling, <em>Multilevel Thinking</em>: https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html.</p>
+<p>We will be ignoring the fact that this data comes from multiple countries.</p>
+<div class="cell" data-collectcode="true">
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
 </section>
-<section id="bayesian-model" class="slide level2">
-<h2>Bayesian Model</h2>
+<section id="basic-bayesian-regression" class="slide level2 smaller">
+<h2>Basic Bayesian Regression</h2>
+<p>What do the results say (particularly about HDI)?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2"></a>bayes: <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Burn-in ...
+Simulation ...
+
+Model summary
+-------------------------------------------------------------------------------------
+Likelihood: 
+  outcome ~ regress(xb_outcome,{sigma2})
+
+Priors: 
+  {outcome:physical_punishment warmth HDI _cons} ~ normal(0,10000)                (1)
+                                        {sigma2} ~ igamma(.01,.01)
+-------------------------------------------------------------------------------------
+(1) Parameters are elements of the linear form xb_outcome.
+
+Bayesian linear regression                              MCMC iterations  =     12,500
+Random-walk Metropolis–Hastings sampling                Burn-in          =      2,500
+                                                        MCMC sample size =     10,000
+                                                        Number of obs    =      3,000
+                                                        Acceptance rate  =      .3362
+                                                        Efficiency:  min =    .007714
+                                                                     avg =     .06273
+Log marginal-likelihood = -9816.8493                                 max =      .2319
+ 
+-------------------------------------------------------------------------------------
+                    |                                                Equal-tailed
+                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
+--------------------+----------------------------------------------------------------
+outcome             |
+physical_punishment | -.7948745   .0846978    .00429  -.7947294  -.9598178   -.631376
+             warmth |  .9690606   .0618009    .00395   .9685337   .8501371   1.088826
+                HDI |  .0127726   .0064496   .000627   .0125935   .0000151   .0247583
+              _cons |  51.19602   .5421563    .06173   51.21804   50.18064   52.24366
+--------------------+----------------------------------------------------------------
+             sigma2 |  39.77481   1.043447   .021669   39.75674   37.82981    41.8904
+-------------------------------------------------------------------------------------
+Note: Default priors are used for model parameters.</code></pre>
+</div>
+</div>
+</section>
+<section id="basic-bayesian-regression-1" class="slide level2 smaller">
+<h2>Basic Bayesian Regression</h2>
+<p>Here we state our prior beliefs about the <span class="math inline">\(\beta_{HDI} HDI\)</span></p>
+<p>We think it is 1, but put some uncertainty around that belief (<span class="math inline">\(sd = 10\)</span>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Burn-in ...
+Simulation ...
+
+Model summary
+-------------------------------------------------------------------------------------
+Likelihood: 
+  outcome ~ regress(xb_outcome,{sigma2})
+
+Priors: 
+                               {outcome:HDI} ~ normal(1,10)                       (1)
+  {outcome:physical_punishment warmth _cons} ~ normal(0,10000)                    (1)
+                                    {sigma2} ~ igamma(.01,.01)
+-------------------------------------------------------------------------------------
+(1) Parameters are elements of the linear form xb_outcome.
+
+Bayesian linear regression                              MCMC iterations  =     12,500
+Random-walk Metropolis–Hastings sampling                Burn-in          =      2,500
+                                                        MCMC sample size =     10,000
+                                                        Number of obs    =      3,000
+                                                        Acceptance rate  =      .4086
+                                                        Efficiency:  min =    .003849
+                                                                     avg =     .05753
+Log marginal-likelihood = -9813.4539                                 max =      .2382
+ 
+-------------------------------------------------------------------------------------
+                    |                                                Equal-tailed
+                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
+--------------------+----------------------------------------------------------------
+outcome             |
+physical_punishment | -.8156175    .082388   .006657  -.8158885  -.9741486  -.6553697
+             warmth |  .9728242   .0589527    .00378    .973475   .8581901   1.085448
+                HDI |  .0111324   .0065901   .001062   .0110226  -.0018381   .0242588
+              _cons |  51.34905   .5201901   .067602   51.36621   50.31316    52.3464
+--------------------+----------------------------------------------------------------
+             sigma2 |  39.76243   1.030319    .02111    39.7578   37.79355   41.80071
+-------------------------------------------------------------------------------------
+Note: Default priors are used for some model parameters.
+Note: There is a high autocorrelation after 500 lags.</code></pre>
+</div>
+</div>
 
 <img src="Thomas_Bayes.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
@@ -641,6 +818,44 @@ Andy Grogan-Kaylor
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
