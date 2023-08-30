@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.433">
 
   <meta name="author" content="Andy Grogan-Kaylor">
-  <meta name="dcterms.date" content="2023-08-29">
+  <meta name="dcterms.date" content="2023-08-30">
   <title>A Discussion Focused Approach to Bayesian Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -393,7 +393,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="black" class="quarto-title-block center">
+<section id="title-slide" data-background-image="mountains.png" class="quarto-title-block center">
   <h1 class="title">A Discussion Focused Approach to Bayesian Statistics</h1>
 
 <div class="quarto-title-authors">
@@ -404,10 +404,21 @@ Andy Grogan-Kaylor
 </div>
 </div>
 
-  <p class="date">2023-08-29</p>
+  <p class="date">2023-08-30</p>
 </section>
 <section id="navigation" class="title-slide slide level1 center">
 <h1>Navigation</h1>
+<div class="cell">
+<style type="text/css">
+
+h1.title, .quarto-title-author-name, p.date {
+  font-size: 50px;
+  color: white;
+  background-color: purple; 
+}
+
+</style>
+</div>
 <ul>
 <li><strong>o</strong> for outline</li>
 <li><strong>f</strong> for full screen</li>
@@ -417,8 +428,8 @@ Andy Grogan-Kaylor
 </section>
 
 <section>
-<section id="beginning" class="title-slide slide level1 center">
-<h1>Beginning</h1>
+<section id="beginning-10-minutes" class="title-slide slide level1 center">
+<h1>Beginning (10 Minutes)</h1>
 
 </section>
 <section id="background" class="slide level2">
@@ -482,8 +493,8 @@ Andy Grogan-Kaylor
 <h2>Prior Information (20 Minutes)</h2>
 <p><a href="https://agrogan.shinyapps.io/Thinking-Through-Bayes/">https://agrogan.shinyapps.io/Thinking-Through-Bayes/</a></p>
 </section>
-<section id="accepting-the-null-hypothesis-20-minutes" class="slide level2 smaller">
-<h2>Accepting The Null Hypothesis (20 Minutes)</h2>
+<section id="accepting-the-null-hypothesis-20-minutes-if-time" class="slide level2 smaller" data-background-color="lightgrey">
+<h2>Accepting The Null Hypothesis (20 Minutes, If Time)</h2>
 <p>In Bayesian analysis, we are <em>not</em> assessing the plausibility of the data (<span class="math inline">\(P(D|H)\)</span>), given the assumption of a null hypothesis <span class="math inline">\(H_0: \text{parameter value} = 0\)</span>. This feature of Bayesian analysis has a few key implications:</p>
 <ul>
 <li><p>We are actually estimating–<em>the probability of a particular hypothesis given the data</em>–what we often <em>think</em> we are estimating in Frequentist analysis. Thus, after conducting a Bayesian analysis, we can simply say, “The probability of our hypothesis (<span class="math inline">\(P(H|D)\)</span>) given the data is <em>x</em>,” rather than engaging in complicated statements about “Were the null hypothesis to be true, we estimate that it is <em>p</em> likely that we would see data as extreme, or more extreme, than we actually observed.”</p></li>
@@ -498,9 +509,13 @@ Andy Grogan-Kaylor
 </section>
 <section id="our-data" class="slide level2">
 <h2>Our Data</h2>
-<p>We are using data from my text on multilevel modeling, <em>Multilevel Thinking</em>: https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html.</p>
+<p>We are using data from my text on multilevel modeling, <em>Multilevel Thinking</em>: <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html">https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html</a>.</p>
 <p>We will be ignoring the fact that this data comes from multiple countries.</p>
 <div class="cell" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">set</span> <span class="dv">seed</span> 3846</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">use</span> <span class="st">"https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code></code></pre>
 </div>
@@ -510,8 +525,8 @@ Andy Grogan-Kaylor
 <h2>Basic Bayesian Regression</h2>
 <p>What do the results say (particularly about HDI)?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2"></a>bayes: <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2"></a>bayes: <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Burn-in ...
 Simulation ...
@@ -531,22 +546,22 @@ Bayesian linear regression                              MCMC iterations  =     1
 Random-walk Metropolis–Hastings sampling                Burn-in          =      2,500
                                                         MCMC sample size =     10,000
                                                         Number of obs    =      3,000
-                                                        Acceptance rate  =      .3362
-                                                        Efficiency:  min =    .007714
-                                                                     avg =     .06273
-Log marginal-likelihood = -9816.8493                                 max =      .2319
+                                                        Acceptance rate  =      .3433
+                                                        Efficiency:  min =     .06054
+                                                                     avg =      .1083
+Log marginal-likelihood = -9816.7984                                 max =      .2332
  
 -------------------------------------------------------------------------------------
                     |                                                Equal-tailed
                     |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
 --------------------+----------------------------------------------------------------
 outcome             |
-physical_punishment | -.7948745   .0846978    .00429  -.7947294  -.9598178   -.631376
-             warmth |  .9690606   .0618009    .00395   .9685337   .8501371   1.088826
-                HDI |  .0127726   .0064496   .000627   .0125935   .0000151   .0247583
-              _cons |  51.19602   .5421563    .06173   51.21804   50.18064   52.24366
+physical_punishment | -.8044095   .0839548   .003412  -.8092264  -.9661497  -.6366157
+             warmth |  .9691171   .0607187   .002298   .9685304   .8545256    1.08821
+                HDI |  .0102997   .0067398    .00023    .010276  -.0031619   .0238625
+              _cons |   51.3921   .5407106   .017849   51.39016   50.35041   52.44588
 --------------------+----------------------------------------------------------------
-             sigma2 |  39.77481   1.043447   .021669   39.75674   37.82981    41.8904
+             sigma2 |  39.78721   1.016526    .02105    39.7867    37.7902   41.83134
 -------------------------------------------------------------------------------------
 Note: Default priors are used for model parameters.</code></pre>
 </div>
@@ -557,8 +572,8 @@ Note: Default priors are used for model parameters.</code></pre>
 <p>Here we state our prior beliefs about the <span class="math inline">\(\beta_{HDI} HDI\)</span></p>
 <p>We think it is 1, but put some uncertainty around that belief (<span class="math inline">\(sd = 10\)</span>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Burn-in ...
 Simulation ...
@@ -579,25 +594,24 @@ Bayesian linear regression                              MCMC iterations  =     1
 Random-walk Metropolis–Hastings sampling                Burn-in          =      2,500
                                                         MCMC sample size =     10,000
                                                         Number of obs    =      3,000
-                                                        Acceptance rate  =      .4086
-                                                        Efficiency:  min =    .003849
-                                                                     avg =     .05753
-Log marginal-likelihood = -9813.4539                                 max =      .2382
+                                                        Acceptance rate  =      .3722
+                                                        Efficiency:  min =    .009886
+                                                                     avg =     .06403
+Log marginal-likelihood = -9813.4776                                 max =      .2274
  
 -------------------------------------------------------------------------------------
                     |                                                Equal-tailed
                     |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
 --------------------+----------------------------------------------------------------
 outcome             |
-physical_punishment | -.8156175    .082388   .006657  -.8158885  -.9741486  -.6553697
-             warmth |  .9728242   .0589527    .00378    .973475   .8581901   1.085448
-                HDI |  .0111324   .0065901   .001062   .0110226  -.0018381   .0242588
-              _cons |  51.34905   .5201901   .067602   51.36621   50.31316    52.3464
+physical_punishment | -.8127239   .0813817    .00398   -.811419  -.9720732  -.6554174
+             warmth |  .9658812   .0622309   .003567    .963989    .849814   1.089816
+                HDI |  .0114689   .0061639    .00062   .0116176  -.0005075   .0230702
+              _cons |  51.34831   .5266038   .051202   51.34456   50.26289   52.37377
 --------------------+----------------------------------------------------------------
-             sigma2 |  39.76243   1.030319    .02111    39.7578   37.79355   41.80071
+             sigma2 |  39.72802   1.009403   .021167    39.7022   37.75251    41.7355
 -------------------------------------------------------------------------------------
-Note: Default priors are used for some model parameters.
-Note: There is a high autocorrelation after 500 lags.</code></pre>
+Note: Default priors are used for some model parameters.</code></pre>
 </div>
 </div>
 

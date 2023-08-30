@@ -1,7 +1,7 @@
 ---
 title: "A Discussion Focused Approach to Bayesian Statistics"
 title-slide-attributes:  
-  data-background-color: black
+  data-background-image: mountains.png
 author: "Andy Grogan-Kaylor"
 date: "today"
 format: 
@@ -19,12 +19,22 @@ execute:
 
 # Navigation 
 
+```{css, echo = FALSE}
+
+h1.title, .quarto-title-author-name, p.date {
+  font-size: 50px;
+  color: white;
+  background-color: purple; 
+}
+
+```
+
 * **o** for outline
 * **f** for full screen
 * **Alt-Click** to zoom
 * Scroll &#8681; to the bottom of each column of slides; then &#8680;
 
-# Beginning
+# Beginning (10 Minutes)
 
 ## Background
 
@@ -52,7 +62,7 @@ In this presentation I hope to at least introduce some of these ideas, and to ge
 
 # Bayes Theorem As Equation & Words (10 Minutes)
 
-## Equation
+## Equation 
 
 $$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ 
 
@@ -70,7 +80,7 @@ Our posterior (updated) beliefs about the probability of some hypothesis are pro
 
 [https://agrogan.shinyapps.io/Thinking-Through-Bayes/](https://agrogan.shinyapps.io/Thinking-Through-Bayes/)
 
-## Accepting The Null Hypothesis (20 Minutes) {.smaller}
+## Accepting The Null Hypothesis (20 Minutes, If Time) {.smaller background-color="lightgrey"}
 
 In Bayesian analysis, we are *not* assessing the plausibility of the data ($P(D|H)$), given the assumption of a null hypothesis $H_0: \text{parameter value} = 0$. This feature of Bayesian analysis has a few key implications:
 
@@ -97,6 +107,8 @@ library(Statamarkdown)
 ```
 
 ```{stata, echo = TRUE, collectcode = TRUE}
+
+set seed 3846
 
 use "https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"
 
