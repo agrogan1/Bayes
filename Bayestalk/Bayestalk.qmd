@@ -46,13 +46,13 @@ h1.title, .quarto-title-author-name, p.date {
 
 Bayesian statistics are often touted as the *new statistics*, that should perhaps supplant traditional *frequentist* statistics. 
 
-## Advantages
+## Advantages {.smaller}
 
 Bayesian statistics have the advantage of being able to incorporate prior information (e.g. clinical wisdom & insight, community knowledge, results of meta-analyses and literature reviews). 
 
 Bayesian statistics also have the advantage that we are not simply deciding whether to reject the null hypotheses, $P(D|H_0)$ but are rather able to evaluate the probability of a hypothesis, $P(H|D)$. In essence, this means that we can sometimes decide to *accept* the null hypothesis, rather than *failing to reject the null hypothesis*.
 
-## Disadvantages
+## Disadvantages {.smaller}
 
 However, Bayesian statistics may be difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive 
 
@@ -124,7 +124,7 @@ bayes: regress outcome physical_punishment warmth HDI
 
 ```
 
-## Basic Bayesian Regression {.smaller}
+## Bayesian Regression With Prior {.smaller}
 
 Here we state our prior beliefs about the $\beta_{HDI} HDI$
 
@@ -136,6 +136,7 @@ bayes, prior({outcome:HDI}, normal(1,10)): regress outcome physical_punishment w
 
 ```
 
+# Questions? {background-color="black"}
 
 
 
