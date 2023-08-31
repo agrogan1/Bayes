@@ -10,7 +10,8 @@ format:
     transition: convex
     controls: true
     controls-tutorial: true
-    slide-number: true
+    navigation-mode: vertical
+    slide-number: h.v
     chalkboard: true
     logo: Thomas_Bayes.png
 execute: 
@@ -60,7 +61,9 @@ Lastly, the advantages of being able to *incorporate prior information* and to *
 
 In this presentation I hope to at least introduce some of these ideas, and to generate some discussion of them. 
 
-# Bayes Theorem As Equation & Words (10 Minutes)
+# Bayes Theorem As Equation & Words (10 Minutes) {.smaller}
+
+10 minutes is *far too short a time* to talk about how the mathematics of Bayes theorem imply, and connect to, all of the ideas that we will discuss in this presentation. Nevertheless, a presentation on Bayesian statistics would be incomplete without some reference to Bayes theorem. In this presentation, we gesture quickly at Bayes theorem to demonstrate that Bayes theorems contains at least two key ideas: We are estimating the probability of hypotheses; and we are using prior information. Discussion in later slides will point connect us back to some of these ideas. 
 
 ## Equation 
 
