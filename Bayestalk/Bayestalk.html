@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.433">
 
   <meta name="author" content="Andy Grogan-Kaylor">
-  <meta name="dcterms.date" content="2023-08-30">
+  <meta name="dcterms.date" content="2023-09-01">
   <title>A Discussion Focused Approach to Bayesian Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -404,7 +404,7 @@ Andy Grogan-Kaylor
 </div>
 </div>
 
-  <p class="date">2023-08-30</p>
+  <p class="date">2023-09-01</p>
 </section>
 <section id="navigation" class="title-slide slide level1 center">
 <h1>Navigation</h1>
@@ -468,9 +468,9 @@ h1.title, .quarto-title-author-name, p.date {
 <p>In this presentation I hope to at least introduce some of these ideas, and to generate some discussion of them.</p>
 </section></section>
 <section>
-<section id="bayes-theorem-as-equation-words-10-minutes" class="title-slide slide level1 center">
-<h1>Bayes Theorem As Equation &amp; Words (10 Minutes)</h1>
-
+<section id="bayes-theorem-as-equation-words-10-minutes" class="title-slide slide level1 smaller center">
+<h1>Bayes’ Theorem As Equation &amp; Words (10 Minutes)</h1>
+<p>10 minutes is <em>far too short a time</em> to talk about how the mathematics of Bayes’ theorem imply, and connect to, all of the ideas that we will discuss in this presentation. Nevertheless, a presentation on Bayesian statistics would be incomplete without some reference to Bayes’ theorem. In this presentation, we gesture quickly at Bayes’ theorem to demonstrate that Bayes’ theorem contains at least two key ideas: We are estimating the probability of hypotheses; and we are using prior information. Discussion in later slides will point connect us back to some of these ideas.</p>
 </section>
 <section id="equation" class="slide level2">
 <h2>Equation</h2>
@@ -478,9 +478,10 @@ h1.title, .quarto-title-author-name, p.date {
 </section>
 <section id="words" class="slide level2">
 <h2>Words</h2>
+<p><span class="math display">\[\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{data}}\]</span></p>
 <p><span class="math display">\[\text{posterior} \propto \text{likelihood} \times \text{prior}\]</span></p>
 </section>
-<section id="in-even-more-words" class="slide level2">
+<section id="in-even-more-words" class="slide level2 smaller">
 <h2>In Even More Words:</h2>
 <p>Our posterior (updated) beliefs about the probability of some hypothesis are proportional to our prior beliefs about the probability of that hypothesis multiplied by the likelihood that were our hypothesis true it would have generated the data we observe.</p>
 </section></section>
@@ -676,7 +677,7 @@ Note: Default priors are used for some model parameters.</code></pre>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: 'h.v',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -717,7 +718,7 @@ Note: Default priors are used for some model parameters.</code></pre>
         rtl: false,
 
         // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
+        navigationMode: 'default',
 
         // Randomizes the order of slides each time the presentation loads
         shuffle: false,

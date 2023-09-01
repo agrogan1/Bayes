@@ -61,9 +61,9 @@ Lastly, the advantages of being able to *incorporate prior information* and to *
 
 In this presentation I hope to at least introduce some of these ideas, and to generate some discussion of them. 
 
-# Bayes Theorem As Equation & Words (10 Minutes) {.smaller}
+# Bayes' Theorem As Equation & Words (10 Minutes) {.smaller}
 
-10 minutes is *far too short a time* to talk about how the mathematics of Bayes theorem imply, and connect to, all of the ideas that we will discuss in this presentation. Nevertheless, a presentation on Bayesian statistics would be incomplete without some reference to Bayes theorem. In this presentation, we gesture quickly at Bayes theorem to demonstrate that Bayes theorems contains at least two key ideas: We are estimating the probability of hypotheses; and we are using prior information. Discussion in later slides will point connect us back to some of these ideas. 
+10 minutes is *far too short a time* to talk about how the mathematics of Bayes' theorem imply, and connect to, all of the ideas that we will discuss in this presentation. Nevertheless, a presentation on Bayesian statistics would be incomplete without some reference to Bayes' theorem. In this presentation, we gesture quickly at Bayes' theorem to demonstrate that Bayes' theorem contains at least two key ideas: We are estimating the probability of hypotheses; and we are using prior information. Discussion in later slides will point connect us back to some of these ideas. 
 
 ## Equation 
 
@@ -71,9 +71,11 @@ $$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$
 
 ## Words
 
+$$\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{data}}$$
+
 $$\text{posterior} \propto \text{likelihood} \times \text{prior}$$ 
 
-## In Even More Words:
+## In Even More Words: 
 
 Our posterior (updated) beliefs about the probability of some hypothesis are proportional to our prior beliefs about the probability of that hypothesis multiplied by the likelihood that were our hypothesis true it would have generated the data we observe.
 
