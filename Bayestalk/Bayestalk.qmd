@@ -57,13 +57,15 @@ Bayesian statistics also have the advantage that we are not simply deciding whet
 
 However, Bayesian statistics may be difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive 
 
+::: {.fragment .highlight-red}
 Lastly, the advantages of being able to *incorporate prior information* and to *accept the null hypothesis* may be overstated: *prior information* may be difficult to come by; and social science may be able to move forward quite well without the ability to *accept null hypotheses*.
+:::
 
 In this presentation I hope to at least introduce some of these ideas, and to generate some discussion of them. 
 
 # Bayes' Theorem As Equation & Words (10 Minutes) {.smaller}
 
-10 minutes is *far too short a time* to talk about how the mathematics of Bayes' theorem imply, and connect to, all of the ideas that we will discuss in this presentation. Nevertheless, a presentation on Bayesian statistics would be incomplete without some reference to Bayes' theorem. In this presentation, we gesture quickly at Bayes' theorem to demonstrate that Bayes' theorem contains at least two key ideas: We are estimating the probability of hypotheses; and we are using prior information. Discussion in later slides will point connect us back to some of these ideas. 
+10 minutes is *far too short a time* to talk about how the mathematics of Bayes' theorem imply, and connect to, all of the ideas that we will discuss in this presentation. Nevertheless, a presentation on Bayesian statistics would be incomplete without some reference to Bayes' theorem. In this presentation, we gesture quickly at Bayes' theorem to demonstrate that Bayes' theorem contains at least two key ideas: We are estimating the probability of hypotheses; and we are using prior information. Discussion in later slides will connect us back to some of these ideas. 
 
 ## Equation 
 
