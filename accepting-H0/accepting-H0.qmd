@@ -9,6 +9,9 @@ format:
     theme:
       light: cosmo
       dark: vapor
+  pdf:
+    toc: true
+    number-sections: true
 bibliography: ../Bayes.bib
 nocite: |
   @Hyde2005

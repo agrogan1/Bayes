@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andy Grogan-Kaylor">
-<meta name="dcterms.date" content="2023-04-17">
+<meta name="dcterms.date" content="2023-10-02">
 
 <title>The Value of Accepting the Null Hypothesis</title>
 <style>
@@ -19,14 +19,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -40,8 +41,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="accepting-H0_files/libs/clipboard/clipboard.min.js"></script>
@@ -60,6 +60,7 @@ div.csl-indent {
 <script src="accepting-H0_files/libs/kePrint/kePrint.js"></script>
 <link href="accepting-H0_files/libs/lightable/lightable.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -72,11 +73,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="toc-section-number">1</span>  Background</a></li>
-  <li><a href="#important-substantive-cases" id="toc-important-substantive-cases" class="nav-link" data-scroll-target="#important-substantive-cases"><span class="toc-section-number">2</span>  Important Substantive Cases</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">3</span>  References</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background"><span class="header-section-number">1</span> Background</a></li>
+  <li><a href="#important-substantive-cases" id="toc-important-substantive-cases" class="nav-link" data-scroll-target="#important-substantive-cases"><span class="header-section-number">2</span> Important Substantive Cases</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3</span> References</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="accepting-H0.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -99,7 +100,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 17, 2023</p>
+      <p class="date">October 2, 2023</p>
     </div>
   </div>
   
@@ -137,71 +138,68 @@ blockquote {
 <h1 data-number="2"><span class="header-section-number">2</span> Important Substantive Cases</h1>
 <p>The Value of Accepting the Null Hypothesis <span class="math inline">\(H_0\)</span></p>
 <div class="cell">
-
-</div>
-<div class="cell">
 <div class="cell-output-display">
-
-<table class=" lightable-paper lightable-hover" style="font-family: Roboto; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> case </th>
-   <th style="text-align:left;"> description </th>
-   <th style="text-align:left;"> H_0 </th>
-   <th style="text-align:left;"> example </th>
-  </tr>
- </thead>
+<table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">case</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">description</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">H_0</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">example</th>
+</tr>
+</thead>
 <tbody>
-  <tr>
-   <td style="text-align:left;"> Equivalence Testing </td>
-   <td style="text-align:left;"> Equivalence Of 2 Treatments Or Interventions </td>
-   <td style="text-align:left;"> $$\beta_1 = \beta_2$$ </td>
-   <td style="text-align:left;"> The effect of Treatment 1 is indistinguishable from the effect of Treatment 2 (especially important if one treatment is much more expensive, or time consuming than another). </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Equivalence Testing </td>
-   <td style="text-align:left;"> Equivalence Of 2 Groups On An Outcome </td>
-   <td style="text-align:left;"> $$\bar{y_1} = \bar{y_2}$$ or in multilevel modeling $$u_0 = 0$$ </td>
-   <td style="text-align:left;"> Men and women are more similar than different with regard to psychological processes (Hyde2005). </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Retiring Interventions </td>
-   <td style="text-align:left;"> There Is No Evidence That Intervention X Is Effective </td>
-   <td style="text-align:left;"> $$\beta_{intervention} = 0$$ </td>
-   <td style="text-align:left;"> Evidence consistently suggests that a particular treatment has near zero effect. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Contextual Equivalence </td>
-   <td style="text-align:left;"> Equivalence of a Predictor Across Contexts (Moderation) </td>
-   <td style="text-align:left;"> $$\beta_{interaction} = 0$$ or in multilevel modeling $$u_k = 0$$ </td>
-   <td style="text-align:left;"> Warm and supportive parenting is equally beneficial across different contexts or countries. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Family Member Equivalence </td>
-   <td style="text-align:left;"> Equivalence of a Predictor Across Family Members </td>
-   <td style="text-align:left;"> $$\beta_{parent1} = \beta_{parent2}$$ </td>
-   <td style="text-align:left;"> Parenting from one parent is equivalent to parenting from another parent </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Full Mediation </td>
-   <td style="text-align:left;"> Association of x and y Is Completely Mediated; No Direct Effect </td>
-   <td style="text-align:left;"> $$\beta_{xmy} \neq 0$$ $$\beta_{xy} = 0$$ </td>
-   <td style="text-align:left;"> The relationship of the treatment and the outcome is completely mediated by mechanism m. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Theory Simplification </td>
-   <td style="text-align:left;"> Removing An Association From A Theory </td>
-   <td style="text-align:left;"> $$\beta_x = 0$$ </td>
-   <td style="text-align:left;"> There is no evidence that x is associated with y. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Theory Rejection </td>
-   <td style="text-align:left;"> Rejecting A Theory </td>
-   <td style="text-align:left;"> $$\beta_{theory} = 0$$ </td>
-   <td style="text-align:left;"> There is strong evidence (contra Theory X) that x is not associated with y. </td>
-  </tr>
+<tr class="odd">
+<td style="text-align: left;">Equivalence Testing</td>
+<td style="text-align: left;">Equivalence Of 2 Treatments Or Interventions</td>
+<td style="text-align: left;">$$\beta_1 = \beta_2$$</td>
+<td style="text-align: left;">The effect of Treatment 1 is indistinguishable from the effect of Treatment 2 (especially important if one treatment is much more expensive, or time consuming than another).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Equivalence Testing</td>
+<td style="text-align: left;">Equivalence Of 2 Groups On An Outcome</td>
+<td style="text-align: left;">$$\bar{y_1} = \bar{y_2}$$ or in multilevel modeling $$u_0 = 0$$</td>
+<td style="text-align: left;">Men and women are more similar than different with regard to psychological processes (Hyde2005).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Retiring Interventions</td>
+<td style="text-align: left;">There Is No Evidence That Intervention X Is Effective</td>
+<td style="text-align: left;">$$\beta_{intervention} = 0$$</td>
+<td style="text-align: left;">Evidence consistently suggests that a particular treatment has near zero effect.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Contextual Equivalence</td>
+<td style="text-align: left;">Equivalence of a Predictor Across Contexts (Moderation)</td>
+<td style="text-align: left;">$$\beta_{interaction} = 0$$ or in multilevel modeling $$u_k = 0$$</td>
+<td style="text-align: left;">Warm and supportive parenting is equally beneficial across different contexts or countries.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Family Member Equivalence</td>
+<td style="text-align: left;">Equivalence of a Predictor Across Family Members</td>
+<td style="text-align: left;">$$\beta_{parent1} = \beta_{parent2}$$</td>
+<td style="text-align: left;">Parenting from one parent is equivalent to parenting from another parent</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Full Mediation</td>
+<td style="text-align: left;">Association of x and y Is Completely Mediated; No Direct Effect</td>
+<td style="text-align: left;">$$\beta_{xmy} \neq 0$$ $$\beta_{xy} = 0$$</td>
+<td style="text-align: left;">The relationship of the treatment and the outcome is completely mediated by mechanism m.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Theory Simplification</td>
+<td style="text-align: left;">Removing An Association From A Theory</td>
+<td style="text-align: left;">$$\beta_x = 0$$</td>
+<td style="text-align: left;">There is no evidence that x is associated with y.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Theory Rejection</td>
+<td style="text-align: left;">Rejecting A Theory</td>
+<td style="text-align: left;">$$\beta_{theory} = 0$$</td>
+<td style="text-align: left;">There is strong evidence (contra Theory X) that x is not associated with y.</td>
+</tr>
 </tbody>
 </table>
+
 
 </div>
 </div>
@@ -211,17 +209,17 @@ blockquote {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">3 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Gallistel2009" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">3 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Gallistel2009" class="csl-entry" role="listitem">
 Gallistel, C R. 2009. <span>“<span class="nocase">The importance of proving the null</span>.”</span> <em>Psychological Review</em> 116 (2): 439–53. <a href="https://doi.org/10.1037/a0015251">https://doi.org/10.1037/a0015251</a>.
 </div>
-<div id="ref-Hyde2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Hyde2005" class="csl-entry" role="listitem">
 Hyde, Janet Shibley. 2005. <span>“The Gender Similarities Hypothesis.”</span> <em>American Psychologist</em> 60 (6): 581–92. <a href="https://doi.org/10.1037/0003-066X.60.6.581">https://doi.org/10.1037/0003-066X.60.6.581</a>.
 </div>
-<div id="ref-Kruschke2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Kruschke2018" class="csl-entry" role="listitem">
 Kruschke, John K, and Torrin M Liddell. 2018. <span>“The Bayesian New Statistics: Hypothesis Testing, Estimation, Meta-Analysis, and Power Analysis from a Bayesian Perspective.”</span> <em>Psychonomic Bulletin <span>&amp;</span> Review</em> 25 (1): 178–206. <a href="https://doi.org/10.3758/s13423-016-1221-4">https://doi.org/10.3758/s13423-016-1221-4</a>.
 </div>
-<div id="ref-Morey2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Morey2018" class="csl-entry" role="listitem">
 Morey, Richard D., Saskia Homer, and Travis Proulx. 2018. <span>“Beyond Statistics: Accepting the Null Hypothesis in Mature Sciences.”</span> <em>Advances in Methods and Practices in Psychological Science</em>. <a href="https://doi.org/10.1177/2515245918776023">https://doi.org/10.1177/2515245918776023</a>.
 </div>
 </div></section></div></main>
@@ -368,9 +366,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -435,6 +447,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
