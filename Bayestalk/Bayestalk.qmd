@@ -131,7 +131,7 @@ use "https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analy
 
 What do the results say (particularly about HDI)?
 
-```{stata, echo=TRUE, eval=FALSE}
+```{stata, echo=TRUE, eval=TRUE}
 
 bayes: mixed outcome physical_punishment warmth HDI || country:
 
@@ -143,7 +143,7 @@ Here we state our prior beliefs about the $\beta_{HDI} HDI$
 
 We think it is 1, but put some uncertainty around that belief ($sd = 10$)
 
-```{stata, echo=TRUE, eval=FALSE}
+```{stata, echo=TRUE, eval=TRUE}
 
 bayes, prior({outcome:HDI}, normal(1,10)): mixed outcome physical_punishment warmth HDI || country: 
 

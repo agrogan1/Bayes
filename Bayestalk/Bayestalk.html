@@ -536,6 +536,66 @@ h1.title, .quarto-title-author-name, p.date {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2"></a>bayes: mixed outcome physical_punishment warmth HDI || country:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>note: Gibbs sampling is used for regression coefficients and variance components.
+  
+Burn-in 2500 aaaaaaaaa1000aaaaaaaaa2000aaaaa done
+Simulation 10000 .........1000.........2000.........3000.........4000.........5000.........6000.
+&gt; ........7000.........8000.........9000.........10000 done
+
+Multilevel structure
+------------------------------------------------------------------------------
+country
+    {U0}: random intercepts
+------------------------------------------------------------------------------
+
+Model summary
+-------------------------------------------------------------------------------------
+Likelihood: 
+  outcome ~ normal(xb_outcome,{e.outcome:sigma2})
+
+Priors: 
+  {outcome:physical_punishment warmth HDI _cons} ~ normal(0,10000)                (1)
+                                            {U0} ~ normal(0,{U0:sigma2})          (1)
+                              {e.outcome:sigma2} ~ igamma(.01,.01)
+
+Hyperprior: 
+  {U0:sigma2} ~ igamma(.01,.01)
+-------------------------------------------------------------------------------------
+(1) Parameters are elements of the linear form xb_outcome.
+
+Bayesian multilevel regression                          MCMC iterations  =     12,500
+Metropolis–Hastings and Gibbs sampling                  Burn-in          =      2,500
+                                                        MCMC sample size =     10,000
+Group variable: country                                 Number of groups=        30
+                                                        Obs per group:
+                                                              min =        100
+                                                              avg =      100.0
+                                                              max =        100
+                                                        Number of obs    =      3,000
+                                                        Acceptance rate  =      .8149
+                                                        Efficiency:  min =     .01661
+                                                                     avg =      .5378
+Log marginal-likelihood                                              max =          1
+ 
+-------------------------------------------------------------------------------------
+                    |                                                Equal-tailed
+                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
+--------------------+----------------------------------------------------------------
+outcome             |
+physical_punishment | -.8386508   .0809886    .00081  -.8396193  -.9974872  -.6787328
+             warmth |   .963721   .0579597   .000571   .9639552   .8502194   1.078531
+                HDI |   .009942   .0211141   .001601   .0100155  -.0318055   .0521301
+              _cons |  51.57477   1.472647    .11425   51.57116   48.69018    54.4736
+--------------------+----------------------------------------------------------------
+country             |
+          U0:sigma2 |  3.911874   1.248587   .027023   3.678984   2.156582    6.92078
+--------------------+----------------------------------------------------------------
+e.outcome           |
+             sigma2 |  36.37304   .9464738   .009564   36.34691    34.5667   38.23824
+-------------------------------------------------------------------------------------
+Note: Default priors are used for model parameters.</code></pre>
+</div>
 </div>
 </section>
 <section id="bayesian-regression-with-prior" class="slide level2 smaller">
@@ -543,8 +603,69 @@ h1.title, .quarto-title-author-name, p.date {
 <p>Here we state our prior beliefs about the <span class="math inline">\(\beta_{HDI} HDI\)</span></p>
 <p>We think it is 1, but put some uncertainty around that belief (<span class="math inline">\(sd = 10\)</span>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): mixed outcome physical_punishment warmth HDI || country: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): mixed outcome physical_punishment warmth HDI || country: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>note: Gibbs sampling is used for regression coefficients and variance components.
+  
+Burn-in 2500 aaaaaaaaa1000aaaaaaaaa2000aaaaa done
+Simulation 10000 .........1000.........2000.........3000.........4000.........5000.........6000.
+&gt; ........7000.........8000.........9000.........10000 done
+
+Multilevel structure
+------------------------------------------------------------------------------
+country
+    {U0}: random intercepts
+------------------------------------------------------------------------------
+
+Model summary
+-------------------------------------------------------------------------------------
+Likelihood: 
+  outcome ~ normal(xb_outcome,{e.outcome:sigma2})
+
+Priors: 
+                               {outcome:HDI} ~ normal(1,10)                       (1)
+  {outcome:physical_punishment warmth _cons} ~ normal(0,10000)                    (1)
+                                        {U0} ~ normal(0,{U0:sigma2})              (1)
+                          {e.outcome:sigma2} ~ igamma(.01,.01)
+
+Hyperprior: 
+  {U0:sigma2} ~ igamma(.01,.01)
+-------------------------------------------------------------------------------------
+(1) Parameters are elements of the linear form xb_outcome.
+
+Bayesian multilevel regression                          MCMC iterations  =     12,500
+Metropolis–Hastings and Gibbs sampling                  Burn-in          =      2,500
+                                                        MCMC sample size =     10,000
+Group variable: country                                 Number of groups=        30
+                                                        Obs per group:
+                                                              min =        100
+                                                              avg =      100.0
+                                                              max =        100
+                                                        Number of obs    =      3,000
+                                                        Acceptance rate  =       .849
+                                                        Efficiency:  min =    .002886
+                                                                     avg =      .5314
+Log marginal-likelihood                                              max =          1
+ 
+-------------------------------------------------------------------------------------
+                    |                                                Equal-tailed
+                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
+--------------------+----------------------------------------------------------------
+outcome             |
+physical_punishment | -.8394731   .0802155   .000802  -.8392659  -.9978658  -.6795874
+             warmth |  .9651679   .0591823   .000592   .9652363   .8483021   1.081992
+                HDI |  .0088244   .0211746   .003941   .0098137  -.0347508   .0503707
+              _cons |  51.63484   1.472414    .27128   51.52086   48.93379   54.71427
+--------------------+----------------------------------------------------------------
+country             |
+          U0:sigma2 |  3.870744   1.220716   .028551   3.662517   2.121036   6.780494
+--------------------+----------------------------------------------------------------
+e.outcome           |
+             sigma2 |  36.34965   .9430053    .00943   36.32999   34.58389    38.2536
+-------------------------------------------------------------------------------------
+Note: Default priors are used for some model parameters.</code></pre>
+</div>
 </div>
 </section></section>
 <section id="questions" class="title-slide slide level1 center" data-background-color="black">
