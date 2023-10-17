@@ -12,7 +12,7 @@
 
   <meta name="author" content="Andy Grogan-Kaylor">
   <meta name="dcterms.date" content="2023-10-17">
-  <title>A Discussion Focused Approach to Bayesian Statistics</title>
+  <title>A Discussion Focused, Collaborative, Lab-Based Introduction to Bayesian Statistics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -394,7 +394,8 @@
     <div class="slides">
 
 <section id="title-slide" data-background-image="mountains.png" class="quarto-title-block center">
-  <h1 class="title">A Discussion Focused Approach to Bayesian Statistics</h1>
+  <h1 class="title">A Discussion Focused, Collaborative, Lab-Based Introduction to Bayesian Statistics</h1>
+  <p class="subtitle"><em>Thinking about</em> Bayesian analysis can be HARD. <em>Doing</em> Bayesian analysis can be EASY! ‘Fail Frequently! Fail Forward!’</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -413,6 +414,11 @@ Andy Grogan-Kaylor
 
 h1.title, .quarto-title-author-name, p.date {
   font-size: 50px;
+  color: white;
+  background-color: purple; 
+}
+
+#title-slide .subtitle, div.reveal div.slides section.quarto-title-block .subtitle {
   color: white;
   background-color: purple; 
 }
@@ -512,8 +518,8 @@ h1.title, .quarto-title-author-name, p.date {
 </section>
 <section id="our-data" class="slide level2">
 <h2>Our Data</h2>
-<p>We are using data from my text on multilevel modeling, <em>Multilevel Thinking</em>: <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html">https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html</a>.</p>
-<p>We will be ignoring the fact that this data comes from multiple countries.</p>
+<p>We are using simulated data from my text on multilevel modeling, <em>Multilevel Thinking</em>: <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html">https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html</a>.</p>
+<p>This simulated data comes from multiple countries so we use <code>mixed</code> instead of <code>regress</code> to account for the clustering. However, our process would be largely the same if we were to use <code>regress.</code></p>
 <div class="cell" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw">set</span> <span class="dv">seed</span> 3846</span>
@@ -529,45 +535,7 @@ h1.title, .quarto-title-author-name, p.date {
 <p>What do the results say (particularly about HDI)?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a>bayes: <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Burn-in ...
-Simulation ...
-
-Model summary
--------------------------------------------------------------------------------------
-Likelihood: 
-  outcome ~ regress(xb_outcome,{sigma2})
-
-Priors: 
-  {outcome:physical_punishment warmth HDI _cons} ~ normal(0,10000)                (1)
-                                        {sigma2} ~ igamma(.01,.01)
--------------------------------------------------------------------------------------
-(1) Parameters are elements of the linear form xb_outcome.
-
-Bayesian linear regression                              MCMC iterations  =     12,500
-Random-walk Metropolis–Hastings sampling                Burn-in          =      2,500
-                                                        MCMC sample size =     10,000
-                                                        Number of obs    =      3,000
-                                                        Acceptance rate  =      .3433
-                                                        Efficiency:  min =     .06054
-                                                                     avg =      .1083
-Log marginal-likelihood = -9816.7984                                 max =      .2332
- 
--------------------------------------------------------------------------------------
-                    |                                                Equal-tailed
-                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
---------------------+----------------------------------------------------------------
-outcome             |
-physical_punishment | -.8044095   .0839548   .003412  -.8092264  -.9661497  -.6366157
-             warmth |  .9691171   .0607187   .002298   .9685304   .8545256    1.08821
-                HDI |  .0102997   .0067398    .00023    .010276  -.0031619   .0238625
-              _cons |   51.3921   .5407106   .017849   51.39016   50.35041   52.44588
---------------------+----------------------------------------------------------------
-             sigma2 |  39.78721   1.016526    .02105    39.7867    37.7902   41.83134
--------------------------------------------------------------------------------------
-Note: Default priors are used for model parameters.</code></pre>
-</div>
+<span id="cb3-2"><a href="#cb3-2"></a>bayes: mixed outcome physical_punishment warmth HDI || country:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="bayesian-regression-with-prior" class="slide level2 smaller">
@@ -575,47 +543,8 @@ Note: Default priors are used for model parameters.</code></pre>
 <p>Here we state our prior beliefs about the <span class="math inline">\(\beta_{HDI} HDI\)</span></p>
 <p>We think it is 1, but put some uncertainty around that belief (<span class="math inline">\(sd = 10\)</span>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): <span class="kw">regress</span> outcome physical_punishment warmth HDI</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Burn-in ...
-Simulation ...
-
-Model summary
--------------------------------------------------------------------------------------
-Likelihood: 
-  outcome ~ regress(xb_outcome,{sigma2})
-
-Priors: 
-                               {outcome:HDI} ~ normal(1,10)                       (1)
-  {outcome:physical_punishment warmth _cons} ~ normal(0,10000)                    (1)
-                                    {sigma2} ~ igamma(.01,.01)
--------------------------------------------------------------------------------------
-(1) Parameters are elements of the linear form xb_outcome.
-
-Bayesian linear regression                              MCMC iterations  =     12,500
-Random-walk Metropolis–Hastings sampling                Burn-in          =      2,500
-                                                        MCMC sample size =     10,000
-                                                        Number of obs    =      3,000
-                                                        Acceptance rate  =      .3722
-                                                        Efficiency:  min =    .009886
-                                                                     avg =     .06403
-Log marginal-likelihood = -9813.4776                                 max =      .2274
- 
--------------------------------------------------------------------------------------
-                    |                                                Equal-tailed
-                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
---------------------+----------------------------------------------------------------
-outcome             |
-physical_punishment | -.8127239   .0813817    .00398   -.811419  -.9720732  -.6554174
-             warmth |  .9658812   .0622309   .003567    .963989    .849814   1.089816
-                HDI |  .0114689   .0061639    .00062   .0116176  -.0005075   .0230702
-              _cons |  51.34831   .5266038   .051202   51.34456   50.26289   52.37377
---------------------+----------------------------------------------------------------
-             sigma2 |  39.72802   1.009403   .021167    39.7022   37.75251    41.7355
--------------------------------------------------------------------------------------
-Note: Default priors are used for some model parameters.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): mixed outcome physical_punishment warmth HDI || country: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section id="questions" class="title-slide slide level1 center" data-background-color="black">

@@ -1,5 +1,6 @@
 ---
-title: "A Discussion Focused Approach to Bayesian Statistics"
+title: "A Discussion Focused, Collaborative, Lab-Based Introduction to Bayesian Statistics"
+subtitle: "*Thinking about* Bayesian analysis can be HARD. *Doing* Bayesian analysis can be EASY! 'Fail Frequently! Fail Forward!'"
 title-slide-attributes:  
   data-background-image: mountains.png
 author: "Andy Grogan-Kaylor"
@@ -24,6 +25,11 @@ execute:
 
 h1.title, .quarto-title-author-name, p.date {
   font-size: 50px;
+  color: white;
+  background-color: purple; 
+}
+
+#title-slide .subtitle, div.reveal div.slides section.quarto-title-block .subtitle {
   color: white;
   background-color: purple; 
 }
@@ -103,9 +109,9 @@ Thinking through Bayes is *hard*. We perhaps learn best by doing.
 
 ## Our Data
 
-We are using data from my text on multilevel modeling, *Multilevel Thinking*: [https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html).
+We are using simulated data from my text on multilevel modeling, *Multilevel Thinking*: [https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html).
 
-We will be ignoring the fact that this data comes from multiple countries. 
+This simulated data comes from multiple countries so we use `mixed` instead of `regress` to account for the clustering. However, our process would be largely the same if we were to use `regress.`
 
 ```{r}
 
@@ -125,9 +131,9 @@ use "https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analy
 
 What do the results say (particularly about HDI)?
 
-```{stata, echo=TRUE}
+```{stata, echo=TRUE, eval=FALSE}
 
-bayes: regress outcome physical_punishment warmth HDI
+bayes: mixed outcome physical_punishment warmth HDI || country:
 
 ```
 
@@ -137,9 +143,9 @@ Here we state our prior beliefs about the $\beta_{HDI} HDI$
 
 We think it is 1, but put some uncertainty around that belief ($sd = 10$)
 
-```{stata, echo=TRUE}
+```{stata, echo=TRUE, eval=FALSE}
 
-bayes, prior({outcome:HDI}, normal(1,10)): regress outcome physical_punishment warmth HDI
+bayes, prior({outcome:HDI}, normal(1,10)): mixed outcome physical_punishment warmth HDI || country: 
 
 ```
 
