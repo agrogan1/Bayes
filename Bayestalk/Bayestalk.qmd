@@ -107,7 +107,7 @@ In Bayesian analysis, we are *not* assessing the plausibility of the data ($P(D|
 
 Thinking through Bayes is *hard*. We perhaps learn best by doing.
 
-## Our Data
+## Our Data {.smaller}
 
 We are using simulated data from my text on multilevel modeling, *Multilevel Thinking*: [https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html).
 
