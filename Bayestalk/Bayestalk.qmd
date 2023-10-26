@@ -96,6 +96,10 @@ Our posterior (updated) beliefs about the probability of some hypothesis are pro
 
 ## Accepting The Null Hypothesis (20 Minutes, If Time) {.smaller background-color="lightgrey"}
 
+::: {.fragment .highlight-red}
+We'll likely circle back to this *after* running some analysis.
+:::
+
 In Bayesian analysis, we are *not* assessing the plausibility of the data ($P(D|H)$), given the assumption of a null hypothesis $H_0: \text{parameter value} = 0$. This feature of Bayesian analysis has a few key implications:
 
 * We are actually estimating--*the probability of a particular hypothesis given the data*--what we often *think* we are estimating in Frequentist analysis. Thus, after conducting a Bayesian analysis, we can simply say, "The probability of our hypothesis ($P(H|D)$) given the data is *x*," rather than engaging in complicated statements about "Were the null hypothesis to be true, we estimate that it is *p* likely that we would see data as extreme, or more extreme, than we actually observed."
@@ -151,6 +155,10 @@ bayes, prior({outcome:HDI}, normal(1,10)): mixed outcome physical_punishment war
 ```
 
 # Questions? {background-color="black"}
+
+::: {.r-fit-text}
+Questions?
+:::
 
 
 
