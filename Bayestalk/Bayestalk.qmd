@@ -108,7 +108,7 @@ In Bayesian analysis, we are *not* assessing the plausibility of the data ($P(D|
     
 [https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html](https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html)
     
-# Lab and Questions (Work At Your Own Pace and Leave When You're Done) (Last 60 Minutes)
+# Lab and Questions (Stata) (Work At Your Own Pace and Leave When You're Done) (Last 60 Minutes)
 
 Thinking through Bayes is *hard*. We perhaps learn best by doing.
 
@@ -126,7 +126,7 @@ library(Statamarkdown)
 
 ```{stata, echo = TRUE, collectcode = TRUE}
 
-set seed 3846
+set seed 3846 // random seed
 
 use "https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"
 
@@ -151,6 +151,114 @@ We think it is 1, but put some uncertainty around that belief ($sd = 10$)
 ```{stata, echo=TRUE, eval=TRUE}
 
 bayes, prior({outcome:HDI}, normal(1,10)): mixed outcome physical_punishment warmth HDI || country: 
+
+```
+
+# Lab and Questions (R) (Work At Your Own Pace and Leave When You're Done) (Last 60 Minutes)
+
+Thinking through Bayes is *hard*. We perhaps learn best by doing.
+
+## Our Data {.smaller}
+
+We are using simulated data from my text on multilevel modeling, *Multilevel Thinking*: [https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html](https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html).
+
+This simulated data comes from multiple countries so we use the `brms` library to access Bayesian multilevel models from `STAN`.
+
+```{r}
+
+library(haven) # read in Stata data
+
+library(brms) # Bayesian regression
+
+```
+
+```{r, echo=TRUE}
+
+set.seed(3846) # random seed
+
+simulated_multilevel_data <- read_dta("https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta")
+
+```
+
+## Basic Bayesian Regression {.smaller}
+
+What do the results say (particularly about HDI)?
+
+```{r, echo=TRUE, output=FALSE}
+
+fit1 <- brm(outcome ~ physical_punishment + warmth + HDI + (1 | country),
+            family = gaussian(), 
+            data = simulated_multilevel_data)
+
+```
+
+```{r, echo=TRUE}
+
+summary(fit1)
+
+```
+
+## Bayesian Regression With Prior {.smaller}
+
+Here we state our prior beliefs about the $\beta_{HDI} HDI$
+
+We think it is 1, but put some uncertainty around that belief ($sd = 10$)
+
+```{r, echo=TRUE, output=FALSE}
+
+prior1 <- c(prior(normal(1, 10), # normal prior with some variance
+                  class = b, # prior for a regression coefficient
+                  coef = HDI)) # which coefficient?
+
+fit2 <- brm(outcome ~ physical_punishment + warmth + HDI + (1 | country),
+            family = gaussian(), 
+            prior = prior1, # add a prior
+            data = simulated_multilevel_data)
+
+```
+
+```{r, echo=TRUE}
+
+summary(fit2)
+
+```
+
+# Markov Chain Monte Carlo (MCMC)
+
+```{r}
+#| echo: false
+#| #| fig-cap: "The Idea of MCMC"
+
+
+# beta1
+
+beta1 <- rnorm(1000, 100, 20)
+
+# beta2
+
+beta2 <- rnorm(1000, 0, 20)
+
+# density plot
+
+mydensity <- kde2d(beta1, beta2)
+
+par(mar = rep(2, 4)) # adjust margins
+
+persp(mydensity,
+      theta = -45,
+      phi = 10,
+      main = "A Simulation of MCMC",
+      xlab = "\u03B2 1",
+      ylab = "\u03B2 2",
+      zlab = "probability",
+      lwd = .5)
+
+# pairs(data.frame(beta1,beta2))
+
+# library(GGally)
+# 
+# ggpairs(data.frame(beta1,beta2),
+#         lower = list(continuous = "density"))
 
 ```
 
