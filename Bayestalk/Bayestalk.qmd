@@ -229,6 +229,7 @@ summary(fit2)
 #| echo: false
 #| #| fig-cap: "The Idea of MCMC"
 
+library(MASS) # for kernel density estimation
 
 # beta1
 
