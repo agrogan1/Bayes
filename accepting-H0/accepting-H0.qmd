@@ -91,7 +91,7 @@ H_0 <- c("$$\\beta_1 = \\beta_2$$",
         "$$\\beta_{theory} = 0$$")
 
 example <- c("The effect of Treatment 1 is indistinguishable from the effect of Treatment 2 (especially important if one treatment is much more expensive, or time consuming than another).",
-             "Men and women are more similar than different with regard to psychological processes (Hyde2005).", 
+             "People identifying as men and people identifying as women are more similar than different with regard to psychological processes (Hyde2005).", 
              "Evidence consistently suggests that a particular treatment has near zero effect.",
              "Warm and supportive parenting is equally beneficial across different contexts or countries.",
              "Parenting from one parent is equivalent to parenting from another parent",
