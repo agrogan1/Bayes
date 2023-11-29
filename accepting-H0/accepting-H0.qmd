@@ -69,6 +69,7 @@ case <- c("Equivalence Testing",
           "Contextual Equivalence",
           "Family Member Equivalence",
           "Full Mediation",
+          "No Mediation", 
           "Theory Simplification",
           "Theory Rejection")
 
@@ -78,6 +79,7 @@ description <- c("Equivalence Of 2 Treatments Or Interventions",
                  "Equivalence of a Predictor Across Contexts (Moderation)",
                  "Equivalence of a Predictor Across Family Members",
                  "Association of x and y Is Completely Mediated; No Direct Effect",
+                 "No Indirect Effect; Association of x and y Is Not Mediated by m",
                  "Removing An Association From A Theory",
                  "Rejecting A Theory")
 
@@ -87,6 +89,7 @@ H_0 <- c("$$\\beta_1 = \\beta_2$$",
         "$$\\beta_{interaction} = 0$$ or in multilevel modeling $$u_k = 0$$",
         "$$\\beta_{parent1} = \\beta_{parent2}$$",
         "$$\\beta_{xmy} \\neq 0$$ $$\\beta_{xy} = 0$$",
+        "$$\\beta_{xmy} = 0$$ $$\\beta_{xy} \\neq 0$$",        
         "$$\\beta_x = 0$$",
         "$$\\beta_{theory} = 0$$")
 
@@ -96,6 +99,7 @@ example <- c("The effect of Treatment 1 is indistinguishable from the effect of 
              "Warm and supportive parenting is equally beneficial across different contexts or countries.",
              "Parenting from one parent is equivalent to parenting from another parent",
              "The relationship of the treatment and the outcome is completely mediated by mechanism m.",
+             "The relationship of the treatment and the outcome is not mediated at all by mechanism m.",
              "There is no evidence that x is associated with y.",
              "There is strong evidence (contra Theory X) that x is not associated with y.")
 
