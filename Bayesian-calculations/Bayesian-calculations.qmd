@@ -1,28 +1,24 @@
 ---
-title: 'Bayesian Calculations: Simulation of Coin Flipping'
+title: "Bayesian Calculations: Simulation of Coin Flipping"
+subtitle: "Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior"
 author: "Andy Grogan-Kaylor"
-date: "`r Sys.Date()`"
-output:
-  distill::distill_article:
-    highlight: haddock
-    toc: yes
-subtitle: 'Prior With 3 Values; Data on Coin Flips; Likelihood and Posterior'
+date: "today"
+format:
+  html:
+    toc: true
+    number-sections: true
+    highlight-style: haddock
+    theme:
+      light: cosmo
+      dark: vapor
+  typst:
+    toc: true
+    number-sections: true
 ---
 
-```{r setup, include=FALSE}
-
-knitr::opts_chunk$set(echo = TRUE,
-                      fig.margin = TRUE)
-
-library(pander)
-
-library(tibble)
-
-library(ggplot2)
-
-```
-
-```{r, eval = FALSE, echo = FALSE}
+```{r}
+#| eval: false
+#| echo: false
 
 # P(A|B) = [P(B|A)P(A) / P(B)]
 # P(H|D) = [P(D|H)P(H) / P(D)]
@@ -34,6 +30,19 @@ library(ggplot2)
 # Background
 
 [Bayes Theorem](./Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+library(pander) # nice tables
+
+library(tibble) # data frames
+
+library(ggplot2) # beautiful graphs
+
+```
+
 
 # Bayes Rule
 
@@ -74,6 +83,8 @@ ptheta1 <- ptheta1/sum(ptheta1) # normalize
 Our values of $\theta$ are `r pander(theta1)`, with probabilities $P(\theta)$ of `r pander(ptheta1)`.
 
 ```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
 
 ggplot(data = NULL,
        aes(x = theta1,
@@ -87,7 +98,7 @@ ggplot(data = NULL,
 
 ```{r}
 
-myBayesianEstimates <- tibble(theta1, ptheta1)
+myBayesianEstimates <- tibble(theta1, ptheta1) # data frame
 
 pander(myBayesianEstimates) # nice table
 
@@ -102,7 +113,7 @@ pander(myBayesianEstimates) # nice table
 data1 <- c(1, 0, 0, 0, 0, 0, 0, 0, 0, 0) # the data
 
 data1_factor <- factor(data1,
-                       levels = c(0,1),
+                       levels = c(0, 1),
                        labels = c("T", "H"))
 
 ```
@@ -115,14 +126,16 @@ n_tails <- sum(data1 == 0) # number of tails
 
 ```
 
-```{r, fig.height=2}
+```{r}
+#| fig-height: 2
+#| code-fold: true
+#| code-summary: "Show the code"
 
+x <- seq(1, 10) # x goes from 1 to 10
 
-x <- seq(1,10)
+y <- rep(1, 10) # y is a sequence of 10 1's
 
-y <- rep(1,10)
-
-coindata <- data.frame(x, y, data1_factor)
+coindata <- data.frame(x, y, data1_factor) # data for visualization
 
 ggplot(coindata,
        aes(x = x,
@@ -136,7 +149,6 @@ ggplot(coindata,
   scale_color_manual(values = c("black", "red")) +
   theme_void() +
   theme(legend.position = "none")
-
 
 ```
 
@@ -155,6 +167,12 @@ $$\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} * (1-\theta)^{\tex
 ```{r}
 
 likelihood1 <- theta1^n_heads * (1 - theta1)^n_tails # likelihood
+
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
 
 ggplot(data = NULL,
        aes(x = theta1,
@@ -195,6 +213,12 @@ $$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$
 ```{r}
 
 posterior1 <- likelihood1 * ptheta1 / pdata1 # Bayes Rule
+
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
 
 ggplot(data = NULL,
        aes(x = theta1,
