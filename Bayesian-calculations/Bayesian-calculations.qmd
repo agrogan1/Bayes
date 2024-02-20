@@ -29,7 +29,7 @@ format:
 
 # Background
 
-[Bayes Theorem](./Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
+[Bayes Theorem](../Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
 
 ```{r}
 #| code-fold: true
