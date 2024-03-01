@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andy Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-02-20">
+<meta name="dcterms.date" content="2024-03-01">
 
 <title>Bayesian Calculations: Simulation of Coin Flipping</title>
 <style>
@@ -102,6 +102,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="Bayesian-calculatons.css">
 </head>
 
 <body>
@@ -145,7 +146,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 20, 2024</p>
+      <p class="date">March 1, 2024</p>
     </div>
   </div>
   
@@ -176,7 +177,7 @@ window.Quarto = {
 <p>Mathematically Bayes Theorem is as follows:</p>
 <p><span class="math display">\[P(H|D) = \frac{P(D|H)P(H)}{P(D)}\]</span></p>
 <p>In words, Bayes Theorem may be written as follows:</p>
-<p><span class="math display">\[posterior = \frac{likelihood * prior}{data}\]</span></p>
+<p><span class="math display">\[\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{data}}\]</span></p>
 <blockquote class="blockquote">
 <p>Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs, given the data.</p>
 </blockquote>
@@ -194,7 +195,7 @@ window.Quarto = {
 <h1 data-number="4"><span class="header-section-number">4</span> Prior</h1>
 <p>We set a simple set of prior beliefs, concerning 3 values of <span class="math inline">\(\theta\)</span>, the proportion of heads.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theta1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>) <span class="co"># candidate parameter values</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theta1 <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">50</span>, .<span class="dv">75</span>) <span class="co"># candidate parameter values</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ptheta1 <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">25</span>, .<span class="dv">50</span>, .<span class="dv">25</span>) <span class="co"># prior probabilities</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -283,7 +284,7 @@ window.Quarto = {
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> y,</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> data1_factor,</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> data1_factor)) <span class="sc">+</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">shape =</span> <span class="dv">1</span>, <span class="at">pch=</span><span class="dv">19</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">pch =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>() <span class="sc">+</span></span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
@@ -291,9 +292,6 @@ window.Quarto = {
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Duplicated aesthetics after name standardisation: shape</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -306,23 +304,23 @@ window.Quarto = {
 <section id="likelihood" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Likelihood</h1>
 <p>The likelihood is the probability that a given value of <span class="math inline">\(\theta\)</span> would produce this number of heads.</p>
-<p>The probability of multiple independent events <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, etc. is <span class="math inline">\(P(A,B,C, ...) = P(A) * P(B) * P(C) * ...\)</span>.</p>
+<p>The probability of multiple independent events <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, etc. is <span class="math inline">\(P(A, B, C, ...) = P(A) \times P(B) \times P(C) \times ...\)</span>.</p>
 <p>Therefore, in this case, the likelihood is proportional to <span class="math inline">\([P(heads)]^{\text{number of heads}}\)</span> and multiply this by <span class="math inline">\([P(tails)]^{\text{number of tails}}\)</span>.</p>
 <p>Thus:</p>
-<p><span class="math display">\[\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} * (1-\theta)^{\text{number of tails}}\]</span></p>
+<p><span class="math display">\[\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} \times (1-\theta)^{\text{number of tails}}\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>likelihood1 <span class="ot">&lt;-</span> theta1<span class="sc">^</span>n_heads <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> theta1)<span class="sc">^</span>n_tails <span class="co"># likelihood</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>likelihood1 <span class="ot">&lt;-</span> theta1<span class="sc">^</span>n_heads <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> theta1)<span class="sc">^</span>n_tails <span class="co"># likelihood</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> theta1,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> likelihood1)) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"#375E97"</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Likelihood"</span>) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> theta1,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> likelihood1)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"#375E97"</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Likelihood"</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -334,9 +332,9 @@ window.Quarto = {
 </div>
 <p>At this point our estimates include not only a value of <span class="math inline">\(\theta\)</span> and <span class="math inline">\(P(\theta)\)</span>, but also the likelihood, <span class="math inline">\(\mathcal{L}(\theta)\)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>myBayesianEstimates <span class="ot">&lt;-</span> <span class="fu">tibble</span>(theta1, ptheta1, likelihood1)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(myBayesianEstimates) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>myBayesianEstimates <span class="ot">&lt;-</span> <span class="fu">tibble</span>(theta1, ptheta1, likelihood1)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(myBayesianEstimates) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -375,25 +373,25 @@ window.Quarto = {
 <section id="posterior" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Posterior</h1>
 <p>We then calculate the denominator of Bayes theorem:</p>
-<p><span class="math display">\[\Sigma [\mathcal{L}(\theta) * P(\theta)]\]</span></p>
+<p><span class="math display">\[\Sigma [\mathcal{L}(\theta) \times P(\theta)]\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pdata1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(likelihood1 <span class="sc">*</span> ptheta1) <span class="co"># normalize</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pdata1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(likelihood1 <span class="sc">*</span> ptheta1) <span class="co"># normalize</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We then use Bayes Rule to calculate the posterior:</p>
 <p><span class="math display">\[P(H|D) = \frac{P(D|H)P(H)}{P(D)}\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>posterior1 <span class="ot">&lt;-</span> likelihood1 <span class="sc">*</span> ptheta1 <span class="sc">/</span> pdata1 <span class="co"># Bayes Rule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>posterior1 <span class="ot">&lt;-</span> likelihood1 <span class="sc">*</span> ptheta1 <span class="sc">/</span> pdata1 <span class="co"># Bayes Rule</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> theta1,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> posterior1)) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, </span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"#3F681C"</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior"</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="cn">NULL</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> theta1,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> posterior1)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="st">"#3F681C"</span>) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Posterior"</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -405,9 +403,9 @@ window.Quarto = {
 </div>
 <p>Our estimates now include <span class="math inline">\(\theta\)</span>, <span class="math inline">\(P(\theta)\)</span>, <span class="math inline">\(\mathcal{L}(\theta)\)</span> and <span class="math inline">\(P(\theta | D)\)</span>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>myBayesianEstimates <span class="ot">&lt;-</span> <span class="fu">tibble</span>(theta1, ptheta1, likelihood1, posterior1)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(myBayesianEstimates) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>myBayesianEstimates <span class="ot">&lt;-</span> <span class="fu">tibble</span>(theta1, ptheta1, likelihood1, posterior1)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pander</span>(myBayesianEstimates) <span class="co"># nice table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <colgroup>
@@ -445,6 +443,19 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Estimates Are A Combination of Prior and Likelihood
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice how <span class="math inline">\(\theta = .5\)</span> has the highest prior probability. <span class="math inline">\(\theta = .25\)</span> has the highest likelihood. <span class="math inline">\(\theta = .75\)</span> has an equivalent prior probability to <span class="math inline">\(\theta = .25\)</span> but a much lower likelihood. The posterior is proportional to the prior multiplied by the likelihood. In this case the posterior estimates strongly favor <span class="math inline">\(\theta = .25\)</span>.</p>
 </div>
 </div>
 </section>

@@ -11,6 +11,7 @@ format:
     theme:
       light: cosmo
       dark: vapor
+    css: Bayesian-calculatons.css
   typst:
     toc: true
     number-sections: true
@@ -52,7 +53,7 @@ $$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$
 
 In words, Bayes Theorem may be written as follows:
 
-$$posterior = \frac{likelihood * prior}{data}$$
+$$\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{data}}$$
 
 > Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs, given the data.
 
@@ -72,7 +73,7 @@ We set a simple set of prior beliefs, concerning 3 values of $\theta$, the propo
 
 ```{r}
 
-theta1 <- c(0.25, 0.50, 0.75) # candidate parameter values
+theta1 <- c(.25, .50, .75) # candidate parameter values
 
 ptheta1 <- c(.25, .50, .25) # prior probabilities
 
@@ -142,7 +143,7 @@ ggplot(coindata,
            y = y,
            label = data1_factor,
            color = data1_factor)) +
-  geom_point(size = 10, shape = 1, pch=19) +
+  geom_point(size = 10, pch = 1) +
   geom_text() +
   labs(x = "",
        y = "") +
@@ -156,13 +157,13 @@ ggplot(coindata,
 
 The likelihood is the probability that a given value of $\theta$ would produce this number of heads.
 
-The probability of multiple independent events $A$, $B$, $C$, etc. is $P(A,B,C, ...) = P(A) * P(B) * P(C) * ...$.
+The probability of multiple independent events $A$, $B$, $C$, etc. is $P(A, B, C, ...) = P(A) \times P(B) \times P(C) \times ...$.
 
 Therefore, in this case, the likelihood is proportional to $[P(heads)]^{\text{number of heads}}$ and multiply this by $[P(tails)]^{\text{number of tails}}$. 
 
 Thus:
 
-$$\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} * (1-\theta)^{\text{number of tails}}$$
+$$\mathcal{L}(\theta) \propto \theta^{\text{number of heads}} \times (1-\theta)^{\text{number of tails}}$$
 
 ```{r}
 
@@ -198,7 +199,7 @@ pander(myBayesianEstimates) # nice table
 
 We then calculate the denominator of Bayes theorem:  
 
-$$\Sigma [\mathcal{L}(\theta) * P(\theta)]$$
+$$\Sigma [\mathcal{L}(\theta) \times P(\theta)]$$
 
 ```{r}
 
@@ -239,6 +240,11 @@ myBayesianEstimates <- tibble(theta1, ptheta1, likelihood1, posterior1)
 pander(myBayesianEstimates) # nice table
 
 ```
+::: {.callout-tip}
+## Estimates Are A Combination of Prior and Likelihood
+
+Notice how $\theta = .5$ has the highest prior probability. $\theta = .25$ has the highest likelihood. $\theta = .75$ has an equivalent prior probability to $\theta = .25$ but a much lower likelihood. The posterior is proportional to the prior multiplied by the likelihood. In this case the posterior estimates strongly favor $\theta = .25$. 
+:::
 
 # Credits
 
