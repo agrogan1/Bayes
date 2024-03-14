@@ -8,7 +8,7 @@
 <link href="Bayestalk_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Bayestalk_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="Bayestalk_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.433">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Andy Grogan-Kaylor">
   <meta name="dcterms.date" content="2023-10-27">
@@ -32,7 +32,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -224,7 +224,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -441,9 +442,9 @@ h1.title, .quarto-title-author-name, p.date {
 </section>
 <section id="background" class="slide level2">
 <h2>Background</h2>
-<div class="quarto-layout-panel">
+<div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Thomas_Bayes.png"></p>
@@ -451,7 +452,7 @@ h1.title, .quarto-title-author-name, p.date {
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Laplace_Pierre-Simon.png"></p>
@@ -470,7 +471,7 @@ h1.title, .quarto-title-author-name, p.date {
 </section>
 <section id="disadvantages" class="slide level2 smaller">
 <h2>Disadvantages</h2>
-<p>However, Bayesian statistics may be very difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive</p>
+<p>However, Bayesian statistics may be very difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive. Bayesian models may take a <em>long</em> time to run.</p>
 <div class="fragment highlight-red">
 <p>Lastly, the advantages of being able to <em>incorporate prior information</em> and to <em>accept the null hypothesis</em> may be overstated: <em>prior information</em> may be difficult to come by; and social science may be able to move forward quite well without the ability to <em>accept null hypotheses</em>.</p>
 </div>
@@ -525,32 +526,24 @@ h1.title, .quarto-title-author-name, p.date {
 <p>We are using simulated data from my text on multilevel modeling, <em>Multilevel Thinking</em>: <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html">https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html</a>.</p>
 <p>This simulated data comes from multiple countries so we use <code>mixed</code> instead of <code>regress</code> to account for the clustering. However, our process would be largely the same if we were to use <code>regress.</code></p>
 <div class="cell" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">set</span> <span class="dv">seed</span> 3846 <span class="co">// random seed</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">use</span> <span class="st">"https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>note:
-      https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-a
-      &gt; nalyze-multilevel-data/simulated_multilevel_data.dta redirected to
-      https://raw.githubusercontent.com/agrogan1/multilevel-thinking/main/sim
-      &gt; ulate-and-analyze-multilevel-data/simulated_multilevel_data.dta</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href=""></a></span>
+<span id="cb1-2"><a href=""></a><span class="kw">set</span> <span class="dv">seed</span> 3846 <span class="co">// random seed</span></span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="kw">use</span> <span class="st">"https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="basic-bayesian-regression" class="slide level2 smaller">
 <h2>Basic Bayesian Regression</h2>
 <p>What do the results say (particularly about HDI)?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a>bayes: mixed outcome physical_punishment warmth HDI || country:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href=""></a></span>
+<span id="cb2-2"><a href=""></a>bayes: mixed outcome physical_punishment warmth HDI || country:</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>note: Gibbs sampling is used for regression coefficients and variance
-      components.
+<pre><code>note: Gibbs sampling is used for regression coefficients and variance components.
   
 Burn-in 2500 aaaaaaaaa1000aaaaaaaaa2000aaaaa done
-Simulation 10000 .........1000.........2000.........3000.........4000.........5
-&gt; 000.........6000.........7000.........8000.........9000.........10000 done
+Simulation 10000 .........1000.........2000.........3000.........4000.........5000.....
+&gt; ....6000.........7000.........8000.........9000.........10000 done
 
 Multilevel structure
 ------------------------------------------------------------------------------
@@ -559,50 +552,50 @@ country
 ------------------------------------------------------------------------------
 
 Model summary
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Likelihood: 
   outcome ~ normal(xb_outcome,{e.outcome:sigma2})
 
 Priors: 
-  {outcome:physical_punishment warmth HDI _cons} ~ normal(0,10000)         (1)
-                                            {U0} ~ normal(0,{U0:sigma2})   (1)
+  {outcome:physical_punishment warmth HDI _cons} ~ normal(0,10000)                (1)
+                                            {U0} ~ normal(0,{U0:sigma2})          (1)
                               {e.outcome:sigma2} ~ igamma(.01,.01)
 
 Hyperprior: 
   {U0:sigma2} ~ igamma(.01,.01)
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 (1) Parameters are elements of the linear form xb_outcome.
 
-Bayesian multilevel regression                   MCMC iterations  =     12,500
-Metropolis–Hastings and Gibbs sampling           Burn-in          =      2,500
-                                                 MCMC sample size =     10,000
-Group variable: country                          Number of groups =         30
-                                                 Obs per group:
+Bayesian multilevel regression                          MCMC iterations  =     12,500
+Metropolis–Hastings and Gibbs sampling                  Burn-in          =      2,500
+                                                        MCMC sample size =     10,000
+Group variable: country                                 Number of groups=        30
+                                                        Obs per group:
                                                               min =        100
                                                               avg =      100.0
                                                               max =        100
-                                                 Number of obs    =      3,000
-                                                 Acceptance rate  =      .8149
-                                                 Efficiency:  min =     .01661
-                                                              avg =      .5378
-Log marginal-likelihood                                       max =          1
+                                                        Number of obs    =      3,000
+                                                        Acceptance rate  =      .8149
+                                                        Efficiency:  min =     .01661
+                                                                     avg =      .5378
+Log marginal-likelihood                                              max =          1
  
-------------------------------------------------------------------------------
-             |                                                Equal-tailed
-             |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
--------------+----------------------------------------------------------------
-outcome      |
-physical_p~t | -.8386508   .0809886    .00081  -.8396193  -.9974872  -.6787328
-      warmth |   .963721   .0579597   .000571   .9639552   .8502194   1.078531
-         HDI |   .009942   .0211141   .001601   .0100155  -.0318055   .0521301
-       _cons |  51.57477   1.472647    .11425   51.57116   48.69018    54.4736
--------------+----------------------------------------------------------------
-country      |
-   U0:sigma2 |  3.911874   1.248587   .027023   3.678984   2.156582    6.92078
--------------+----------------------------------------------------------------
-e.outcome    |
-      sigma2 |  36.37304   .9464738   .009564   36.34691    34.5667   38.23824
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+                    |                                                Equal-tailed
+                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
+--------------------+----------------------------------------------------------------
+outcome             |
+physical_punishment | -.8386508   .0809886    .00081  -.8396193  -.9974872  -.6787328
+             warmth |   .963721   .0579597   .000571   .9639552   .8502194   1.078531
+                HDI |   .009942   .0211141   .001601   .0100155  -.0318055   .0521301
+              _cons |  51.57477   1.472647    .11425   51.57116   48.69018    54.4736
+--------------------+----------------------------------------------------------------
+country             |
+          U0:sigma2 |  3.911874   1.248587   .027023   3.678984   2.156582    6.92078
+--------------------+----------------------------------------------------------------
+e.outcome           |
+             sigma2 |  36.37304   .9464738   .009564   36.34691    34.5667   38.23824
+-------------------------------------------------------------------------------------
 Note: Default priors are used for model parameters.</code></pre>
 </div>
 </div>
@@ -612,15 +605,14 @@ Note: Default priors are used for model parameters.</code></pre>
 <p>Here we state our prior beliefs about the <span class="math inline">\(\beta_{HDI} HDI\)</span></p>
 <p>We think it is 1, but put some uncertainty around that belief (<span class="math inline">\(sd = 10\)</span>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2"></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): mixed outcome physical_punishment warmth HDI || country: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource stata number-lines code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href=""></a></span>
+<span id="cb4-2"><a href=""></a>bayes, prior({outcome:HDI}, <span class="fu">normal</span>(1,10)): mixed outcome physical_punishment warmth HDI || country: </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>note: Gibbs sampling is used for regression coefficients and variance
-      components.
+<pre><code>note: Gibbs sampling is used for regression coefficients and variance components.
   
 Burn-in 2500 aaaaaaaaa1000aaaaaaaaa2000aaaaa done
-Simulation 10000 .........1000.........2000.........3000.........4000.........5
-&gt; 000.........6000.........7000.........8000.........9000.........10000 done
+Simulation 10000 .........1000.........2000.........3000.........4000.........5000.....
+&gt; ....6000.........7000.........8000.........9000.........10000 done
 
 Multilevel structure
 ------------------------------------------------------------------------------
@@ -629,51 +621,51 @@ country
 ------------------------------------------------------------------------------
 
 Model summary
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 Likelihood: 
   outcome ~ normal(xb_outcome,{e.outcome:sigma2})
 
 Priors: 
-                               {outcome:HDI} ~ normal(1,10)                (1)
-  {outcome:physical_punishment warmth _cons} ~ normal(0,10000)             (1)
-                                        {U0} ~ normal(0,{U0:sigma2})       (1)
+                               {outcome:HDI} ~ normal(1,10)                       (1)
+  {outcome:physical_punishment warmth _cons} ~ normal(0,10000)                    (1)
+                                        {U0} ~ normal(0,{U0:sigma2})              (1)
                           {e.outcome:sigma2} ~ igamma(.01,.01)
 
 Hyperprior: 
   {U0:sigma2} ~ igamma(.01,.01)
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
 (1) Parameters are elements of the linear form xb_outcome.
 
-Bayesian multilevel regression                   MCMC iterations  =     12,500
-Metropolis–Hastings and Gibbs sampling           Burn-in          =      2,500
-                                                 MCMC sample size =     10,000
-Group variable: country                          Number of groups =         30
-                                                 Obs per group:
+Bayesian multilevel regression                          MCMC iterations  =     12,500
+Metropolis–Hastings and Gibbs sampling                  Burn-in          =      2,500
+                                                        MCMC sample size =     10,000
+Group variable: country                                 Number of groups=        30
+                                                        Obs per group:
                                                               min =        100
                                                               avg =      100.0
                                                               max =        100
-                                                 Number of obs    =      3,000
-                                                 Acceptance rate  =       .849
-                                                 Efficiency:  min =    .002886
-                                                              avg =      .5314
-Log marginal-likelihood                                       max =          1
+                                                        Number of obs    =      3,000
+                                                        Acceptance rate  =       .849
+                                                        Efficiency:  min =    .002886
+                                                                     avg =      .5314
+Log marginal-likelihood                                              max =          1
  
-------------------------------------------------------------------------------
-             |                                                Equal-tailed
-             |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
--------------+----------------------------------------------------------------
-outcome      |
-physical_p~t | -.8394731   .0802155   .000802  -.8392659  -.9978658  -.6795874
-      warmth |  .9651679   .0591823   .000592   .9652363   .8483021   1.081992
-         HDI |  .0088244   .0211746   .003941   .0098137  -.0347508   .0503707
-       _cons |  51.63484   1.472414    .27128   51.52086   48.93379   54.71427
--------------+----------------------------------------------------------------
-country      |
-   U0:sigma2 |  3.870744   1.220716   .028551   3.662517   2.121036   6.780494
--------------+----------------------------------------------------------------
-e.outcome    |
-      sigma2 |  36.34965   .9430053    .00943   36.32999   34.58389    38.2536
-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+                    |                                                Equal-tailed
+                    |      Mean   Std. dev.     MCSE     Median  [95% cred. interval]
+--------------------+----------------------------------------------------------------
+outcome             |
+physical_punishment | -.8394731   .0802155   .000802  -.8392659  -.9978658  -.6795874
+             warmth |  .9651679   .0591823   .000592   .9652363   .8483021   1.081992
+                HDI |  .0088244   .0211746   .003941   .0098137  -.0347508   .0503707
+              _cons |  51.63484   1.472414    .27128   51.52086   48.93379   54.71427
+--------------------+----------------------------------------------------------------
+country             |
+          U0:sigma2 |  3.870744   1.220716   .028551   3.662517   2.121036   6.780494
+--------------------+----------------------------------------------------------------
+e.outcome           |
+             sigma2 |  36.34965   .9430053    .00943   36.32999   34.58389    38.2536
+-------------------------------------------------------------------------------------
 Note: Default priors are used for some model parameters.</code></pre>
 </div>
 </div>
@@ -688,21 +680,21 @@ Note: Default priors are used for some model parameters.</code></pre>
 <p>We are using simulated data from my text on multilevel modeling, <em>Multilevel Thinking</em>: <a href="https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html">https://agrogan1.github.io/multilevel-thinking/simulated-multi-country-data.html</a>.</p>
 <p>This simulated data comes from multiple countries so we use the <code>brms</code> library to access Bayesian multilevel models from <code>STAN</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">set.seed</span>(<span class="dv">3846</span>) <span class="co"># random seed</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>simulated_multilevel_data <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">3846</span>) <span class="co"># random seed</span></span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a>simulated_multilevel_data <span class="ot">&lt;-</span> <span class="fu">read_dta</span>(<span class="st">"https://github.com/agrogan1/multilevel-thinking/raw/main/simulate-and-analyze-multilevel-data/simulated_multilevel_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="basic-bayesian-regression-1" class="slide level2 smaller">
 <h2>Basic Bayesian Regression</h2>
 <p>What do the results say (particularly about HDI)?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>fit1 <span class="ot">&lt;-</span> <span class="fu">brm</span>(outcome <span class="sc">~</span> physical_punishment <span class="sc">+</span> warmth <span class="sc">+</span> HDI <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
-<span id="cb8-2"><a href="#cb8-2"></a>            <span class="at">family =</span> <span class="fu">gaussian</span>(), </span>
-<span id="cb8-3"><a href="#cb8-3"></a>            <span class="at">data =</span> simulated_multilevel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>fit1 <span class="ot">&lt;-</span> <span class="fu">brm</span>(outcome <span class="sc">~</span> physical_punishment <span class="sc">+</span> warmth <span class="sc">+</span> HDI <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
+<span id="cb7-2"><a href=""></a>            <span class="at">family =</span> <span class="fu">gaussian</span>(), </span>
+<span id="cb7-3"><a href=""></a>            <span class="at">data =</span> simulated_multilevel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">summary</span>(fit1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: gaussian 
   Links: mu = identity; sigma = identity 
@@ -714,18 +706,18 @@ Formula: outcome ~ physical_punishment + warmth + HDI + (1 | country)
 Group-Level Effects: 
 ~country (Number of levels: 30) 
               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)     2.01      0.31     1.49     2.69 1.00      996     1640
+sd(Intercept)     1.99      0.29     1.50     2.65 1.01      816     1546
 
 Population-Level Effects: 
                     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept              51.54      1.58    48.38    54.63 1.00      897     1449
-physical_punishment    -0.84      0.08    -1.00    -0.68 1.00     5417     3115
-warmth                  0.96      0.06     0.85     1.08 1.00     4973     2862
-HDI                     0.01      0.02    -0.03     0.06 1.00      787     1332
+Intercept              51.45      1.51    48.38    54.35 1.01      799     1622
+physical_punishment    -0.84      0.08    -1.00    -0.68 1.00     5634     2852
+warmth                  0.96      0.06     0.85     1.08 1.00     5418     3096
+HDI                     0.01      0.02    -0.03     0.05 1.01      717     1556
 
 Family Specific Parameters: 
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma     6.03      0.08     5.88     6.18 1.00     5727     2712
+sigma     6.03      0.08     5.87     6.20 1.00     6111     2832
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -738,17 +730,17 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <p>Here we state our prior beliefs about the <span class="math inline">\(\beta_{HDI} HDI\)</span></p>
 <p>We think it is 1, but put some uncertainty around that belief (<span class="math inline">\(sd = 10\)</span>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>prior1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="co"># normal prior with some variance</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>                  <span class="at">class =</span> b, <span class="co"># prior for a regression coefficient</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a>                  <span class="at">coef =</span> HDI)) <span class="co"># which coefficient?</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a></span>
-<span id="cb11-5"><a href="#cb11-5"></a>fit2 <span class="ot">&lt;-</span> <span class="fu">brm</span>(outcome <span class="sc">~</span> physical_punishment <span class="sc">+</span> warmth <span class="sc">+</span> HDI <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
-<span id="cb11-6"><a href="#cb11-6"></a>            <span class="at">family =</span> <span class="fu">gaussian</span>(), </span>
-<span id="cb11-7"><a href="#cb11-7"></a>            <span class="at">prior =</span> prior1, <span class="co"># add a prior</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a>            <span class="at">data =</span> simulated_multilevel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>prior1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="co"># normal prior with some variance</span></span>
+<span id="cb10-2"><a href=""></a>                  <span class="at">class =</span> b, <span class="co"># prior for a regression coefficient</span></span>
+<span id="cb10-3"><a href=""></a>                  <span class="at">coef =</span> HDI)) <span class="co"># which coefficient?</span></span>
+<span id="cb10-4"><a href=""></a></span>
+<span id="cb10-5"><a href=""></a>fit2 <span class="ot">&lt;-</span> <span class="fu">brm</span>(outcome <span class="sc">~</span> physical_punishment <span class="sc">+</span> warmth <span class="sc">+</span> HDI <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> country),</span>
+<span id="cb10-6"><a href=""></a>            <span class="at">family =</span> <span class="fu">gaussian</span>(), </span>
+<span id="cb10-7"><a href=""></a>            <span class="at">prior =</span> prior1, <span class="co"># add a prior</span></span>
+<span id="cb10-8"><a href=""></a>            <span class="at">data =</span> simulated_multilevel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">summary</span>(fit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a><span class="fu">summary</span>(fit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Family: gaussian 
   Links: mu = identity; sigma = identity 
@@ -760,18 +752,18 @@ Formula: outcome ~ physical_punishment + warmth + HDI + (1 | country)
 Group-Level Effects: 
 ~country (Number of levels: 30) 
               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)     1.99      0.31     1.48     2.70 1.00      888     1533
+sd(Intercept)     2.00      0.31     1.49     2.70 1.01      690     1640
 
 Population-Level Effects: 
                     Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept              51.44      1.50    48.56    54.46 1.00     1083     1912
-physical_punishment    -0.84      0.08    -1.00    -0.68 1.00     6220     2881
-warmth                  0.96      0.06     0.85     1.08 1.00     5974     3249
-HDI                     0.01      0.02    -0.03     0.05 1.00     1007     1699
+Intercept              51.42      1.54    48.42    54.60 1.00      832     1439
+physical_punishment    -0.84      0.08    -1.00    -0.68 1.00     6090     2670
+warmth                  0.96      0.06     0.85     1.08 1.00     6259     3165
+HDI                     0.01      0.02    -0.03     0.06 1.00      772     1432
 
 Family Specific Parameters: 
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sigma     6.03      0.08     5.88     6.18 1.00     6640     2823
+sigma     6.03      0.08     5.89     6.19 1.00     4890     2767
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
@@ -789,9 +781,11 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <div class="r-fit-text">
 <p>Questions?</p>
 </div>
+<div class="quarto-auto-generated-content">
+<p><img src="Thomas_Bayes.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
-<img src="Thomas_Bayes.png" class="slide-logo r-stretch"><div class="footer footer-default">
-
+</div>
 </div>
 </section>
     </div>
@@ -821,7 +815,6 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
       Reveal.initialize({
 'controlsAuto': false,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1121,10 +1114,9 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1134,8 +1126,17 @@ scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

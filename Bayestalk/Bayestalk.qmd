@@ -4,7 +4,7 @@ subtitle: "*Thinking about* Bayesian analysis can be HARD. *Doing* Bayesian anal
 title-slide-attributes:  
   data-background-image: mountains.png
 author: "Andy Grogan-Kaylor"
-date: "today"
+date: "2023-10-27"
 format: 
   revealjs:
     scrollable: true
@@ -62,7 +62,7 @@ Bayesian statistics also have the advantage that we are not simply deciding whet
 
 ## Disadvantages {.smaller}
 
-However, Bayesian statistics may be very difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive 
+However, Bayesian statistics may be very difficult to understand. Further, while statistical software for Bayesian inference is becoming easier and easier to use, syntax for Bayesian inference may remain complicated and counter-intuitive. Bayesian models may take a *long* time to run. 
 
 ::: {.fragment .highlight-red}
 Lastly, the advantages of being able to *incorporate prior information* and to *accept the null hypothesis* may be overstated: *prior information* may be difficult to come by; and social science may be able to move forward quite well without the ability to *accept null hypotheses*.
