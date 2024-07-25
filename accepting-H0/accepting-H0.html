@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.29">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andy Grogan-Kaylor">
-<meta name="dcterms.date" content="2024-07-23">
+<meta name="dcterms.date" content="2024-07-25">
 
 <title>The Value of Accepting the Null Hypothesis</title>
 <style>
@@ -58,11 +58,9 @@ div.csl-indent {
 <link href="accepting-H0_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="accepting-H0_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script src="accepting-H0_files/libs/kePrint/kePrint.js"></script>
-
 <link href="accepting-H0_files/libs/lightable/lightable.css" rel="stylesheet">
 
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -129,7 +127,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 23, 2024</p>
+      <p class="date">July 25, 2024</p>
     </div>
   </div>
   
@@ -171,7 +169,7 @@ Accepting The Null Hypothesis
 <p>Lastly, the ability to accept <span class="math inline">\(H_0\)</span> means that one is not only looking for statistically credible–or statistically significant–results as substantively important findings, but that results supporting the null hypothesis can also be seen as substantively important findings that contribute to theory and practice.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -183,7 +181,7 @@ Bayesian And Frequentist Perspectives
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="Thomas_Bayes.png" class="img-fluid figure-img" style="width:10.0%"></p>
+<p><img src="Thomas_Bayes.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:10.0%"></p>
 <figcaption>Thomas Bayes</figcaption>
 </figure>
 </div>
@@ -203,6 +201,26 @@ Statistical Power
 <p>A finding of a <em>null result</em> is dependent on having enough statistical power that one might plausibly detect an effect were an effect to exist.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Addressing Hard Problems (A Personal View)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Most of the research teams that I work with are addressing <em>hard problems</em> like: child abuse; harsh parenting; mental health challenges; and substance use.</p>
+<p>Many of these issues are complicated, long-standing, and sometimes seemingly intractable.</p>
+<p>I think that in any statistical model, some associations end up not being statistically credible, or in frequentist models, not statistically significant. Unfortunately, I think this is often seen as a “failure” of the statistical model, or as a rejection of the conceptual underpinnings of a particular project in its entirety.</p>
+<p>I’ve been hoping that statistical modeling might be seen more as a process of <strong>discernment</strong>: Which results are credible or significant? Which results are not credible or significant? How does this pattern of results help us understand the issues that we are working with more deeply? What does this imply for our future work? What aspects of our current work do we need to strengthen in the future?</p>
+<p>After all, we are usually trying to address longstanding and difficult problems. Not every result in every model is going to be statistically credible or significant, and I think finding results that are statistically not credible, or statistically insignificant can be informative.</p>
+</div>
+</div>
+</div>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="important-substantive-cases" class="level1" data-number="2">
@@ -210,7 +228,6 @@ Statistical Power
 <p>The Value of Accepting the Null Hypothesis <span class="math inline">\(H_0\)</span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
 <table class="lightable-paper lightable-hover table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -279,7 +296,6 @@ Statistical Power
 </table>
 
 
-</div>
 </div>
 </div>
 </section>
@@ -482,7 +498,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -514,47 +541,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -589,11 +576,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

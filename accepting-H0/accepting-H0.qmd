@@ -57,7 +57,7 @@ The ability to accept $H_0$ may also lead to a lower likelihood of the publicati
 Lastly, the ability to accept $H_0$ means that one is not only looking for statistically credible--or statistically significant--results as substantively important findings, but that results supporting the null hypothesis can also be seen as substantively important findings that contribute to theory and practice. 
 :::
 
-::: {.callout-note}
+::: {.callout-tip}
 ## Bayesian And Frequentist Perspectives
 
 ![Thomas Bayes](Thomas_Bayes.png){width=10% fig-align="left"}
@@ -69,6 +69,20 @@ This handout is written from a *Bayesian* perspective. However, even from a trad
 ## Statistical Power
 
 A finding of a *null result* is dependent on having enough statistical power that one might plausibly detect an effect were an effect to exist.
+:::
+
+::: {.callout-note collapse="true"}
+## Addressing Hard Problems (A Personal View)
+
+Most of the research teams that I work with are addressing *hard problems* like: child abuse; harsh parenting; mental health challenges; and substance use.
+
+Many of these issues are complicated, long-standing, and sometimes seemingly intractable. 
+
+I think that in any statistical model, some associations end up not being statistically credible, or in frequentist models, not statistically significant. Unfortunately, I think this is often seen as a "failure" of the statistical model, or as a rejection of the conceptual underpinnings of a particular project in its entirety.
+
+I’ve been hoping that statistical modeling might be seen more as a process of **discernment**: Which results are credible or significant? Which results are not credible or significant? How does this pattern of results help us understand the issues that we are working with more deeply? What does this imply for our future work? What aspects of our current work do we need to strengthen in the future?
+
+After all, we are usually trying to address longstanding and difficult problems. Not every result in every model is going to be statistically credible or significant, and I think finding results that are statistically not credible, or statistically insignificant can be informative. 
 :::
 
 {{< pagebreak >}}
