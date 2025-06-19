@@ -9,6 +9,7 @@ format:
     theme:
       light: yeti
       dark: vapor
+    lightbox: true
   pdf:
     toc: true
     number-sections: true
@@ -60,7 +61,7 @@ Lastly, the ability to accept $H_0$ means that one is not only looking for stati
 ::: {.callout-tip}
 ## Bayesian And Frequentist Perspectives
 
-![Thomas Bayes](Thomas_Bayes.png){width=10% fig-align="left"}
+![Thomas Bayes](Thomas_Bayes.png){width=10% fig-align="left" #fig-Bayes}
 
 This handout is written from a *Bayesian* perspective. However, even from a traditional *frequentist* statistical perspective, it may be helpful to think about the *value* of results that are *not statistically significant*.
 :::
