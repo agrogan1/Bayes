@@ -8,13 +8,10 @@ format:
     toc: true
     number-sections: true
     theme:
-      light: cosmo
+      light: yeti
       dark: vapor
+    lightbox: true
 ---
-
-# Derivation
-
-> Following inspiration from Kruschke (2011).
 
 # From The Definition Of Conditional Probability: 
 
