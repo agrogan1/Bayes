@@ -11,13 +11,28 @@ format:
       light: yeti
       dark: vapor
     lightbox: true
+  pdf: 
+    toc: true
+    number-sections: true
 ---
+
+# Some Definitions
+
+$$\begin{matrix}
+ & \color{blue}{P(A)} & P(!A) \\
+\color{blue}{P(B)} & \color{red}{P(A,B)} & P(A, !B) \\
+P(!B) & P(A,!B) & P(!A, !B)
+\end{matrix}$$ {#eq-probability-matrix}
+
+* $\color{blue}{P(A)}$ and $\color{blue}{P(B)}$ are examples of *marginal* probabilities. 
+* $\color{red}{P(A,B)}$ is an example of a *joint* probability.
+* A *conditional* probability, for example, $\color{purple}{P(A|B)}$ is defined as the appropriate *joint* probability divided by the *marginal* probability: $\frac{\color{red}{P(A,B)}}{\color{blue}{P(B)}}$
 
 # From The Definition Of Conditional Probability: 
 
-$P(A|B) = P(A,B) / P(B)$
+$P(A|B) = \frac{P(A,B)}{P(B)}$
 
-$P(B|A) = P(A,B) / P(A)$
+$P(B|A) = \frac{P(A,B)}{P(A)}$
 
 # Multiply Each Fraction By The Denominator: 
 
@@ -32,6 +47,9 @@ $P(A|B)P(B) = P(B|A)P(A)$
 # Divide by $P(B)$:
 
 $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$
+
+This is Bayes Theorem.
+
 
 
 

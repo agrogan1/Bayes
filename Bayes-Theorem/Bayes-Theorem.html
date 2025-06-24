@@ -79,12 +79,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#from-the-definition-of-conditional-probability" id="toc-from-the-definition-of-conditional-probability" class="nav-link active" data-scroll-target="#from-the-definition-of-conditional-probability"><span class="header-section-number">1</span> From The Definition Of Conditional Probability:</a></li>
-  <li><a href="#multiply-each-fraction-by-the-denominator" id="toc-multiply-each-fraction-by-the-denominator" class="nav-link" data-scroll-target="#multiply-each-fraction-by-the-denominator"><span class="header-section-number">2</span> Multiply Each Fraction By The Denominator:</a></li>
-  <li><a href="#set-the-two-expressions-to-be-equivalent" id="toc-set-the-two-expressions-to-be-equivalent" class="nav-link" data-scroll-target="#set-the-two-expressions-to-be-equivalent"><span class="header-section-number">3</span> Set The Two Expressions To Be Equivalent:</a></li>
-  <li><a href="#divide-by-pb" id="toc-divide-by-pb" class="nav-link" data-scroll-target="#divide-by-pb"><span class="header-section-number">4</span> Divide by <span class="math inline">\(P(B)\)</span>:</a></li>
+  <li><a href="#some-definitions" id="toc-some-definitions" class="nav-link active" data-scroll-target="#some-definitions"><span class="header-section-number">1</span> Some Definitions</a></li>
+  <li><a href="#from-the-definition-of-conditional-probability" id="toc-from-the-definition-of-conditional-probability" class="nav-link" data-scroll-target="#from-the-definition-of-conditional-probability"><span class="header-section-number">2</span> From The Definition Of Conditional Probability:</a></li>
+  <li><a href="#multiply-each-fraction-by-the-denominator" id="toc-multiply-each-fraction-by-the-denominator" class="nav-link" data-scroll-target="#multiply-each-fraction-by-the-denominator"><span class="header-section-number">3</span> Multiply Each Fraction By The Denominator:</a></li>
+  <li><a href="#set-the-two-expressions-to-be-equivalent" id="toc-set-the-two-expressions-to-be-equivalent" class="nav-link" data-scroll-target="#set-the-two-expressions-to-be-equivalent"><span class="header-section-number">4</span> Set The Two Expressions To Be Equivalent:</a></li>
+  <li><a href="#divide-by-pb" id="toc-divide-by-pb" class="nav-link" data-scroll-target="#divide-by-pb"><span class="header-section-number">5</span> Divide by <span class="math inline">\(P(B)\)</span>:</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Bayes-Theorem.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -119,23 +120,37 @@ window.Quarto = {
 </header>
 
 
-<section id="from-the-definition-of-conditional-probability" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> From The Definition Of Conditional Probability:</h1>
-<p><span class="math inline">\(P(A|B) = P(A,B) / P(B)\)</span></p>
-<p><span class="math inline">\(P(B|A) = P(A,B) / P(A)\)</span></p>
+<section id="some-definitions" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Some Definitions</h1>
+<p><span id="eq-probability-matrix"><span class="math display">\[\begin{matrix}
+&amp; \color{blue}{P(A)} &amp; P(!A) \\
+\color{blue}{P(B)} &amp; \color{red}{P(A,B)} &amp; P(A, !B) \\
+P(!B) &amp; P(A,!B) &amp; P(!A, !B)
+\end{matrix} \tag{1}\]</span></span></p>
+<ul>
+<li><span class="math inline">\(\color{blue}{P(A)}\)</span> and <span class="math inline">\(\color{blue}{P(B)}\)</span> are examples of <em>marginal</em> probabilities.</li>
+<li><span class="math inline">\(\color{red}{P(A,B)}\)</span> is an example of a <em>joint</em> probability.</li>
+<li>A <em>conditional</em> probability, for example, <span class="math inline">\(\color{purple}{P(A|B)}\)</span> is defined as the appropriate <em>joint</em> probability divided by the <em>marginal</em> probability: <span class="math inline">\(\frac{\color{red}{P(A,B)}}{\color{blue}{P(B)}}\)</span></li>
+</ul>
 </section>
-<section id="multiply-each-fraction-by-the-denominator" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Multiply Each Fraction By The Denominator:</h1>
+<section id="from-the-definition-of-conditional-probability" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> From The Definition Of Conditional Probability:</h1>
+<p><span class="math inline">\(P(A|B) = \frac{P(A,B)}{P(B)}\)</span></p>
+<p><span class="math inline">\(P(B|A) = \frac{P(A,B)}{P(A)}\)</span></p>
+</section>
+<section id="multiply-each-fraction-by-the-denominator" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Multiply Each Fraction By The Denominator:</h1>
 <p><span class="math inline">\(P(A|B)P(B) = P(A,B)\)</span></p>
 <p><span class="math inline">\(P(B|A)P(A) = P(A,B)\)</span></p>
 </section>
-<section id="set-the-two-expressions-to-be-equivalent" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Set The Two Expressions To Be Equivalent:</h1>
+<section id="set-the-two-expressions-to-be-equivalent" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Set The Two Expressions To Be Equivalent:</h1>
 <p><span class="math inline">\(P(A|B)P(B) = P(B|A)P(A)\)</span></p>
 </section>
-<section id="divide-by-pb" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Divide by <span class="math inline">\(P(B)\)</span>:</h1>
+<section id="divide-by-pb" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Divide by <span class="math inline">\(P(B)\)</span>:</h1>
 <p><span class="math inline">\(P(A|B) = \frac{P(B|A)P(A)}{P(B)}\)</span></p>
+<p>This is Bayes Theorem.</p>
 </section>
 
 </main>
