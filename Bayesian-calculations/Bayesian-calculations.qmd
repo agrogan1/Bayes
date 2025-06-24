@@ -9,10 +9,11 @@ format:
     number-sections: true
     highlight-style: haddock
     theme:
-      light: cosmo
+      light: yeti
       dark: vapor
-    css: Bayesian-calculatons.css
-  typst:
+    lightbox: true
+    css: Bayesian-calculations.css
+  pdf:
     toc: true
     number-sections: true
 ---
@@ -30,7 +31,7 @@ format:
 
 # Background
 
-[Bayes Theorem](../Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
+[Bayes Theorem](https://agrogan1.github.io/Bayes/Bayes-Theorem/Bayes-Theorem.html) allows us to state our *prior* beliefs, to calculate the *likelihood* of our data given those beliefs, and then to update those beliefs with data, thus arriving at a set of *posterior* beliefs.  However, Bayesian calculations can be difficult to understand. This document attempts to provide a simple walkthrough of some Bayesian calculations.
 
 ```{r}
 #| code-fold: true
@@ -49,11 +50,11 @@ library(ggplot2) # beautiful graphs
 
 Mathematically Bayes Theorem is as follows:
 
-$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$ 
+$$P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$ {#eq-Bayes-Theorem}
 
 In words, Bayes Theorem may be written as follows:
 
-$$\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{data}}$$
+$$\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{data}}$$ {#eq-Bayes-Theorem-words}
 
 > Our posterior beliefs are proportional to our prior beliefs, multiplied by the likelihood of those beliefs, given the data.
 

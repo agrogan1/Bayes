@@ -8,8 +8,9 @@ format:
     toc: true
     number-sections: true
     theme:
-      light: cosmo
+      light: yeti
       dark: vapor
+    lightbox: true
   pdf:
     toc: false
     toc-depth: 3
@@ -17,24 +18,17 @@ format:
     colorlinks: true
 ---
 
-```{r setup, include=FALSE}
-
-knitr::opts_chunk$set(echo = FALSE,
-                      fig.margin = TRUE)
-
-```
-
 # Bayes
 
 ![Thomas Bayes](Thomas_Bayes.png){width=25%}
 
 # Bayes Theorem
 
-$$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ 
+$$P(H|D) = \frac{P(D|H) P(H)}{P(D)}$$ {#eq-Bayes-Theorem}
 
 # In Words:
 
-$$\text{posterior} \propto \text{likelihood} \times \text{prior}$$ 
+$$\text{posterior} \propto \text{likelihood} \times \text{prior}$$ {#eq-Bayes-Theorem-words} 
 
 # In Even More Words:
 
