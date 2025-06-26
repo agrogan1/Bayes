@@ -49,9 +49,9 @@ In standard frequentist models, we cannot formally accept the *null hypothesis* 
 Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018]. 
 
 ::: {.callout-tip}
-## Accepting The Null Hypothesis
+## Accepting The Null Hypothesis May Have Scientific Value
 
-Accepting $H_0$ may be very scientifically valuable, and may have consequences for affirming similarity, universality, or treatment invariance [@Gallistel2009; @Morey2018]. 
+Accepting $H_0$ may be very scientifically valuable, and may have consequences for affirming similarity, universality, or treatment invariance [@Gallistel2009; @Morey2018]. See, for examples, @sec-substantive-cases.
 
 The ability to accept $H_0$ may also lead to a lower likelihood of the publication bias that results from frequentist methods predicated upon the rejection of $H_0$ [@Kruschke2018]. 
 
@@ -88,7 +88,7 @@ After all, we are usually trying to address longstanding and difficult problems.
 
 {{< pagebreak >}}
 
-# Important Substantive Cases
+# Important Substantive Cases {#sec-substantive-cases}
 
 The Value of Accepting the Null Hypothesis $H_0$
 
