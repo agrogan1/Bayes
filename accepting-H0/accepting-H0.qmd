@@ -6,9 +6,7 @@ format:
   html:
     toc: true
     number-sections: true
-    theme:
-      light: yeti
-      dark: vapor
+    theme:  yeti
     lightbox: true
   pdf:
     toc: true
@@ -44,9 +42,12 @@ blockquote {
 
 # Background
 
+::: {.callout-tip}
+## Key Idea
 In standard frequentist models, we cannot formally accept the *null hypothesis* $H_0$, but can only reject, or fail to reject, $H_0$.
 
 Bayesian models allow one to both accept and reject $H_0$ [@Kruschke2018]. 
+:::
 
 ::: {.callout-tip}
 ## Accepting The Null Hypothesis May Have Scientific Value
@@ -107,7 +108,7 @@ case <- c("Equivalence Testing",
           "Theory Rejection")
 
 description <- c("Equivalence Of 2 Treatments Or Interventions",
-                 "Equivalence Of 2 Groups On An Outcome",
+                 "Equivalence Of 2 Or More Groups On An Outcome",
                  "There Is No Evidence That Intervention X Is Effective",
                  "Equivalence of a Predictor Across Contexts (Moderation)",
                  "Equivalence of a Predictor Across Family Members",
