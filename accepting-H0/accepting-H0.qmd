@@ -6,7 +6,7 @@ format:
   html:
     toc: true
     number-sections: true
-    theme:  yeti
+    theme: yeti
     lightbox: true
   pdf:
     toc: true
