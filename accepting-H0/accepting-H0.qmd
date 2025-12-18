@@ -12,8 +12,11 @@ format:
     toc: true
     number-sections: true
 bibliography: ../Bayes.bib
+csl: apa.csl
 nocite: |
   @Hyde2005
+citation:
+  url: https://agrogan1.github.io/Bayes/accepting-H0/accepting-H0.html
 ---
 
 ```{r setup, include=FALSE}
